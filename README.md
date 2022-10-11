@@ -7,6 +7,9 @@ https://dados.antt.gov.br/dataset/acidentes-rodovias
 Descrição dos Conjuntos de Dados: 
 https://docs.google.com/document/d/1HuwIfaRHR4NsTypmWYzZ7Z2rUZnPAosFi5hPTiUY3Gw/edit?usp=sharing
 
+Modelo Entidade Relacionamento:
+https://app.diagrams.net/#G1i_nmH2mmX3KEBt6APAN9qKTRa8uAhCu1
+
 Sample Sinalização:
 https://docs.google.com/spreadsheets/d/1fzKd1FsKjTRLtIczmEoAw726mxGYnVw84rmtZsLcFGA/edit?usp=sharing
 

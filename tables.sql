@@ -42,7 +42,7 @@ CREATE TABLE "rodovia"."tipoPista" (
 CREATE TABLE "rodovia"."acidente" (
 	data DATE NOT NULL,
 	hora TIME,
-	nrOcorrencia REAL NOT NULL,
+	nrOcorrencia Integer NOT NULL,
 	km REAL, 
 	automovel INT DEFAULT 0,
 	bicicleta INT DEFAULT 0, 

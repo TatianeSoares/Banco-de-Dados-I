@@ -1,6 +1,6 @@
 package business;
 
-import DAO.RodoviaDAO;
+import DAO.Rodovia.RodoviaDAO;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.io.Serializable;

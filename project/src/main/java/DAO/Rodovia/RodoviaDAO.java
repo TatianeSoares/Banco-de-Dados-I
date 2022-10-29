@@ -1,4 +1,4 @@
-package DAO;
+package DAO.Rodovia;
 
 import javax.enterprise.context.ApplicationScoped;
 

@@ -73,4 +73,8 @@ public class DAOFactory implements AutoCloseable{
     }
   }
 
+  @Override
+  public void close() throws Exception {
+
+  }
 }

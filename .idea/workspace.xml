@@ -10,23 +10,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="commit na branch de desenvolvimento">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/Sinalização.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_faces_javax_faces_api_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_omnifaces_omnifaces_3_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_primefaces_primefaces_11_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_primefaces_themes_all_themes_1_0_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" />
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="models Acidente, Rodovia e Sinalização criados">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/UltrapassagemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/SentidoRodovia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoOcorrencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoPista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TrechoRodovia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/RodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/RodoviaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/business/RodoviaBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/business/RodoviaBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Sinalização.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Sinalizacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666704615580</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="models Acidente, Rodovia e Sinalização criados">
+      <created>1667066131555</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667066131555</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +236,7 @@
     <MESSAGE value="commit na branch de desenvolvimento" />
     <MESSAGE value="mudança no pom.xml" />
     <MESSAGE value="Criando pastas e arquivos para conexão com o banco de dados." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criando pastas e arquivos para conexão com o banco de dados." />
+    <MESSAGE value="models Acidente, Rodovia e Sinalização criados" />
+    <option name="LAST_COMMIT_MESSAGE" value="models Acidente, Rodovia e Sinalização criados" />
   </component>
 </project>

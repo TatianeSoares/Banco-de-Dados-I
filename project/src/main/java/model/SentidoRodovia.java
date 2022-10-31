@@ -1,5 +1,8 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -7,8 +10,8 @@ public class SentidoRodovia {
 
     //rodovia.sentidoRodovia
     @NotNull
-    private Integer idSentidoRodovia;
+    @Getter @Setter private Integer idSentidoRodovia;
     @Size(max=30)
-    private String descricaoSentidoRodovia;
+    @Getter @Setter private String descricaoSentidoRodovia;
 
 }

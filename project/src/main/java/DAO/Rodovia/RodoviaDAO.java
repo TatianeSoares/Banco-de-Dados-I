@@ -1,7 +1,10 @@
 package DAO.Rodovia;
 
+import DAO.DAO;
+import model.Rodovia;
+
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class RodoviaDAO {
+public interface RodoviaDAO extends DAO<Rodovia> {
 }

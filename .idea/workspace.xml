@@ -10,29 +10,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="models Acidente, Rodovia e Sinalização criados">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/UltrapassagemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/SentidoRodovia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoOcorrencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoPista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/TrechoRodovia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" afterDir="false" />
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="terminando o DAO">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/PgSentidoRodoviaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/SentidoRodoviaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/PgTipoAcidenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/TipoAcidenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/TipoOcorrenciaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoPista/PgTipoPistaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoPista/TipoPistaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TrechoRodovia/PgTrechoRodoviaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TrechoRodovia/TrechoRodoviaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/RodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/RodoviaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/business/RodoviaBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/business/RodoviaBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/RodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/RodoviaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Sinalização.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Sinalizacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/SentidoRodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/SentidoRodovia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Sinalizacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TipoOcorrencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoOcorrencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TipoPista.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoPista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TrechoRodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TrechoRodovia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,6 +235,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />

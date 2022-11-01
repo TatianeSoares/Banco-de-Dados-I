@@ -4,9 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
 
 public class Acidente {
 
@@ -14,8 +13,10 @@ public class Acidente {
     // PK = (data, nrOcorrencia)
 
     @NotNull
-    @Getter @Setter private LocalDate data;
-    @Getter @Setter private LocalTime hora;
+    @Getter @Setter private Integer idAcidente;
+    @NotNull
+    @Getter @Setter private Date data;
+    @Getter @Setter private Time hora;
     @NotNull
     @Getter @Setter private Integer nrOcorrencia;
     @Getter @Setter private float km;

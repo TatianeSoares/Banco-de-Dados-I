@@ -40,6 +40,7 @@ CREATE TABLE "rodovia"."tipoPista" (
 );
 
 CREATE TABLE "rodovia"."acidente" (
+    idAcidente NOT NULL,
 	data DATE NOT NULL,
 	hora TIME,
 	nrOcorrencia Integer NOT NULL,
@@ -62,7 +63,7 @@ CREATE TABLE "rodovia"."acidente" (
 	idSentidoRodovia INT DEFAULT 0,
 	idTipoAcidente INT DEFAULT 0,
 	idTipoOcorrencia INT DEFAULT 0,
-	CONSTRAINT pk_acidente PRIMARY KEY(data, nrOcorrencia),
+	CONSTRAINT pk_acidente PRIMARY KEY(idAcidente),
 	CONSTRAINT fk_aci_trechoRod FOREIGN KEY(idTrechoRodovia)
 		REFERENCES rodovia."trechoRodovia"(id),
 	CONSTRAINT fk_aci_sentRod FOREIGN KEY(idSentidoRodovia)

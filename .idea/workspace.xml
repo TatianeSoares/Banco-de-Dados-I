@@ -10,33 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="terminando o DAO">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/PgSentidoRodoviaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/SentidoRodoviaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/PgTipoAcidenteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/TipoAcidenteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/TipoOcorrenciaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoPista/PgTipoPistaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoPista/TipoPistaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TrechoRodovia/PgTrechoRodoviaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TrechoRodovia/TrechoRodoviaDAO.java" afterDir="false" />
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="DAO de cada model criado">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/RodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/RodoviaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Acidente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Rodovia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/SentidoRodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/SentidoRodovia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Sinalizacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TipoOcorrencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoOcorrencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TipoPista.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TipoPista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/TrechoRodovia.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/TrechoRodovia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +58,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CalculadoraFracao" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -190,6 +172,8 @@
       <workItem from="1666705797970" duration="1086000" />
       <workItem from="1666814528388" duration="5745000" />
       <workItem from="1667059489342" duration="1694000" />
+      <workItem from="1667241516246" duration="181000" />
+      <workItem from="1667260835410" duration="6356000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -219,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667066131555</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DAO de cada model criado">
+      <created>1667227548270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667227548270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +233,7 @@
     <MESSAGE value="mudança no pom.xml" />
     <MESSAGE value="Criando pastas e arquivos para conexão com o banco de dados." />
     <MESSAGE value="models Acidente, Rodovia e Sinalização criados" />
-    <option name="LAST_COMMIT_MESSAGE" value="models Acidente, Rodovia e Sinalização criados" />
+    <MESSAGE value="DAO de cada model criado" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAO de cada model criado" />
   </component>
 </project>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title/>
+</h:head>
+<h:body>
+    <p:toolbar id="menuSessao">
+        <p:toolbarGroup align="left">
+            <p:commandButton value="Sistema de Gerenciamento de Salas do CCE"
+                             action="index.xhtml?faces-redirect=true"
+                             style="margin-left: 350px; width: 450px; height: 60px"/>
+        </p:toolbarGroup>
+        <p:toolbarGroup align="right">
+            <p:commandButton value="Cadastrar-se" style="margin-right: 50px"
+                             action="cadastro.xhtml?faces-redirect=true"
+                             rendered="#{sessaoController.usuarioLogado eq null}"/>
+            <p:commandButton value="Entrar" style="margin-right: 30px"
+                             action="login.xhtml?faces-redirect=true"
+                             rendered="#{sessaoController.usuarioLogado eq null}"/>
+            <p:commandButton value="Sair" action="#{sessaoController.logout}"
+                             style="margin-right: 30px"
+                             rendered="#{sessaoController.usuarioLogado ne null}"/>
+        </p:toolbarGroup>
+    </p:toolbar>
+</h:body>
+</html>

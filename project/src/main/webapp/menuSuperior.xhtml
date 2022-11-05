@@ -10,13 +10,13 @@
 <h:body>
     <p:toolbar id="menuSessao">
         <p:toolbarGroup align="left">
-            <p:commandButton value="Sistema de Gerenciamento de Salas do CCE"
+            <p:commandButton value="Relação de Acidentes com Sinalização por Rodovias"
                              action="index.xhtml?faces-redirect=true"
                              style="margin-left: 350px; width: 450px; height: 60px"/>
         </p:toolbarGroup>
         <p:toolbarGroup align="right">
-            <p:commandButton value="Cadastrar-se" style="margin-right: 50px"
-                             action="cadastro.xhtml?faces-redirect=true"
+            <p:commandButton value="Inserir dados" style="margin-right: 50px"
+                             action="input.xhtml?faces-redirect=true"
                              rendered="#{sessaoController.usuarioLogado eq null}"/>
             <p:commandButton value="Entrar" style="margin-right: 30px"
                              action="login.xhtml?faces-redirect=true"

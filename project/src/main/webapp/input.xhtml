@@ -4,14 +4,20 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="conteudo">
+        <f:metadata>
+            <f:viewAction action="#{inputController.init}"/>
+        </f:metadata>
+
+        <h:form id="form">
+            <label for="inputFile">Selecione o arquivo:</label>
+            <input type="file" id="inputFile" name="inputFile"><br><br>
+            <input type="submit" value="#{inputController.verificarArquivo}">
+        </h:form>
+
+
         <h:form>
             <h:panelGrid columns="1" cellpadding="5" style="margin-top: 25px">
                 <p:graphicImage name="mapaCCE.png" width="850px" height="500px"/>
-            </h:panelGrid>
-            <h:panelGrid columns="3" cellpadding="5">
-                <p:graphicImage name="logoDC.png" width="150px" height="130px"/>
-                <p:graphicImage name="logoUEL.png" width="350px" height="100px"/>
-                <p:graphicImage name="logoCCE.png" width="100px" height="100px"/>
             </h:panelGrid>
         </h:form>
     </ui:define>

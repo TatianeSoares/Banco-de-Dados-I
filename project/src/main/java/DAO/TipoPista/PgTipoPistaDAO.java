@@ -1,8 +1,10 @@
 package DAO.TipoPista;
 
 import model.TipoPista;
+import org.omnifaces.util.Messages;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -39,7 +41,13 @@ public class PgTipoPistaDAO implements TipoPistaDAO{
 
   @Override
   public void create(TipoPista tipoPista) throws SQLException {
-
+    try (PreparedStatement statement = connection.prepareStatement(INSERT_TIPO_PISTA)) {
+      statement.setInt(1, tipoPista.getIdTipoPista());
+      statement.setString(2, tipoPista.getDescricaoTipoPista());
+      statement.executeUpdate();
+    } catch (SQLException ex) {
+      Messages.addGlobalError("Erro ao inserir trechoRodovia");
+    }
   }
 
   @Override

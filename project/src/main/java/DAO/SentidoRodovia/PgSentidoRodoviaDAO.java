@@ -1,8 +1,10 @@
 package DAO.SentidoRodovia;
 
 import model.SentidoRodovia;
+import org.omnifaces.util.Messages;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -39,7 +41,13 @@ public class PgSentidoRodoviaDAO implements SentidoRodoviaDAO{
 
   @Override
   public void create(SentidoRodovia sentidoRodovia) throws SQLException {
-
+    try (PreparedStatement statement = connection.prepareStatement(INSERT_SENTIDO_RODOVIA)) {
+      statement.setInt(1, sentidoRodovia.getIdSentidoRodovia());
+      statement.setString(2, sentidoRodovia.getDescricaoSentidoRodovia());
+      statement.executeUpdate();
+    } catch (SQLException ex) {
+      Messages.addGlobalError("Erro ao inserir sentidoRodovia");
+    }
   }
 
   @Override

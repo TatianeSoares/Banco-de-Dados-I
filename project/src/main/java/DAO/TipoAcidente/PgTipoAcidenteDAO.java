@@ -1,8 +1,10 @@
 package DAO.TipoAcidente;
 
 import model.TipoAcidente;
+import org.omnifaces.util.Messages;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -39,7 +41,13 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
 
   @Override
   public void create(TipoAcidente tipoAcidente) throws SQLException {
-
+    try (PreparedStatement statement = connection.prepareStatement(INSERT_TIPO_ACIDENTE)) {
+      statement.setInt(1, tipoAcidente.getIdTipoAcidente());
+      statement.setString(2, tipoAcidente.getDescricaoTipoAcidente());
+      statement.executeUpdate();
+    } catch (SQLException ex) {
+      Messages.addGlobalError("Erro ao inserir tipoAcidente");
+    }
   }
 
   @Override

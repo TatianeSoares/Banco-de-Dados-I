@@ -1,6 +1,8 @@
 package DAO.Acidente;
 
 import model.Acidente;
+import org.omnifaces.util.Messages;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
   private final Connection connection;
 
   private static final String INSERT_ACIDENTE =
-      "INSERT INTO rodovia.acidente(data" +
+      "INSERT INTO rodovia.acidente(idAcidente, data" +
           "hora, nrOcorrencia, km, automovel, bicicleta, caminhao" +
           "moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario" +
           "ileso, levementeFerido, gravementeFerido, mortos)" +
@@ -99,16 +101,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
 
       statement.executeUpdate();
     } catch (SQLException ex) {
-      Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-
-      if (ex.getMessage().contains("uq_user_login")) {
-        throw new SQLException("Erro ao inserir acidente, informações já existente no banco de dados.");
-      } else if (ex.getMessage().contains("not-null")) {
-        //TODO talvez este exeption nao deva estar aqui
-        throw new SQLException("Erro ao inserir acidente: pelo menos um campo está em branco.");
-      } else {
-        throw new SQLException("Erro ao inserir acidente.");
-      }
+      Messages.addGlobalError("Erro ao inserir acidente");
     }
   }
 
@@ -145,12 +138,6 @@ public class PgAcidenteDAO implements AcidenteDAO{
       }
     } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-
-      if (ex.getMessage().equals("Erro ao visualizar: acidente não pode ser encontrado.")) {
-        throw ex;
-      } else {
-        throw new SQLException("Erro ao visualizar acidente.");
-      }
     }
     return acidente;
   }
@@ -179,23 +166,8 @@ public class PgAcidenteDAO implements AcidenteDAO{
       statement.setInt(18, acidente.getGravementeFerido());
       statement.setInt(19, acidente.getMortos());
 
-      if (statement.executeUpdate() < 1) {
-        throw new SQLException("Erro ao editar: acidente não pode ser encontrado.");
-      }
     } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-
-      if (ex.getMessage().equals("Erro ao editar: acidente não pode ser encontrado.")) {
-        throw ex;
-      } else if (ex.getMessage().contains("uq_user_login")) {
-        //TODO verificar este exception
-        throw new SQLException("Erro ao editar usuário: login já existente.");
-      } else if (ex.getMessage().contains("not-null")) {
-        //TODO verificar este exception
-        throw new SQLException("Erro ao editar usuário: pelo menos um campo está em branco.");
-      } else {
-        throw new SQLException("Erro ao editar acidente.");
-      }
     }
   }
 
@@ -204,17 +176,8 @@ public class PgAcidenteDAO implements AcidenteDAO{
     try (PreparedStatement statement = connection.prepareStatement(DELETE_ACIDENTE)) {
       statement.setInt(1, id);
 
-      if (statement.executeUpdate() < 1) {
-        throw new SQLException("Erro ao excluir, acidente não pode ser encontrado.");
-      }
     } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-
-      if (ex.getMessage().equals("Erro ao excluir, acidente não pode ser encontrado.")) {
-        throw ex;
-      } else {
-        throw new SQLException("Erro ao excluir acidente.");
-      }
     }
   }
 
@@ -250,8 +213,6 @@ public class PgAcidenteDAO implements AcidenteDAO{
       }
     } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-
-      throw new SQLException("Erro ao listar acidentes.");
     }
     return acidenteList;
   }

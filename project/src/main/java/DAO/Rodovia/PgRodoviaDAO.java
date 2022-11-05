@@ -1,15 +1,17 @@
 package DAO.Rodovia;
 
 import model.Rodovia;
+import org.omnifaces.util.Messages;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
 public class PgRodoviaDAO implements RodoviaDAO {
 
   private final Connection connection;
-  //TODO talvez tenhamos de mudar no bd os nomes dos id
+
   private static final String INSERT_RODOVIA =
       "INSERT INTO rodovia.rodovias(id, descricao)" +
           "VALUES()";
@@ -39,7 +41,13 @@ public class PgRodoviaDAO implements RodoviaDAO {
 
   @Override
   public void create(Rodovia rodovia) throws SQLException {
-
+    try (PreparedStatement statement = connection.prepareStatement(INSERT_RODOVIA)) {
+      statement.setInt(1, rodovia.getIdRodovia());
+      statement.setString(2, rodovia.getDescricaoRodovia());
+      statement.executeUpdate();
+    } catch (SQLException ex) {
+      Messages.addGlobalError("Erro ao inserir rodovia");
+    }
   }
 
   @Override

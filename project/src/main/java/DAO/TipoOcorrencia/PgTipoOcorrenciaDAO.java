@@ -1,8 +1,10 @@
 package DAO.TipoOcorrencia;
 
 import model.TipoOcorrencia;
+import org.omnifaces.util.Messages;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -39,7 +41,13 @@ public class PgTipoOcorrenciaDAO implements TipoOcorrenciaDAO{
 
   @Override
   public void create(TipoOcorrencia tipoOcorrencia) throws SQLException {
-
+    try (PreparedStatement statement = connection.prepareStatement(INSERT_TIPO_OCORRENCIA)) {
+      statement.setInt(1, tipoOcorrencia.getIdTipoOcorrencia());
+      statement.setString(2, tipoOcorrencia.getDescricaoTipoOcorrencia());
+      statement.executeUpdate();
+    } catch (SQLException ex) {
+      Messages.addGlobalError("Erro ao inserir tipoOcorrencia");
+    }
   }
 
   @Override

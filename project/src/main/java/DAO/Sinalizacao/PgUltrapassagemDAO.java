@@ -1,7 +1,9 @@
 package DAO.Sinalizacao;
 
 import model.Ultrapassagem;
+import org.omnifaces.util.Messages;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -10,7 +12,6 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
 
     @Override
     public void create(Ultrapassagem ultrapassagem) throws SQLException {
-
     }
 
     @Override

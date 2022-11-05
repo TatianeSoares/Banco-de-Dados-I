@@ -16,9 +16,6 @@ public class VelocidadeMaxima {
     @Size(max=2)
     @Getter @Setter private String uf;
     @Getter @Setter private Integer anoPnvSnc;
-    @Getter @Setter private Integer idTrechoRodovia;
-    @Getter @Setter private Integer idSentidoRodovia;
-    @Getter @Setter private Integer idTipoPista;
     @Getter @Setter private float veloVeicPesado;
     @Getter @Setter private float veloVeicLeve;
     @Getter @Setter private float latitude;
@@ -26,5 +23,8 @@ public class VelocidadeMaxima {
     @Size(max=40)
     @Getter @Setter private String municipio;
     @Getter @Setter private float km;
+    @Getter @Setter private Integer idTrechoRodovia;
+    @Getter @Setter private Integer idSentidoRodovia;
+    @Getter @Setter private Integer idTipoPista;
 
 }

@@ -75,7 +75,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
   public List<Acidente> getTodosAcidentes() {
     return null;
   }
-
+  // TODO get especificos
   @Override
   public void create(Acidente acidente) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_ACIDENTE)) {

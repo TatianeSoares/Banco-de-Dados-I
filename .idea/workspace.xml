@@ -10,14 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="templates e menus criados, falta desenvolvimento">
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Tela input básica">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/UltrapassagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/UltrapassagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeMaximaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/controllers/SessaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controllers/InputController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

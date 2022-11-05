@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Named
 @SessionScoped
-public class SessaoController implements Serializable {
+public class InputController implements Serializable {
 
 
 

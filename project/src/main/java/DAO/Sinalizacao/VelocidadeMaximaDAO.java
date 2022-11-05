@@ -1,4 +1,10 @@
 package DAO.Sinalizacao;
 
-public class VelocidadeMaximaDAO {
+
+import DAO.DAO;
+import model.VelocidadeMaxima;
+
+public interface VelocidadeMaximaDAO extends DAO<VelocidadeMaxima>{
+
+
 }

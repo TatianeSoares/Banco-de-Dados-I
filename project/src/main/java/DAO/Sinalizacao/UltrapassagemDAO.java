@@ -1,4 +1,7 @@
 package DAO.Sinalizacao;
 
-public class UltrapassagemDAO {
+import model.Ultrapassagem;
+import DAO.DAO;
+
+public interface UltrapassagemDAO extends DAO<Ultrapassagem> {
 }

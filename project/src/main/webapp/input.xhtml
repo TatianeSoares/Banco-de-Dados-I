@@ -9,17 +9,34 @@
             <f:viewAction action="#{inputController.init}"/>
         </f:metadata>
 
-        <h:form id="form">
-            <label for="inputFile">Selecione o arquivo:</label>
-            <input type="file" id="inputFile" name="inputFile"/><br></br>
-            <input type="submit" value="#{inputController.verificarArquivo()}"/>
-        </h:form>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <p:toolbar>
+                    <p:toolbarGroup align="right">
+                        <p:commandButton value="Inserir dados" style="margin-right: 15px;"
+                                         action="input.xhtml?faces-redirect=true"/>
+                        <p:commandButton value="Consultar Rodovias" style="margin-right: 15px;"
+                                         action="login.xhtml?faces-redirect=true"/>
+                    </p:toolbarGroup>
+                </p:toolbar>
+                <div class="ui-fluid p-grid">
+                    <div style="text-align: center"
+                         class="p-col-12 p-md-12">
+                        <h1>Upload dos dados abertos</h1>
+                    </div>
+                    <div class="p-col-12 p-md-12">
+                        <p:outputLabel value="Selecione o arquivo:"/>
+                    </div>
+
+                    <div class="p-col-12 p-md-12"/>
+
+                    <div class="p-col-12 p-md-12">
+                        <p:fileUpload value="" id="input" chooseButtonTitle="Procurar"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-        <h:form>
-            <h:panelGrid columns="1" cellpadding="5" style="margin-top: 25px">
-                <p:graphicImage name="mapaCCE.png" width="850px" height="500px"/>
-            </h:panelGrid>
-        </h:form>
     </ui:define>
 </ui:composition>

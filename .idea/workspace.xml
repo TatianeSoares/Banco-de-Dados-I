@@ -9,20 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="commit na branch de desenvolvimento">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/inputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/projeto_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/projeto_war_exploded.xml" beforeDir="false" />
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando dependencias do projeto">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/example/project/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/example/project/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/default.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/default.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/pagina.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/pagina.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/index.xhtml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/menuLateral.xhtml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/webapp/menuSuperior.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/menuSuperior.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/templates/default.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/default.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/templates/pagina.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/pagina.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +55,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
@@ -70,9 +69,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11">
+    <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="13">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/${project.artifactId}-${project.version}" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="project:war exploded">
           <settings />
@@ -158,6 +158,7 @@
       <workItem from="1666102492931" duration="1053000" />
       <workItem from="1666103908436" duration="517000" />
       <workItem from="1666186502427" duration="255000" />
+      <workItem from="1667778640291" duration="457000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -166,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666103964967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Arrumando dependencias do projeto">
+      <created>1667706133310</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667706133310</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +194,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit na branch de desenvolvimento" />
+    <MESSAGE value="Arrumando dependencias do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumando dependencias do projeto" />
   </component>
 </project>

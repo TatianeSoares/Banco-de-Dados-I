@@ -35,7 +35,7 @@ m
 .project/src/main/java/model/Ultrapassagem.java,4\c\4ce029f09989fa052e62a6f79b03028f5a5bc9cf
 a
 1project/src/main/java/model/VelocidadeMaxima.java,2\1\21008d2ccc526f2d47b981caca8a75ae01dfefaa
-Y
-)project/src/main/java/model/Acidente.java,f\5\f5f931c0aa4d72153f8a8f32233b25b91a14ec86
 j
 :project/src/main/webapp/configuracao/datasource.properties,a\5\a582b8e70cf7ef459dfc65c97e7bd251119b1e8d
+q
+Aproject/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java,d\2\d2a78b911f041204ec660cba99bf6a68028db75c

@@ -10,19 +10,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="DAO Acidente implementado">
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/projeto_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/projeto_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/PgSentidoRodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/PgSentidoRodoviaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/SentidoRodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/SentidoRodovia/SentidoRodoviaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/PgTipoAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/PgTipoAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoPista/PgTipoPistaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoPista/PgTipoPistaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/Ultrapassagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/model/VelocidadeMaxima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/business/RodoviaBusiness.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/controllers/InputController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +63,9 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CalculadoraFracao" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -81,14 +79,11 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="13">
+    <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/${project.artifactId}-${project.version}" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="project:war exploded">
-          <settings />
-        </artifact>
-        <artifact name="projeto:war exploded">
           <settings />
         </artifact>
       </deployment>
@@ -153,7 +148,6 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="project:war exploded" />
-          <artifact name="projeto:war exploded" />
         </option>
       </method>
     </configuration>
@@ -181,6 +175,7 @@
       <workItem from="1667059489342" duration="1694000" />
       <workItem from="1667241516246" duration="181000" />
       <workItem from="1667260835410" duration="6356000" />
+      <workItem from="1667703513483" duration="770000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -233,6 +228,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />

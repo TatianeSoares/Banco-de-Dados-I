@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="project:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="commit na branch de desenvolvimento">
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_faces_javax_faces_api_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_interceptor_javax_interceptor_api_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_omnifaces_omnifaces_3_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_primefaces_primefaces_11_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_primefaces_themes_all_themes_1_0_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/inputController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/projeto_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/projeto_war_exploded.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/menuLateral.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/menuLateral.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/example/project/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/example/project/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/webapp/menuSuperior.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/menuSuperior.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/templates/default.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/default.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/templates/pagina.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/templates/pagina.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,7 @@
         <option value="Tag Library Descriptor" />
         <option value="HTML File" />
         <option value="jsf" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\webapp" />
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-1\project\src\main\webapp" />
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-1\project\src\main" />
@@ -72,9 +75,6 @@
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="project:war exploded">
-          <settings />
-        </artifact>
-        <artifact name="projeto:war exploded">
           <settings />
         </artifact>
       </deployment>
@@ -139,21 +139,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="project:war exploded" />
-          <artifact name="projeto:war exploded" />
         </option>
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="project" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -196,6 +182,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />

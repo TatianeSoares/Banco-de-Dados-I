@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="Sistema-de-gerenciamento-de-salas-1.0-SNAPSHOT.war">
+    <root id="archive" name="project-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="project:war exploded" />
     </root>
   </artifact>

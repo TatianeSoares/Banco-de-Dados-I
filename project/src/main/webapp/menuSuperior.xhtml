@@ -16,14 +16,11 @@
         </p:toolbarGroup>
         <p:toolbarGroup align="right">
             <p:commandButton value="Inserir dados" style="margin-right: 50px"
-                             action="input.xhtml?faces-redirect=true"
-                             rendered="#{sessaoController.usuarioLogado eq null}"/>
+                             action="input.xhtml?faces-redirect=true"/>
             <p:commandButton value="Entrar" style="margin-right: 30px"
-                             action="login.xhtml?faces-redirect=true"
-                             rendered="#{sessaoController.usuarioLogado eq null}"/>
+                             action="login.xhtml?faces-redirect=true"/>
             <p:commandButton value="Sair" action="#{sessaoController.logout}"
-                             style="margin-right: 30px"
-                             rendered="#{sessaoController.usuarioLogado ne null}"/>
+                             style="margin-right: 30px"/>
         </p:toolbarGroup>
     </p:toolbar>
 </h:body>

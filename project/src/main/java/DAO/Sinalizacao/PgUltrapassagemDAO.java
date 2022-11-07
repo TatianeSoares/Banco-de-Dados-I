@@ -21,16 +21,16 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
     private static final String INSERT_ULTRAPASSAGEM =
             "INSERT INTO rodovia.acidente(idUltrapassagem," +
                     "situacao, uf, anoPnvSnc, kmInicial, kmFinal, longitudeFinal" +
-                    "longitudeInical, latitudeFinal, latitudeInicial)" +
+                    "longitudeInical, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)" +
                     "VALUES();";
 
     private static final String BUSCA_TODAS_ULTRAPASSAGENS =
-            "SELECT situacao, uf, anoPnvSnc, kmInicial, kmFinal, longitudeFinal,  longitudeInical, latitudeFinal, latitudeInicial" +
+            "SELECT situacao, uf, anoPnvSnc, kmInicial, kmFinal, longitudeFinal,  longitudeInical, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
                     "FROM rodovia.ultrapassagem" +
                     "ORDER BY kmInicial;";
 
     private static final String BUSCA_ULTRAPASSAGEM =
-            "SELECT situacao, uf, anoPnvSnc, kmInicial, kmFinal, longitudeFinal,  longitudeInical, latitudeFinal, latitudeInicial" +
+            "SELECT situacao, uf, anoPnvSnc, kmInicial, kmFinal, longitudeFinal,  longitudeInical, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
                     "FROM rodovia.ultrapassagem" +
                     "WHERE id = ?;";
 
@@ -46,6 +46,9 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
                     "longitudeInicial =" +
                     "latitudeFinal =" +
                     "latitudeInical =" +
+                    "idTrechoRodovia =" +
+                    "idSentidoRodovia =" +
+                    "idTipoPista =" +
                     "WHERE id = ;";
 
     private static final String DELETE_ULTRAPASSAGEM =
@@ -61,7 +64,6 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
     }
     public Ultrapassagem getUltrapassagem(int id) throws SQLException {
         return read(id);
-
     }
     public List<Ultrapassagem> getTodasUltrapassagens() throws SQLException {
         return all();
@@ -79,7 +81,9 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
             statement.setFloat(7, ultrapassagem.getLongitudeInicial());
             statement.setFloat(8, ultrapassagem.getLatitudeFinal());
             statement.setFloat(9, ultrapassagem.getLatitudeInicial());
-            //TODO nao foi adicionado as fk
+            statement.setInt(10, ultrapassagem.getIdTrechoRodovia());
+            statement.setInt(11, ultrapassagem.getIdSentidoRodovia());
+            statement.setInt(12, ultrapassagem.getIdTipoPista());
 
             statement.executeUpdate();
         } catch (SQLException ex) {
@@ -105,6 +109,9 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
                     ultrapassagem.setLongitudeInicial(result.getFloat("longitudeInicial"));
                     ultrapassagem.setLatitudeFinal(result.getFloat("latitudeFinal"));
                     ultrapassagem.setLatitudeInicial(result.getFloat("latitudeInicial"));
+                    ultrapassagem.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+                    ultrapassagem.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+                    ultrapassagem.setIdTipoPista(result.getInt("idTipoPista"));
                 } else {
                     throw new SQLException("Erro ao visualizar: placa de ultrapassagem não pode ser encontrada.");
                 }
@@ -128,6 +135,9 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
             statement.setFloat(8, ultrapassagem.getLongitudeInicial());
             statement.setFloat(9, ultrapassagem.getLatitudeFinal());
             statement.setFloat(10, ultrapassagem.getLatitudeInicial());
+            statement.setInt(11, ultrapassagem.getIdTrechoRodovia());
+            statement.setInt(12, ultrapassagem.getIdSentidoRodovia());
+            statement.setInt(13, ultrapassagem.getIdTipoPista());
 
         } catch (SQLException ex) {
             Logger.getLogger(PgUltrapassagemDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
@@ -162,7 +172,9 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
                 ultrapassagem.setLongitudeInicial(result.getFloat("longitudeInicial"));
                 ultrapassagem.setLatitudeFinal(result.getFloat("latitudeFinal"));
                 ultrapassagem.setLatitudeInicial(result.getFloat("latitudeInicial"));
-
+                ultrapassagem.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+                ultrapassagem.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+                ultrapassagem.setIdTipoPista(result.getInt("idTipoPista"));
 
                 ultrapassagemList.add(ultrapassagem);
             }

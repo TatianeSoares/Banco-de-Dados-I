@@ -14,4 +14,6 @@ public interface AcidenteDAO extends DAO<Acidente> {
 
     public List<Acidente> getTodosAcidentes() throws SQLException;
 
+    public boolean verificarInAcidente(Acidente acidente);
+
 }

@@ -79,9 +79,9 @@ public class inputController implements Serializable {
         // Km
         Float km = Float.parseFloat(info[4]);
         // Trecho
-        String trecho = info[5];
+        String descricaoTrechoRodovia = info[5];
         // Sentido
-        String sentido = info[6];
+        String descricaoSentidoRodovia = info[6];
         // Tipo de acidente *nova tabela
         String descricaoTipoAcidente = info[7];
         // Automovel
@@ -134,6 +134,15 @@ public class inputController implements Serializable {
         acidente.setLevementeFerido(levementeFerido);
         acidente.setGravementeFerido(gravementeFerido);
         acidente.setMortos(mortos);
+        // TODO VERIFICAR SE JA EXISTE
+        TrechoRodovia trechoRodovia = new TrechoRodovia();
+        trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
+
+        SentidoRodovia sentidoRodovia = new SentidoRodovia();
+        sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
+
+        acidente.setIdTrechoRodovia(trechoRodovia.getIdTrechoRodovia());
+
 
         TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
         tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);
@@ -141,7 +150,7 @@ public class inputController implements Serializable {
         TipoAcidente tipoAcidente = new TipoAcidente();
         tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 
-        if(data != null && hora != null && nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && trecho != null && sentido != null && descricaoTipoAcidente != null){
+        if(data != null && hora != null && nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null){
           // TODO correto?
           acidenteDAO.adicionarAcidente(acidente);
           tipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
@@ -172,6 +181,7 @@ public class inputController implements Serializable {
         String[] info = line.split(";");
 
         // Concessionaria
+
 
 
 

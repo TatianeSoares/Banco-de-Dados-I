@@ -21,16 +21,16 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
     private static final String INSERT_VELOCIDADE_MAXIMA =
             "INSERT INTO rodovia.acidente(idVelocidadeMaxima," +
                     "situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude" +
-                    "longitude, municipio, km)" +
+                    "longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)" +
                     "VALUES();";
 
     private static final String BUSCA_TODAS_VELOCIDADES =
-            "SELECT situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km" +
+            "SELECT situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
                     "FROM rodovia.velocidadeMaxima" +
                     "ORDER BY km;";
 
     private static final String BUSCA_VELOCIDADE_MAXIMA =
-            "SELECT situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km" +
+            "SELECT situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
                     "FROM rodovia.velocidadeMaxima" +
                     "WHERE id = ?;";
 
@@ -46,6 +46,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
                     "longitude =" +
                     "municipio =" +
                     "km =" +
+                    "idTrechoRodovia =" +
+                    "idSentidoRodovia =" +
+                    "idTipoPista =" +
                     "WHERE id = ;";
 
     private static final String DELETE_VELOCIDADE_MAXIMA =
@@ -79,7 +82,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
             statement.setFloat(7, velocidadeMaxima.getLongitude());
             statement.setString(8, velocidadeMaxima.getMunicipio());
             statement.setFloat(9, velocidadeMaxima.getKm());
-            //TODO nao foi adicionado as fk
+            statement.setInt(10, velocidadeMaxima.getIdTrechoRodovia());
+            statement.setInt(11, velocidadeMaxima.getIdSentidoRodovia());
+            statement.setInt(12, velocidadeMaxima.getIdTipoPista());
 
             statement.executeUpdate();
         } catch (SQLException ex) {
@@ -105,6 +110,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
                     velocidadeMaxima.setLongitude(result.getFloat("longitude"));
                     velocidadeMaxima.setMunicipio(result.getString("municipio"));
                     velocidadeMaxima.setKm(result.getFloat("km"));
+                    velocidadeMaxima.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+                    velocidadeMaxima.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+                    velocidadeMaxima.setIdTipoPista(result.getInt("idTipoPista"));
                 } else {
                     throw new SQLException("Erro ao visualizar: placa de velocidade máxima não pode ser encontrada.");
                 }
@@ -128,6 +136,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
             statement.setFloat(8, velocidadeMaxima.getLongitude());
             statement.setString(9, velocidadeMaxima.getMunicipio());
             statement.setFloat(10, velocidadeMaxima.getKm());
+            statement.setInt(11, velocidadeMaxima.getIdTrechoRodovia());
+            statement.setInt(12, velocidadeMaxima.getIdSentidoRodovia());
+            statement.setInt(13, velocidadeMaxima.getIdTipoPista());
 
         } catch (SQLException ex) {
             Logger.getLogger(PgVelocidadeMaximaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
@@ -162,7 +173,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
                 velocidadeMaxima.setLongitude(result.getFloat("longitude"));
                 velocidadeMaxima.setMunicipio(result.getString("municipio"));
                 velocidadeMaxima.setKm(result.getFloat("km"));
-
+                velocidadeMaxima.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+                velocidadeMaxima.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+                velocidadeMaxima.setIdTipoPista(result.getInt("idTipoPista"));
 
                 velocidadeMaximaList.add(velocidadeMaxima);
             }

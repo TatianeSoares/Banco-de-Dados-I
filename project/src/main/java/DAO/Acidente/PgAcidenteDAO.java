@@ -17,16 +17,16 @@ public class PgAcidenteDAO implements AcidenteDAO{
       "INSERT INTO rodovia.acidente(idAcidente, data" +
           "hora, nrOcorrencia, km, automovel, bicicleta, caminhao" +
           "moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario" +
-          "ileso, levementeFerido, gravementeFerido, mortos)" +
+          "ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente)" +
       "VALUES();";
 
   private static final String BUSCA_TODOS_ACIDENTES =
-      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos" +
+      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente" +
       "FROM rodovia.acidente" +
       "ORDER BY data, nrOcorrencia;";
 
   private static final String BUSCA_ACIDENTE =
-      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos" +
+      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente" +
       "FROM rodovia.acidente" +
       "WHERE id = ?;";
 
@@ -51,6 +51,10 @@ public class PgAcidenteDAO implements AcidenteDAO{
           "levementeFerido =" +
           "gravementeFerido =" +
           "mortos =" +
+          "idTrechoRodovia =" +
+          "idSentidoRodovia =" +
+          "idTipoOcorrencia =" +
+          "idTipoAcidente =" +
           "WHERE id = ;";
 
   private static final String DELETE_ACIDENTE =
@@ -75,7 +79,10 @@ public class PgAcidenteDAO implements AcidenteDAO{
   public List<Acidente> getTodosAcidentes() throws SQLException {
     return all();
   }
-  // TODO get especificos
+
+  public boolean verificarInAcidente(Acidente acidente){
+    return true;
+  }
   @Override
   public void create(Acidente acidente) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_ACIDENTE)) {
@@ -97,7 +104,10 @@ public class PgAcidenteDAO implements AcidenteDAO{
       statement.setInt(16, acidente.getLevementeFerido());
       statement.setInt(17, acidente.getGravementeFerido());
       statement.setInt(18, acidente.getMortos());
-      //TODO nao foi adicionado as fk
+      statement.setInt(19, acidente.getIdTrechoRodovia());
+      statement.setInt(20, acidente.getIdSentidoRodovia());
+      statement.setInt(21, acidente.getIdTipoOcorrencia());
+      statement.setInt(22, acidente.getIdTipoAcidente());
 
       statement.executeUpdate();
     } catch (SQLException ex) {
@@ -132,6 +142,10 @@ public class PgAcidenteDAO implements AcidenteDAO{
           acidente.setLevementeFerido(result.getInt("levementeFeridos"));
           acidente.setGravementeFerido(result.getInt("gravementeFeridos"));
           acidente.setMortos(result.getInt("mortos"));
+          acidente.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+          acidente.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+          acidente.setIdTipoOcorrencia(result.getInt("idTipoOcorrencia"));
+          acidente.setIdTipoAcidente((result.getInt("idTipoAcidente")));
         } else {
           throw new SQLException("Erro ao visualizar: acidente não pode ser encontrado.");
         }
@@ -165,6 +179,10 @@ public class PgAcidenteDAO implements AcidenteDAO{
       statement.setInt(17, acidente.getLevementeFerido());
       statement.setInt(18, acidente.getGravementeFerido());
       statement.setInt(19, acidente.getMortos());
+      statement.setInt(20, acidente.getIdTrechoRodovia());
+      statement.setInt(21, acidente.getIdSentidoRodovia());
+      statement.setInt(22, acidente.getIdTipoOcorrencia());
+      statement.setInt(23, acidente.getIdTipoAcidente());
 
     } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
@@ -208,6 +226,10 @@ public class PgAcidenteDAO implements AcidenteDAO{
         acidente.setLevementeFerido(result.getInt("levementeFeridos"));
         acidente.setGravementeFerido(result.getInt("gravementeFeridos"));
         acidente.setMortos(result.getInt("mortos"));
+        acidente.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+        acidente.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+        acidente.setIdTipoOcorrencia(result.getInt("idTipoOcorrencia"));
+        acidente.setIdTipoAcidente(result.getInt("idTipoAcidente"));
 
         acidenteList.add(acidente);
       }

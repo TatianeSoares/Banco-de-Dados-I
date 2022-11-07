@@ -34,11 +34,6 @@ public class inputController implements Serializable {
   @Getter @Setter
   private UploadedFile file;
   private String type;
-  @Inject private AcidenteDAO acidenteDAO;
-  @Inject private UltrapassagemDAO ultrapassagemDAO;
-  @Inject private VelocidadeMaximaDAO velocidadeMaximaDAO;
-  @Inject private TipoAcidenteDAO tipoAcidenteDAO;
-  @Inject private TipoOcorrenciaDAO tipoOcorrenciaDAO;
 
   public void init(){
     createTypeList();
@@ -152,15 +147,11 @@ public class inputController implements Serializable {
 
         if(data != null && hora != null && nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null){
           // TODO correto?
-          acidenteDAO.adicionarAcidente(acidente);
-          tipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
-          tipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
+          AcidenteDAO.adicionarAcidente(acidente);
         }
 
         line = br.readLine();
       }
-
-
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
     } catch (IOException e) {
@@ -168,8 +159,6 @@ public class inputController implements Serializable {
     } catch (ParseException | SQLException e) {
       throw new RuntimeException(e);
     }
-
-
   }
 
   public void readUploadUltrapassagem(){
@@ -181,17 +170,7 @@ public class inputController implements Serializable {
         String[] info = line.split(";");
 
         // Concessionaria
-
-
-
-
       }
-
-
-
-
-
-    }catch(){
 
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);

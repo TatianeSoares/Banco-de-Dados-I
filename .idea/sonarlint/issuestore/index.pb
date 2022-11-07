@@ -1,28 +1,16 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-R
-"project/src/main/java/DAO/DAO.java,5\d\5d934d30763962566ad83ea98203bd288666e2ac
-S
-#project/src/main/webapp/index.xhtml,e\4\e42f3248e4703fdab79ab44f4ee65a29d473dcf0
 [
 +project/src/main/java/DAO/PgDAOFactory.java,a\1\a1ee7f280bfafdb780cabc313c4a3adc767cab89
 Y
 )project/src/main/java/DAO/DAOFactory.java,d\c\dc7e5fd3052743be083ec65d1ff379a853023f6f
-a
-1project/src/main/java/DAO/Rodovia/RodoviaDAO.java,f\e\fe5e6659c167105ffe907502223f003a59772a6f
 _
 /project/src/main/java/model/SentidoRodovia.java,3\9\394da36c73102b8369f2d58543240ba1309b196b
-o
-?project/src/main/java/DAO/SentidoRodovia/SentidoRodoviaDAO.java,1\f\1fb0e560abd2d29ea7f965a4de42434fa758f30e
 ]
 -project/src/main/java/model/TipoAcidente.java,6\8\683af7dab1d2f68c632ca0428b4fd370f1dbbfbf
-k
-;project/src/main/java/DAO/TipoAcidente/TipoAcidenteDAO.java,f\0\f0407b6f54e9256206357dc90b281d0838eda2d9
 _
 /project/src/main/java/model/TipoOcorrencia.java,8\6\86a56da76d79b29cfb622fcb866a0a7c65b3ceb1
-o
-?project/src/main/java/DAO/TipoOcorrencia/TipoOcorrenciaDAO.java,f\5\f5dce6a6e46bc0596260ae9d3fb70fc8817ab936
 Z
 *project/src/main/java/model/TipoPista.java,9\4\94286efb900ac02b4e912f097ada9f7f012b4150
 e
@@ -37,5 +25,3 @@ a
 1project/src/main/java/model/VelocidadeMaxima.java,2\1\21008d2ccc526f2d47b981caca8a75ae01dfefaa
 j
 :project/src/main/webapp/configuracao/datasource.properties,a\5\a582b8e70cf7ef459dfc65c97e7bd251119b1e8d
-q
-Aproject/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java,d\2\d2a78b911f041204ec660cba99bf6a68028db75c

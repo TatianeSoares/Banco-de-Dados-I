@@ -3,6 +3,7 @@ package DAO.Acidente;
 import model.Acidente;
 import org.omnifaces.util.Messages;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.logging.Logger;
 
 public class PgAcidenteDAO implements AcidenteDAO{
 
+  private static Connection connect;
   private final Connection connection;
 
   private static final String INSERT_ACIDENTE =
@@ -65,9 +67,33 @@ public class PgAcidenteDAO implements AcidenteDAO{
     this.connection = connection;
   }
 
-  @Override
-  public void adicionarAcidente(Acidente acidente) throws SQLException {
-      create(acidente);
+
+  public static void adicionarAcidente(Acidente acidente) throws SQLException {
+    try (PreparedStatement statement = connect.prepareStatement(INSERT_ACIDENTE)) {
+      statement.setDate(1, acidente.getData());
+      statement.setTime(2, acidente.getHora());
+      statement.setInt(3, acidente.getNrOcorrencia());
+      statement.setFloat(4, acidente.getKm());
+      statement.setInt(5, acidente.getAutomovel());
+      statement.setInt(6, acidente.getBicicleta());
+      statement.setInt(7, acidente.getCaminhao());
+      statement.setInt(8, acidente.getMoto());
+      statement.setInt(9, acidente.getOnibus());
+      statement.setInt(10, acidente.getOutros());
+      statement.setInt(11, acidente.getTracaoAnimal());
+      statement.setInt(12, acidente.getCargaEspecial());
+      statement.setInt(13, acidente.getTratorMaquina());
+      statement.setInt(14, acidente.getUtilitario());
+      statement.setInt(15, acidente.getIleso());
+      statement.setInt(16, acidente.getLevementeFerido());
+      statement.setInt(17, acidente.getGravementeFerido());
+      statement.setInt(18, acidente.getMortos());
+      //TODO nao foi adicionado as fk
+
+      statement.executeUpdate();
+    } catch (SQLException ex) {
+      Messages.addGlobalError("Erro ao inserir acidente");
+    }
   }
 
   @Override

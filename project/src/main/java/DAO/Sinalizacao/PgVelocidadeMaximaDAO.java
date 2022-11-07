@@ -56,16 +56,16 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
         this.connection = connection;
     }
 
-    // TODO n sei se ta certo essas duas abaixo
-    public VelocidadeMaxima getVelocidadeMaxima(int id) {
-        return null;
+    public void adicionarVelocidadeMaxima(VelocidadeMaxima velocidadeMaxima) throws SQLException {
+        create(velocidadeMaxima);
     }
+    public VelocidadeMaxima getVelocidadeMaxima(int id) throws SQLException {
+        return read(id);
 
-
-    public List<VelocidadeMaxima> getTodasVelocidadesMaximas() {
-        return null;
     }
-    // TODO get especificos
+    public List<VelocidadeMaxima> getTodasVelocidadeMaximas() throws SQLException {
+        return all();
+    }
 
     @Override
     public void create(VelocidadeMaxima velocidadeMaxima) throws SQLException {

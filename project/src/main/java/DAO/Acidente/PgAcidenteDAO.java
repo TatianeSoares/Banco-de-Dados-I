@@ -62,18 +62,18 @@ public class PgAcidenteDAO implements AcidenteDAO{
   }
 
   @Override
-  public void adicionarAcidente(Acidente acidente) {
-
+  public void adicionarAcidente(Acidente acidente) throws SQLException {
+      create(acidente);
   }
 
   @Override
-  public Acidente getAcidente(int id) {
-    return null;
+  public Acidente getAcidente(int id) throws SQLException {
+    return read(id);
   }
 
   @Override
-  public List<Acidente> getTodosAcidentes() {
-    return null;
+  public List<Acidente> getTodosAcidentes() throws SQLException {
+    return all();
   }
   // TODO get especificos
   @Override

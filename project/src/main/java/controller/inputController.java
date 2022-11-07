@@ -2,6 +2,9 @@ package controller;
 
 import lombok.Getter;
 import lombok.Setter;
+import model.Acidente;
+import model.TipoAcidente;
+import model.TipoOcorrencia;
 import org.primefaces.model.file.UploadedFile;
 
 import javax.faces.application.FacesMessage;
@@ -49,7 +52,7 @@ public class inputController implements Serializable {
   public void readUploadAcidente(){
     try {
       BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
-
+      int someNull = 0;
       String line = br.readLine(); // pega o cabeçalho
       line = br.readLine();   // primeira linha com conteúdo
       while(line != null){
@@ -60,13 +63,13 @@ public class inputController implements Serializable {
         SimpleDateFormat parser = new SimpleDateFormat();
         Date data = parser.parse(dataInput);
         // Horário
-        Time hora = Time.pars
+        Time hora = Time.parse
         // Numero da ocorrencia
         Integer nrOcorrencia = parseInt(info[2]);
         // Tipo de ocorrencia *nova tabela
         String descricaoTipoOcorrencia = info[3];
         // Km
-        String km = info[4];
+        Float km = Float.parseFloat(info[4]);
         // Trecho
         String trecho = info[5];
         // Sentido
@@ -105,7 +108,7 @@ public class inputController implements Serializable {
         int mortos = parseInt(info[22]);
 
         Acidente acidente = new Acidente();
-        acidente.setData(data);
+        acidente.setData((java.sql.Date) data);
         acidente.setHora(hora);
         acidente.setNrOcorrencia(nrOcorrencia);
         acidente.setKm(km);
@@ -125,16 +128,19 @@ public class inputController implements Serializable {
         acidente.setMortos(mortos);
 
         TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
-        tipoOcorrencia.setDescricao(descricaoTipoOcorrencia);
+        tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);
 
         TipoAcidente tipoAcidente = new TipoAcidente();
-        tipoAcidente.setDescricao(descricaoTipoAcidente);
+        tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
+
+        if(data == null || hora == null || nrOcorrencia == null || descricaoTipoOcorrencia == null || km == null || trecho == null || sentido == null || descricaoTipoAcidente == null){
+
+        }
+        else{
+
+        }
 
         line = br.readLine();
-      }
-
-      if(data == null || hora == null || nrOcorrencia == null || descricaoTipoOcorrencia == null || km == null || trecho == null || sentido == null || descricaoTipoAcidente == null){
-
       }
 
 
@@ -160,12 +166,12 @@ public class inputController implements Serializable {
         if(type.equals("Acidente")){
           readUploadAcidente();
         }
-        else if(type.equals("Ultrapassagem")){
-          readUploadUltrapassagem();
-        }
-        else if(type.equals("Velocidade Máxima")){
-          readUploadVelocidadeMaxima();
-        }
+//        else if(type.equals("Ultrapassagem")){
+//          readUploadUltrapassagem();
+//        }
+//        else if(type.equals("Velocidade Máxima")){
+//          readUploadVelocidadeMaxima();
+//        }
 
 
 

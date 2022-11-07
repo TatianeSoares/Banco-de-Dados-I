@@ -55,16 +55,17 @@ public class PgUltrapassagemDAO implements UltrapassagemDAO{
         this.connection = connection;
     }
 
-    // TODO n sei se ta certo essas duas abaixo
-    public Ultrapassagem getUltrapassagem(int id) {
-        return null;
-    }
 
-
-    public List<Ultrapassagem> getTodasUltrapassagens() {
-        return null;
+    public void adicionarUltrapassagem(Ultrapassagem ultrapassagem) throws SQLException {
+        create(ultrapassagem);
     }
-    // TODO get especificos
+    public Ultrapassagem getUltrapassagem(int id) throws SQLException {
+        return read(id);
+
+    }
+    public List<Ultrapassagem> getTodasUltrapassagens() throws SQLException {
+        return all();
+    }
 
     @Override
     public void create(Ultrapassagem ultrapassagem) throws SQLException {

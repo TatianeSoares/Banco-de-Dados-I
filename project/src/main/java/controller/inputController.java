@@ -148,8 +148,10 @@ public class inputController implements Serializable {
         tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 
         if(data != null && hora != null && nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null){
-          // TODO correto?
+          // TODO implementação dos outros
           AcidenteDAO.adicionarAcidente(acidente);
+          //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
+          //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
         }
 
         line = br.readLine();

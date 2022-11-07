@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.constraints.Null;
 import java.io.*;
 import java.sql.Time;
 import java.text.ParseException;
@@ -53,86 +54,88 @@ public class inputController implements Serializable {
       line = br.readLine();   // primeira linha com conteúdo
       while(line != null){
         String[] info = line.split(";");
+
         // Data
         String dataInput = info[0];
         SimpleDateFormat parser = new SimpleDateFormat();
         Date data = parser.parse(dataInput);
-
         // Horário
-        Time horario = Time.pars
-
+        Time hora = Time.pars
         // Numero da ocorrencia
         Integer nrOcorrencia = parseInt(info[2]);
-
         // Tipo de ocorrencia *nova tabela
-        String tipoOcorrencia = info[3];
-
+        String descricaoTipoOcorrencia = info[3];
         // Km
         String km = info[4];
-
         // Trecho
         String trecho = info[5];
-
         // Sentido
         String sentido = info[6];
-
         // Tipo de acidente *nova tabela
-        String tipoAcidente = info[7];
-
+        String descricaoTipoAcidente = info[7];
         // Automovel
         int automovel = parseInt(info[8]);
-
         // Bicicleta
         int bicicleta = parseInt(info[9]);
-
         // Caminhao
         int caminhao = parseInt(info[10]);
-
         // Moto
         int moto = parseInt(info[11]);
-
         // Onibus
         int onibus = parseInt(info[12]);
-
         // Outros
         int outros = parseInt(info[13]);
-
         // Tracao animal
         int tracaoAnimal = parseInt(info[14]);
-
         // Transporte de cargas especiais
         int cargaEspecial = parseInt(info[15]);
-
         // Trator Maquina
         int tratorMaquina = parseInt(info[16]);
-
         // Utilitario
         int utilitario = parseInt(info[17]);
-
         // Ileso
         int ileso = parseInt(info[18]);
-
         // Levemente Ferido
         int levementeFerido = parseInt(info[19]);
-
         // Moderamente Ferido *não utilizado
         int moderamenteFerido = parseInt(info[20]);
-
         // Gravemente Ferido
         int gravementeFerido = parseInt(info[21]);
-
         // Mortos
         int mortos = parseInt(info[22]);
 
         Acidente acidente = new Acidente();
+        acidente.setData(data);
+        acidente.setHora(hora);
+        acidente.setNrOcorrencia(nrOcorrencia);
+        acidente.setKm(km);
+        acidente.setAutomovel(automovel);
+        acidente.setBicicleta(bicicleta);
+        acidente.setCaminhao(caminhao);
+        acidente.setMoto(moto);
+        acidente.setOnibus(onibus);
+        acidente.setOutros(outros);
+        acidente.setTracaoAnimal(tracaoAnimal);
+        acidente.setCargaEspecial(cargaEspecial);
+        acidente.setTratorMaquina(tratorMaquina);
+        acidente.setUtilitario(utilitario);
+        acidente.setIleso(ileso);
+        acidente.setLevementeFerido(levementeFerido);
+        acidente.setGravementeFerido(gravementeFerido);
+        acidente.setMortos(mortos);
 
+        TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
+        tipoOcorrencia.setDescricao(descricaoTipoOcorrencia);
 
+        TipoAcidente tipoAcidente = new TipoAcidente();
+        tipoAcidente.setDescricao(descricaoTipoAcidente);
 
-
-
-
+        line = br.readLine();
       }
 
+      if(data == null || hora == null || nrOcorrencia == null || descricaoTipoOcorrencia == null || km == null || trecho == null || sentido == null || descricaoTipoAcidente == null){
+
+      }
 
 
     } catch (FileNotFoundException e) {

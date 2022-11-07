@@ -31,7 +31,14 @@
                     <div class="p-col-12 p-md-12"/>
 
                     <div class="p-col-12 p-md-12">
-                        <p:fileUpload value="" id="input" chooseButtonTitle="Procurar"/>
+                        <
+                        <p:fileUpload value="#{inputController.file}" id="input"/>
+
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <p:commandButton value="Submit"
+                                         actionListener="#{inputController.upload}"
+                                         process="@this"/>
                     </div>
                 </div>
             </div>

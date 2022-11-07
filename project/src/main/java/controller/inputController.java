@@ -1,9 +1,5 @@
 package controller;
 
-import DAO.Sinalizacao.UltrapassagemDAO;
-import DAO.Sinalizacao.VelocidadeMaximaDAO;
-import DAO.TipoAcidente.TipoAcidenteDAO;
-import DAO.TipoOcorrencia.TipoOcorrenciaDAO;
 import lombok.Getter;
 import lombok.Setter;
 import model.*;
@@ -13,9 +9,7 @@ import org.primefaces.model.file.UploadedFile;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.constraints.Null;
 import java.io.*;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -183,7 +177,7 @@ public class inputController implements Serializable {
     }
   }
 
-  public void upload(){
+  public void uploadFile(){
 
     try{
       BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
@@ -200,8 +194,6 @@ public class inputController implements Serializable {
 //        else if(type.equals("Velocidade Máxima")){
 //          readUploadVelocidadeMaxima();
 //        }
-
-
 
       }
     } catch (FileNotFoundException e) {

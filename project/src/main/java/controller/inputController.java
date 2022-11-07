@@ -33,14 +33,16 @@ public class inputController implements Serializable {
 
   @Getter @Setter
   private UploadedFile file;
+  @Getter @Setter
   private String type;
+  @Getter @Setter private ArrayList<String> typeList;
 
   public void init(){
     createTypeList();
   }
 
   public List<String> createTypeList(){
-    ArrayList<String> typeList = new ArrayList<>();
+    typeList = new ArrayList<>();
 
     typeList.add("Acidente");
     typeList.add("Ultrapassagem");

@@ -9,15 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando botão de upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/inputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/inputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +47,9 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -185,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667792152159</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Arrumando botão de upload">
+      <created>1667853087361</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667853087361</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +211,7 @@
     <MESSAGE value="Arrumando dependencias do projeto" />
     <MESSAGE value="readUploadAcidente implementado parcialmente" />
     <MESSAGE value="getDAO's e readUploadAcidente" />
-    <option name="LAST_COMMIT_MESSAGE" value="getDAO's e readUploadAcidente" />
+    <MESSAGE value="Arrumando botão de upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumando botão de upload" />
   </component>
 </project>

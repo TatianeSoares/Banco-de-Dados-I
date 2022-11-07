@@ -1,6 +1,7 @@
 package DAO.TipoAcidente;
 
 import DAO.Rodovia.PgRodoviaDAO;
+import model.Acidente;
 import model.Rodovia;
 import model.TipoAcidente;
 import org.omnifaces.util.Messages;
@@ -43,6 +44,21 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
 
   public PgTipoAcidenteDAO(Connection connection) {
     this.connection = connection;
+  }
+
+  @Override
+  public void adicionarTipoAcidente(TipoAcidente tipoAcidente) throws SQLException {
+    create(tipoAcidente);
+  }
+
+  @Override
+  public TipoAcidente getTipoAcidente(int id) throws SQLException {
+    return read(id);
+  }
+
+  @Override
+  public List<TipoAcidente> getTodosTipoAcidentes() throws SQLException {
+    return all();
   }
 
   @Override

@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando dependencias do projeto">
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="getDAO's e readUploadAcidente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/UltrapassagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/UltrapassagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeMaximaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/PgTipoAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/PgTipoAcidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/TipoAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoAcidente/TipoAcidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/TipoOcorrenciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TipoOcorrencia/TipoOcorrenciaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/inputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/inputController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +53,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
@@ -144,19 +141,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="project" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -174,6 +158,7 @@
       <workItem from="1666103908436" duration="517000" />
       <workItem from="1666186502427" duration="255000" />
       <workItem from="1667778640291" duration="457000" />
+      <workItem from="1667823608651" duration="5960000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -196,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667790528026</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="getDAO's e readUploadAcidente">
+      <created>1667792152159</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667792152159</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +209,7 @@
     <MESSAGE value="commit na branch de desenvolvimento" />
     <MESSAGE value="Arrumando dependencias do projeto" />
     <MESSAGE value="readUploadAcidente implementado parcialmente" />
-    <option name="LAST_COMMIT_MESSAGE" value="readUploadAcidente implementado parcialmente" />
+    <MESSAGE value="getDAO's e readUploadAcidente" />
+    <option name="LAST_COMMIT_MESSAGE" value="getDAO's e readUploadAcidente" />
   </component>
 </project>

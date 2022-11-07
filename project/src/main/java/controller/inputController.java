@@ -1,10 +1,13 @@
 package controller;
 
+import DAO.Sinalizacao.UltrapassagemDAO;
+import DAO.Sinalizacao.VelocidadeMaximaDAO;
+import DAO.TipoAcidente.TipoAcidenteDAO;
+import DAO.TipoOcorrencia.TipoOcorrenciaDAO;
 import lombok.Getter;
 import lombok.Setter;
-import model.Acidente;
-import model.TipoAcidente;
-import model.TipoOcorrencia;
+import model.*;
+import DAO.Acidente.AcidenteDAO;
 import org.primefaces.model.file.UploadedFile;
 
 import javax.faces.application.FacesMessage;
@@ -14,6 +17,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.Null;
 import java.io.*;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,6 +34,11 @@ public class inputController implements Serializable {
   @Getter @Setter
   private UploadedFile file;
   private String type;
+  @Inject private AcidenteDAO acidenteDAO;
+  @Inject private UltrapassagemDAO ultrapassagemDAO;
+  @Inject private VelocidadeMaximaDAO velocidadeMaximaDAO;
+  @Inject private TipoAcidenteDAO tipoAcidenteDAO;
+  @Inject private TipoOcorrenciaDAO tipoOcorrenciaDAO;
 
   public void init(){
     createTypeList();
@@ -52,7 +61,6 @@ public class inputController implements Serializable {
   public void readUploadAcidente(){
     try {
       BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
-      int someNull = 0;
       String line = br.readLine(); // pega o cabeçalho
       line = br.readLine();   // primeira linha com conteúdo
       while(line != null){
@@ -63,7 +71,7 @@ public class inputController implements Serializable {
         SimpleDateFormat parser = new SimpleDateFormat();
         Date data = parser.parse(dataInput);
         // Horário
-        Time hora = Time.parse
+        Time hora = new Time(new SimpleDateFormat("HH:mm:ss").parse(info[1]).getTime());
         // Numero da ocorrencia
         Integer nrOcorrencia = parseInt(info[2]);
         // Tipo de ocorrencia *nova tabela
@@ -133,11 +141,11 @@ public class inputController implements Serializable {
         TipoAcidente tipoAcidente = new TipoAcidente();
         tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 
-        if(data == null || hora == null || nrOcorrencia == null || descricaoTipoOcorrencia == null || km == null || trecho == null || sentido == null || descricaoTipoAcidente == null){
-
-        }
-        else{
-
+        if(data != null && hora != null && nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && trecho != null && sentido != null && descricaoTipoAcidente != null){
+          // TODO correto?
+          acidenteDAO.adicionarAcidente(acidente);
+          tipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
+          tipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
         }
 
         line = br.readLine();
@@ -148,11 +156,38 @@ public class inputController implements Serializable {
       throw new RuntimeException(e);
     } catch (IOException e) {
       throw new RuntimeException(e);
-    } catch (ParseException e) {
+    } catch (ParseException | SQLException e) {
       throw new RuntimeException(e);
     }
 
 
+  }
+
+  public void readUploadUltrapassagem(){
+    try{
+      BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
+      String line = br.readLine(); // pega o cabeçalho
+      line = br.readLine();   // primeira linha com conteúdo
+      while(line != null) {
+        String[] info = line.split(";");
+
+        // Concessionaria
+
+
+
+      }
+
+
+
+
+
+    }catch(){
+
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public void upload(){

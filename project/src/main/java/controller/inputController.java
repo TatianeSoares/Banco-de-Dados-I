@@ -35,7 +35,8 @@ public class inputController implements Serializable {
   private UploadedFile file;
   @Getter @Setter
   private String type;
-  @Getter @Setter private ArrayList<String> typeList;
+  @Getter @Setter
+  private ArrayList<String> typeList;
 
   public void init(){
     createTypeList();
@@ -75,9 +76,9 @@ public class inputController implements Serializable {
         String descricaoTipoOcorrencia = info[3];
         // Km
         Float km = Float.parseFloat(info[4]);
-        // Trecho
+        // Trecho Rodovia *nova tabela
         String descricaoTrechoRodovia = info[5];
-        // Sentido
+        // Sentido Rodovia *nova tabela
         String descricaoSentidoRodovia = info[6];
         // Tipo de acidente *nova tabela
         String descricaoTipoAcidente = info[7];
@@ -131,7 +132,7 @@ public class inputController implements Serializable {
         acidente.setLevementeFerido(levementeFerido);
         acidente.setGravementeFerido(gravementeFerido);
         acidente.setMortos(mortos);
-        // TODO VERIFICAR SE JA EXISTE
+        // TODO criar funções verificarIn*'s
         TrechoRodovia trechoRodovia = new TrechoRodovia();
         trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
 
@@ -139,7 +140,6 @@ public class inputController implements Serializable {
         sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
 
         acidente.setIdTrechoRodovia(trechoRodovia.getIdTrechoRodovia());
-
 
         TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
         tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);

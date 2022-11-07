@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import model.*;
 import DAO.Acidente.AcidenteDAO;
+import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.file.UploadedFile;
 
 import javax.faces.application.FacesMessage;
@@ -177,11 +178,10 @@ public class inputController implements Serializable {
     }
   }
 
-  public void uploadFile(){
-
+  public void uploadFile(FileUploadEvent event){
     try{
-      BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
-      if(file != null){
+      BufferedReader br = new BufferedReader(new FileReader(event.getFile().getFileName()));
+      if(event.getFile().getFileName() != null){
         FacesMessage message = new FacesMessage("Sucesso", file.getFileName() + " upload está feito.");
         FacesContext.getCurrentInstance().addMessage(null, message);
 

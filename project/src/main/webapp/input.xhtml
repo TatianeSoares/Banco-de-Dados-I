@@ -38,11 +38,12 @@
                         </p:selectOneMenu>
                     </div>
                     <div>
-                        <p:fileUpload value="#{inputController.file}"
+                        <h:form >
+                            <p:fileUpload value="#{inputController.file}"
                                           mode="advanced"
                                           skinSimple="true"
                                           listener="#{inputController.uploadFile}"/>
-
+                        </h:form>
                     </div>
                 </div>
             </div>

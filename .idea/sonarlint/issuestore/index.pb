@@ -6,10 +6,6 @@
 Y
 )project/src/main/java/DAO/DAOFactory.java,d\c\dc7e5fd3052743be083ec65d1ff379a853023f6f
 _
-/project/src/main/java/model/SentidoRodovia.java,3\9\394da36c73102b8369f2d58543240ba1309b196b
-]
--project/src/main/java/model/TipoAcidente.java,6\8\683af7dab1d2f68c632ca0428b4fd370f1dbbfbf
-_
 /project/src/main/java/model/TipoOcorrencia.java,8\6\86a56da76d79b29cfb622fcb866a0a7c65b3ceb1
 Z
 *project/src/main/java/model/TipoPista.java,9\4\94286efb900ac02b4e912f097ada9f7f012b4150

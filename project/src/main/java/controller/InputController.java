@@ -20,7 +20,7 @@ public class InputController implements Serializable {
 
   }
 
-  public void uploadFile(FileUploadEvent fileUploadEvent) {
+  public void uploadFile(FileUploadEvent fileUploadEvent) throws IOException {
       UploadedFile file = fileUploadEvent.getFile();
 
       if (file.getFileName() != null) {

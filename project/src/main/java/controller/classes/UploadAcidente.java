@@ -1,58 +1,40 @@
-package controller;
+package controller.classes;
 
-import lombok.Getter;
-import lombok.Setter;
-import model.*;
 import DAO.Acidente.AcidenteDAO;
-import org.primefaces.event.FileUploadEvent;
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+import model.*;
 import org.primefaces.model.file.UploadedFile;
-
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
-@Named
-@ViewScoped
-public class inputController implements Serializable {
+public class UploadAcidente {
 
-  @Getter @Setter
-  private UploadedFile file;
-  @Getter @Setter
-  private String type;
-  @Getter @Setter
-  private ArrayList<String> typeList;
-
-  public void init(){
-    createTypeList();
-  }
-
-  public List<String> createTypeList(){
-    typeList = new ArrayList<>();
-
-    typeList.add("Acidente");
-    typeList.add("Ultrapassagem");
-    typeList.add("Velocidade Máxima");
-
-    return typeList;
-  }
-
-  public void verificarArquivo(){
-
-  }
-
-  public void readUploadAcidente(){
+  public static void readUploadAcidente(UploadedFile file){
     try {
+//      FileReader filereader = new FileReader(file.getFileName());
+//      CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
+//      CSVReader csvReader = new CSVReaderBuilder(filereader).withCSVParser(parserCv).build();
+//      String[] nextRecord;
+//      while ((nextRecord = csvReader.readNext()) != null) {
+//        for (String cell : nextRecord) {
+//          System.out.print(cell + "\t");
+//        }
+//        System.out.println();
+//      }
+
+
       BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
       String line = br.readLine(); // pega o cabeçalho
       line = br.readLine();   // primeira linha com conteúdo
@@ -158,47 +140,5 @@ public class inputController implements Serializable {
     } catch (ParseException | SQLException e) {
       throw new RuntimeException(e);
     }
-  }
-
-  public void readUploadUltrapassagem(){
-    try{
-      BufferedReader br = new BufferedReader(new FileReader(file.getFileName()));
-      String line = br.readLine(); // pega o cabeçalho
-      line = br.readLine();   // primeira linha com conteúdo
-      while(line != null) {
-        String[] info = line.split(";");
-
-        // Concessionaria
-      }
-
-    } catch (FileNotFoundException e) {
-      throw new RuntimeException(e);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  public void uploadFile(FileUploadEvent event){
-    try{
-      BufferedReader br = new BufferedReader(new FileReader(event.getFile().getFileName()));
-      if(event.getFile().getFileName() != null){
-        FacesMessage message = new FacesMessage("Sucesso", file.getFileName() + " upload está feito.");
-        FacesContext.getCurrentInstance().addMessage(null, message);
-
-        if(type.equals("Acidente")){
-          readUploadAcidente();
-        }
-//        else if(type.equals("Ultrapassagem")){
-//          readUploadUltrapassagem();
-//        }
-//        else if(type.equals("Velocidade Máxima")){
-//          readUploadVelocidadeMaxima();
-//        }
-
-      }
-    } catch (FileNotFoundException e) {
-      throw new RuntimeException(e);
-    }
-
   }
 }

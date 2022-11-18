@@ -8,6 +8,8 @@ import org.primefaces.model.file.UploadedFile;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.*;
+import java.sql.SQLException;
+import java.text.ParseException;
 
 @Named
 @ViewScoped
@@ -20,7 +22,7 @@ public class InputController implements Serializable {
 
   }
 
-  public void uploadFile(FileUploadEvent fileUploadEvent) throws IOException {
+  public void uploadFile(FileUploadEvent fileUploadEvent) throws IOException, SQLException, ParseException {
       UploadedFile file = fileUploadEvent.getFile();
 
       if (file.getFileName() != null) {

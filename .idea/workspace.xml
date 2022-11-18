@@ -9,8 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Mudando padrões de leitura do csv">
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Ajustes controller">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_opencsv_opencsv_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadUltrapassagem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadVelocidadeMaxima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" afterDir="false" />
     </list>
@@ -23,9 +36,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Tag Library Descriptor" />
         <option value="HTML File" />
         <option value="jsf" />
+        <option value="Tag Library Descriptor" />
         <option value="Class" />
       </list>
     </option>
@@ -33,16 +46,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="desenvolvimento" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/project/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/input.xhtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/main/java/model/TipoAcidente.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,12 +63,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
@@ -74,7 +81,8 @@
   <component name="RunManager">
     <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="13">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/${project.artifactId}-${project.version}" />
-      <option name="BROWSER_ID" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="project:war exploded">
           <settings />
@@ -163,13 +171,7 @@
       <workItem from="1667778640291" duration="457000" />
       <workItem from="1667823608651" duration="5960000" />
       <workItem from="1667858621612" duration="5790000" />
-      <workItem from="1668639425566" duration="4964000" />
-      <workItem from="1668646624260" duration="7727000" />
-      <workItem from="1668685542336" duration="1754000" />
-      <workItem from="1668687373972" duration="2571000" />
-      <workItem from="1668692454060" duration="558000" />
-      <workItem from="1668706135734" duration="2105000" />
-      <workItem from="1668729802906" duration="10597000" />
+      <workItem from="1668778844511" duration="5532000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -213,14 +215,7 @@
       <option name="project" value="LOCAL" />
       <updated>1667861978010</updated>
     </task>
-    <task id="LOCAL-00007" summary="Mudando padrões de leitura do csv">
-      <created>1668741282536</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1668741282537</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +231,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />
@@ -245,23 +239,6 @@
     <MESSAGE value="getDAO's e readUploadAcidente" />
     <MESSAGE value="Ajustes controller" />
     <MESSAGE value="Arrumando input.xhtml" />
-    <MESSAGE value="Mudando padrões de leitura do csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mudando padrões de leitura do csv" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumando input.xhtml" />
   </component>
 </project>

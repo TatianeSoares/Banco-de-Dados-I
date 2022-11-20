@@ -22,7 +22,8 @@ public class InputController implements Serializable {
 
   }
 
-  public void uploadFile(FileUploadEvent fileUploadEvent) throws IOException, SQLException, ParseException {
+  public void uploadFile(FileUploadEvent fileUploadEvent)
+      throws IOException, SQLException, ParseException {
       UploadedFile file = fileUploadEvent.getFile();
 
       if (file.getFileName() != null) {

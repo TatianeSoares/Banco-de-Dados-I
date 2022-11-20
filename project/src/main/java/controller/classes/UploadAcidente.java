@@ -19,69 +19,77 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class UploadAcidente {
+  public static int isObjetcEmpty(String objeto) {
+    if(objeto.isEmpty()) {
+      return 0;
+    } else {
+      return parseInt(objeto);
+    }
+  }
 
-  public static void readUploadAcidente(UploadedFile file) throws IOException, ParseException, SQLException {
+  public static float isObjetcEmptyFloat(String objeto) {
+    if(objeto.isEmpty()) {
+      return 0;
+    } else {
+      return Float.parseFloat(objeto);
+    }
+  }
 
-    String fileName = file.getFileName();
+  public static void readUploadAcidente(UploadedFile file)
+      throws IOException, ParseException, SQLException {
+
+    int nomeColuna = 1;
+    int i;
+    int j = -1;
+    int tamanhoTable;
     byte[] contents = file.getContent();
     CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
     CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
-            .withCSVParser(parserCv).build();
+        .withCSVParser(parserCv).build();
 
     List<String[]> table = csvReader.readAll();
+    //TODO primeiro ler a linha com os nomes de colunas da table
 
-    for (String[] row : table) {
-      // Data
-      String dataInput = row[0];
-      SimpleDateFormat parser = new SimpleDateFormat();
-      Date data = parser.parse(dataInput);
-      // Horário
-      Time hora = new Time(new SimpleDateFormat("HH:mm:ss").parse(row[1]).getTime());
-      // Numero da ocorrencia
-      Integer nrOcorrencia = parseInt(row[2]);
-      // Tipo de ocorrencia *nova tabela
-      String descricaoTipoOcorrencia = row[3];
-      // Km
-      Float km = Float.parseFloat(row[4]);
-      // Trecho Rodovia *nova tabela
-      String descricaoTrechoRodovia = row[5];
-      // Sentido Rodovia *nova tabela
-      String descricaoSentidoRodovia = row[6];
-      // Tipo de acidente *nova tabela
-      String descricaoTipoAcidente = row[7];
-      // Automovel
-      int automovel = parseInt(row[8]);
-      // Bicicleta
-      int bicicleta = parseInt(row[9]);
-      // Caminhao
-      int caminhao = parseInt(row[10]);
-      // Moto
-      int moto = parseInt(row[11]);
-      // Onibus
-      int onibus = parseInt(row[12]);
-      // Outros
-      int outros = parseInt(row[13]);
-      // Tracao animal
-      int tracaoAnimal = parseInt(row[14]);
-      // Transporte de cargas especiais
-      int cargaEspecial = parseInt(row[15]);
-      // Trator Maquina
-      int tratorMaquina = parseInt(row[16]);
-      // Utilitario
-      int utilitario = parseInt(row[17]);
-      // Ileso
-      int ileso = parseInt(row[18]);
-      // Levemente Ferido
-      int levementeFerido = parseInt(row[19]);
-      // Moderamente Ferido *não utilizado
-      int moderamenteFerido = parseInt(row[20]);
-      // Gravemente Ferido
-      int gravementeFerido = parseInt(row[21]);
-      // Mortos
-      int mortos = parseInt(row[22]);
+    tamanhoTable = table.size();
+    String[] linha;
+    while(j <= tamanhoTable) {
+      j++;
+      i = 0;
+      linha = table.get(j);
+      if(nomeColuna == 1){
+        j++;
+        nomeColuna = 0;
+        linha = table.get(j);
+      }
+
+      String dataInput = linha[i++];
+//      SimpleDateFormat parser = new SimpleDateFormat();
+//      Date data = parser.parse(dataInput);
+      Time hora = new Time(new SimpleDateFormat("HH:mm:ss").parse(linha[i++]).getTime());
+      Integer nrOcorrencia = isObjetcEmpty(linha[i++]);
+      String descricaoTipoOcorrencia = linha[i++];
+      float km = isObjetcEmptyFloat(linha[i++]);
+      String descricaoTrechoRodovia = linha[i++];
+      String descricaoSentidoRodovia = linha[i++];
+      String descricaoTipoAcidente = linha[i++];
+      int automovel = isObjetcEmpty(linha[i++]);
+      int bicicleta = isObjetcEmpty(linha[i++]);
+      int caminhao = isObjetcEmpty(linha[i++]);
+      int moto = isObjetcEmpty(linha[i++]);
+      int onibus = isObjetcEmpty(linha[i++]);
+      int outros = isObjetcEmpty(linha[i++]);
+      int tracaoAnimal = isObjetcEmpty(linha[i++]);
+      int cargaEspecial = isObjetcEmpty(linha[i++]);
+      int tratorMaquina = isObjetcEmpty(linha[i++]);
+      int utilitario = isObjetcEmpty(linha[i++]);
+      int ileso = isObjetcEmpty(linha[i++]);
+      int levementeFerido = isObjetcEmpty(linha[i++]);
+      int moderamenteFerido = isObjetcEmpty(linha[i++]);
+      int gravementeFerido = isObjetcEmpty(linha[i++]);
+      int mortos = isObjetcEmpty(linha[i++]);
 
       Acidente acidente = new Acidente();
-      acidente.setData((java.sql.Date) data);
+//      acidente.setData((java.sql.Date) data);
       acidente.setHora(hora);
       acidente.setNrOcorrencia(nrOcorrencia);
       acidente.setKm(km);
@@ -113,16 +121,13 @@ public class UploadAcidente {
 
       TipoAcidente tipoAcidente = new TipoAcidente();
       tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
-
-      if (data != null && hora != null && nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
+//      data != null && hora != null &&
+      if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
         // TODO implementação dos outros
         AcidenteDAO.adicionarAcidente(acidente);
         //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
         //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
       }
-
     }
-
   }
 }
-

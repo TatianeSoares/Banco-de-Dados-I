@@ -19,7 +19,7 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class UploadAcidente {
-  public static int isObjetcEmpty(String objeto) {
+  public static int isObjectEmpty(String objeto) {
     if(objeto.isEmpty()) {
       return 0;
     } else {
@@ -27,7 +27,7 @@ public class UploadAcidente {
     }
   }
 
-  public static float isObjetcEmptyFloat(String objeto) {
+  public static float isObjectEmptyFloat(String objeto) {
     if(objeto.isEmpty()) {
       return 0;
     } else {
@@ -66,27 +66,27 @@ public class UploadAcidente {
 //      SimpleDateFormat parser = new SimpleDateFormat();
 //      Date data = parser.parse(dataInput);
       Time hora = new Time(new SimpleDateFormat("HH:mm:ss").parse(linha[i++]).getTime());
-      Integer nrOcorrencia = isObjetcEmpty(linha[i++]);
+      Integer nrOcorrencia = isObjectEmpty(linha[i++]);
       String descricaoTipoOcorrencia = linha[i++];
-      float km = isObjetcEmptyFloat(linha[i++]);
+      float km = isObjectEmptyFloat(linha[i++]);
       String descricaoTrechoRodovia = linha[i++];
       String descricaoSentidoRodovia = linha[i++];
       String descricaoTipoAcidente = linha[i++];
-      int automovel = isObjetcEmpty(linha[i++]);
-      int bicicleta = isObjetcEmpty(linha[i++]);
-      int caminhao = isObjetcEmpty(linha[i++]);
-      int moto = isObjetcEmpty(linha[i++]);
-      int onibus = isObjetcEmpty(linha[i++]);
-      int outros = isObjetcEmpty(linha[i++]);
-      int tracaoAnimal = isObjetcEmpty(linha[i++]);
-      int cargaEspecial = isObjetcEmpty(linha[i++]);
-      int tratorMaquina = isObjetcEmpty(linha[i++]);
-      int utilitario = isObjetcEmpty(linha[i++]);
-      int ileso = isObjetcEmpty(linha[i++]);
-      int levementeFerido = isObjetcEmpty(linha[i++]);
-      int moderamenteFerido = isObjetcEmpty(linha[i++]);
-      int gravementeFerido = isObjetcEmpty(linha[i++]);
-      int mortos = isObjetcEmpty(linha[i++]);
+      int automovel = isObjectEmpty(linha[i++]);
+      int bicicleta = isObjectEmpty(linha[i++]);
+      int caminhao = isObjectEmpty(linha[i++]);
+      int moto = isObjectEmpty(linha[i++]);
+      int onibus = isObjectEmpty(linha[i++]);
+      int outros = isObjectEmpty(linha[i++]);
+      int tracaoAnimal = isObjectEmpty(linha[i++]);
+      int cargaEspecial = isObjectEmpty(linha[i++]);
+      int tratorMaquina = isObjectEmpty(linha[i++]);
+      int utilitario = isObjectEmpty(linha[i++]);
+      int ileso = isObjectEmpty(linha[i++]);
+      int levementeFerido = isObjectEmpty(linha[i++]);
+      int moderamenteFerido = isObjectEmpty(linha[i++]);
+      int gravementeFerido = isObjectEmpty(linha[i++]);
+      int mortos = isObjectEmpty(linha[i++]);
 
       Acidente acidente = new Acidente();
 //      acidente.setData((java.sql.Date) data);

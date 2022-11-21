@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-222.4345.14">
+  <component name="dataSourceStorageLocal" created-in="IU-212.4746.92">
     <data-source name="tatiane@sicm.dc.uel.br" uuid="f37362ac-7719-4081-a13e-0626517c85ce">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
-      <user-name>tatiane</user-name>
+      <secret-storage>forget</secret-storage>
       <schema-mapping />
     </data-source>
   </component>

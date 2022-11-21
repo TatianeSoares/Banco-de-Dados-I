@@ -19,7 +19,7 @@ public class Acidente {
     @Getter @Setter private Time hora;
     @NotNull
     @Getter @Setter private Integer nrOcorrencia;
-    @Getter @Setter private float km;
+    @Getter @Setter private String km;
     @Getter @Setter private int automovel;
     @Getter @Setter private int bicicleta;
     @Getter @Setter private int caminhao;

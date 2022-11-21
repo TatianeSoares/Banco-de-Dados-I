@@ -73,7 +73,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
       statement.setDate(1, acidente.getData());
       statement.setTime(2, acidente.getHora());
       statement.setInt(3, acidente.getNrOcorrencia());
-      statement.setFloat(4, acidente.getKm());
+      statement.setString(4, acidente.getKm());
       statement.setInt(5, acidente.getAutomovel());
       statement.setInt(6, acidente.getBicicleta());
       statement.setInt(7, acidente.getCaminhao());
@@ -115,7 +115,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
       statement.setDate(1, acidente.getData());
       statement.setTime(2, acidente.getHora());
       statement.setInt(3, acidente.getNrOcorrencia());
-      statement.setFloat(4, acidente.getKm());
+      statement.setString(4, acidente.getKm());
       statement.setInt(5, acidente.getAutomovel());
       statement.setInt(6, acidente.getBicicleta());
       statement.setInt(7, acidente.getCaminhao());
@@ -153,7 +153,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
           acidente.setData(result.getDate("data"));
           acidente.setHora(result.getTime("hora"));
           acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
-          acidente.setKm(result.getInt("km"));
+          acidente.setKm(result.getString("km"));
           acidente.setAutomovel(result.getInt("automovel"));
           acidente.setBicicleta(result.getInt("bicicleta"));
           acidente.setCaminhao(result.getInt("caminhao"));
@@ -190,7 +190,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
       statement.setDate(2, acidente.getData());
       statement.setTime(3, acidente.getHora());
       statement.setInt(4, acidente.getNrOcorrencia());
-      statement.setFloat(5, acidente.getKm());
+      statement.setString(5, acidente.getKm());
       statement.setInt(6, acidente.getAutomovel());
       statement.setInt(7, acidente.getBicicleta());
       statement.setInt(8, acidente.getCaminhao());
@@ -237,7 +237,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
         acidente.setData(result.getDate("data"));
         acidente.setHora(result.getTime("hora"));
         acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
-        acidente.setKm(result.getInt("km"));
+        acidente.setKm(result.getString("km"));
         acidente.setAutomovel(result.getInt("automovel"));
         acidente.setBicicleta(result.getInt("bicicleta"));
         acidente.setCaminhao(result.getInt("caminhao"));

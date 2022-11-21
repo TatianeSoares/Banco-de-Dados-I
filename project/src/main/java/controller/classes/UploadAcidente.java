@@ -27,6 +27,18 @@ public class UploadAcidente {
     }
   }
 
+  public static float stringToFloat(String entrada){
+    float saida;
+    if(entrada.contains(",")){
+      String[] entradaSeparada = entrada.split(",");
+      saida = (float) (Integer.parseInt(entradaSeparada[0]) + Integer.parseInt(entradaSeparada[1]) * 0.1);
+    }
+    else{
+      saida = Float.parseFloat(entrada);
+    }
+    return saida;
+  }
+
 
   public static void readUploadAcidente(UploadedFile file)
       throws IOException, ParseException, SQLException {
@@ -61,7 +73,7 @@ public class UploadAcidente {
       Time hora = new Time(new SimpleDateFormat("HH:mm:ss").parse(linha[i++]).getTime());
       Integer nrOcorrencia = isObjectEmpty(linha[i++]);
       String descricaoTipoOcorrencia = linha[i++];
-      String km = linha[i++];
+      float km = stringToFloat(linha[i++]);
       String descricaoTrechoRodovia = linha[i++];
       String descricaoSentidoRodovia = linha[i++];
       String descricaoTipoAcidente = linha[i++];
@@ -115,7 +127,7 @@ public class UploadAcidente {
       TipoAcidente tipoAcidente = new TipoAcidente();
       tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 //      data != null && hora != null &&
-      if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != null && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
+      if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
         // TODO implementação dos outros
         AcidenteDAO.adicionarAcidente(acidente);
         //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);

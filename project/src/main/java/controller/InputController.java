@@ -19,13 +19,13 @@ public class InputController implements Serializable {
 
   @Getter @Setter private UploadedFile file;
   @Getter @Setter private String tipSelecionado;
-  @Getter @Setter private int tipo = 0;
 
   public void init() {
 
   }
 
   public void setType(String tipSelecionado){
+
     tipSelecionado = this.tipSelecionado;
   }
 
@@ -44,5 +44,7 @@ public class InputController implements Serializable {
           UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file);
         }
       }
+
+      tipSelecionado = null;
   }
 }

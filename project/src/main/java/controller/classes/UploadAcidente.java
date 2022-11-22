@@ -1,6 +1,8 @@
 package controller.classes;
 
 import DAO.Acidente.AcidenteDAO;
+import DAO.Acidente.PgAcidenteDAO;
+import DAO.DAOFactory;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
@@ -19,11 +21,17 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class UploadAcidente {
+
   public static int isObjectEmpty(String objeto) {
     if(objeto.isEmpty()) {
       return 0;
     } else {
-      return parseInt(objeto);
+//      try{
+        return parseInt(objeto);
+//      }catch (Exception e){
+//        System.out.println(objeto);
+//      }
+
     }
   }
 
@@ -42,7 +50,6 @@ public class UploadAcidente {
 
   public static void readUploadAcidente(UploadedFile file)
       throws IOException, ParseException, SQLException {
-
     int nomeColuna = 1;
     int i;
     int j = -1;
@@ -128,10 +135,18 @@ public class UploadAcidente {
       tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 //      data != null && hora != null &&
       if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
+
+
+        try(DAOFactory daoFactory = DAOFactory.getInstance()){
+          AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
+          acidenteDAO.adicionarAcidente(acidente);
+        } catch (ClassNotFoundException e) {
+          e.printStackTrace();
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
         // TODO implementação dos outros
-        AcidenteDAO.adicionarAcidente(acidente);
-        //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
-        //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
+
       }
     }
   }

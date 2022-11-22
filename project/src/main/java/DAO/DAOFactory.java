@@ -1,12 +1,13 @@
 package DAO;
 
+import DAO.Acidente.AcidenteDAO;
 import jdbc.ConnectionFactory;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class DAOFactory implements AutoCloseable{
+public abstract class DAOFactory implements AutoCloseable{
 
   protected Connection connection;
 
@@ -77,4 +78,6 @@ public class DAOFactory implements AutoCloseable{
   public void close() throws Exception {
 
   }
+
+  public abstract AcidenteDAO getAcidenteDAO();
 }

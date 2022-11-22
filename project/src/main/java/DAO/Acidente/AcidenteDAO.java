@@ -9,9 +9,7 @@ import java.util.List;
 
 public interface AcidenteDAO extends DAO<Acidente> {
 
-    public static void adicionarAcidente(Acidente acidente) throws SQLException{
-
-    }
+    public void adicionarAcidente(Acidente acidente) throws SQLException;
 
     public Acidente getAcidente(int id) throws SQLException;
 

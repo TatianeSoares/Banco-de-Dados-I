@@ -153,7 +153,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
           acidente.setData(result.getDate("data"));
           acidente.setHora(result.getTime("hora"));
           acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
-          acidente.setKm(result.getInt("km"));
+          acidente.setKm(result.getFloat("km"));
           acidente.setAutomovel(result.getInt("automovel"));
           acidente.setBicicleta(result.getInt("bicicleta"));
           acidente.setCaminhao(result.getInt("caminhao"));
@@ -237,7 +237,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
         acidente.setData(result.getDate("data"));
         acidente.setHora(result.getTime("hora"));
         acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
-        acidente.setKm(result.getInt("km"));
+        acidente.setKm(result.getFloat("km"));
         acidente.setAutomovel(result.getInt("automovel"));
         acidente.setBicicleta(result.getInt("bicicleta"));
         acidente.setCaminhao(result.getInt("caminhao"));

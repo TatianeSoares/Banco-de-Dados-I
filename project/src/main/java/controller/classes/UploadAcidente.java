@@ -27,13 +27,18 @@ public class UploadAcidente {
     }
   }
 
-  public static float isObjectEmptyFloat(String objeto) {
-    if(objeto.isEmpty()) {
-      return 0;
-    } else {
-      return Float.parseFloat(objeto);
+  public static float stringToFloat(String entrada){
+    float saida;
+    if(entrada.contains(",")){
+      String[] entradaSeparada = entrada.split(",");
+      saida = (float) (Integer.parseInt(entradaSeparada[0]) + Integer.parseInt(entradaSeparada[1]) * 0.1);
     }
+    else{
+      saida = Float.parseFloat(entrada);
+    }
+    return saida;
   }
+
 
   public static void readUploadAcidente(UploadedFile file)
       throws IOException, ParseException, SQLException {
@@ -53,7 +58,7 @@ public class UploadAcidente {
     tamanhoTable = table.size();
     String[] linha;
     while(j <= tamanhoTable) {
-      j++;
+        j++;
       i = 0;
       linha = table.get(j);
       if(nomeColuna == 1){
@@ -63,12 +68,12 @@ public class UploadAcidente {
       }
 
       String dataInput = linha[i++];
-//      SimpleDateFormat parser = new SimpleDateFormat();
-//      Date data = parser.parse(dataInput);
+      SimpleDateFormat parser = new SimpleDateFormat("dd/MM/yyyy");
+      Date data = parser.parse(dataInput);
       Time hora = new Time(new SimpleDateFormat("HH:mm:ss").parse(linha[i++]).getTime());
       Integer nrOcorrencia = isObjectEmpty(linha[i++]);
       String descricaoTipoOcorrencia = linha[i++];
-      float km = isObjectEmptyFloat(linha[i++]);
+      float km = stringToFloat(linha[i++]);
       String descricaoTrechoRodovia = linha[i++];
       String descricaoSentidoRodovia = linha[i++];
       String descricaoTipoAcidente = linha[i++];
@@ -89,7 +94,7 @@ public class UploadAcidente {
       int mortos = isObjectEmpty(linha[i++]);
 
       Acidente acidente = new Acidente();
-//      acidente.setData((java.sql.Date) data);
+      acidente.setData(new java.sql.Date(data.getTime()));
       acidente.setHora(hora);
       acidente.setNrOcorrencia(nrOcorrencia);
       acidente.setKm(km);

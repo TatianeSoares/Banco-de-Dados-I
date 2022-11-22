@@ -19,13 +19,16 @@
                             <div class="p-col-12 p-md-12">
                                 <p:outputLabel value="Selecione o conteúdo do arquivo:"/>
                             </div>
-                            <div class="p-col-12 p-md-3">
+                            <div class="p-col-12 p-md-5">
                                 <p:selectOneMenu id="tipo" value="#{inputController.tipSelecionado}">
                                     <f:selectItem itemLabel="Select One" itemDisabled="true"/>
-                                    <f:selectItem itemLabel="Acidente" itemValue="Acidente"/>
-                                    <f:selectItem itemLabel="Ultrapassagem" itemValue="Ultrapassagem"/>
-                                    <f:selectItem itemLabel="Velocidade Máxima" itemValue="VelocidadeMaxima"/>
+                                    <f:selectItem itemLabel="Acidente" itemValue="acidente"/>
+                                    <f:selectItem itemLabel="Ultrapassagem" itemValue="ultrapassagem"/>
+                                    <f:selectItem itemLabel="Velocidade Máxima" itemValue="velocidade"/>
+                                    <p:ajax listener="#{inputController.setType(inputController.tipSelecionado)}"/>
                                 </p:selectOneMenu>
+                            </div>
+                            <div class="p-col-12 p-md-3">
                                 <p:fileUpload mode="advanced"
                                               listener="#{inputController.uploadFile}"/>
                             </div>

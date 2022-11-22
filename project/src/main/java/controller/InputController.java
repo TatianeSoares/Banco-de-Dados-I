@@ -1,6 +1,8 @@
 package controller;
 
 import controller.classes.UploadAcidente;
+import controller.classes.UploadUltrapassagem;
+import controller.classes.UploadVelocidadeMaxima;
 import lombok.Getter;
 import lombok.Setter;
 import org.primefaces.event.FileUploadEvent;
@@ -17,21 +19,30 @@ public class InputController implements Serializable {
 
   @Getter @Setter private UploadedFile file;
   @Getter @Setter private String tipSelecionado;
-//  @Getter @Setter private int
+  @Getter @Setter private int tipo = 0;
 
   public void init() {
 
+  }
+
+  public void setType(String tipSelecionado){
+    tipSelecionado = this.tipSelecionado;
   }
 
   public void uploadFile(FileUploadEvent fileUploadEvent)
       throws IOException, SQLException, ParseException {
       UploadedFile file = fileUploadEvent.getFile();
 
-      tipSelecionado = "alo";
       if (file.getFileName() != null) {
-        UploadAcidente.readUploadAcidente(file);
-
-        //TODO verificar o tipoSelecionado, está retornando null
+        if (tipSelecionado.equals("acidente")) {
+          UploadAcidente.readUploadAcidente(file);
+        }
+        if (tipSelecionado.equals("ultrapassagem")) {
+          UploadUltrapassagem.readUploadUltrapassagem(file);
+        }
+        if (tipSelecionado.equals("velocidade")) {
+          UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file);
+        }
       }
   }
 }

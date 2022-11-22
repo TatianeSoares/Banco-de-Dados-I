@@ -16,7 +16,8 @@ import java.text.ParseException;
 public class InputController implements Serializable {
 
   @Getter @Setter private UploadedFile file;
-  @Getter @Setter private String tipoSelecionado;
+  @Getter @Setter private String tipSelecionado;
+//  @Getter @Setter private int
 
   public void init() {
 
@@ -26,6 +27,7 @@ public class InputController implements Serializable {
       throws IOException, SQLException, ParseException {
       UploadedFile file = fileUploadEvent.getFile();
 
+      tipSelecionado = "alo";
       if (file.getFileName() != null) {
         UploadAcidente.readUploadAcidente(file);
 

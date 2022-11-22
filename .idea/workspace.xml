@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando lógica de UploadAcidente">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_primefaces_themes_all_themes_1_0_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" afterDir="false" />
-    </list>
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando dependencias do projeto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +34,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -201,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667861978010</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Arrumando dependencias do projeto">
+      <created>1669031323765</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669031323766</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,13 +224,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />
-    <MESSAGE value="Arrumando dependencias do projeto" />
     <MESSAGE value="readUploadAcidente implementado parcialmente" />
     <MESSAGE value="getDAO's e readUploadAcidente" />
     <MESSAGE value="Ajustes controller" />
     <MESSAGE value="Arrumando input.xhtml" />
     <MESSAGE value="Arrumando lógica de UploadAcidente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arrumando lógica de UploadAcidente" />
+    <MESSAGE value="Arrumando dependencias do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumando dependencias do projeto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

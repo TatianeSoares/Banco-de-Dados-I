@@ -16,19 +16,9 @@
                                     style="margin: auto;
                                     width: 70%;
                                     font-size: 20px;">
-                            <div class="p-col-12 p-md-12">
-                                <p:outputLabel value="Selecione o conteúdo do arquivo:"/>
-                            </div>
-                            <div class="p-col-12 p-md-3">
-                                <p:selectOneMenu id="tipo" value="#{inputController.tipSelecionado}">
-                                    <f:selectItem itemLabel="Select One" itemDisabled="true"/>
-                                    <f:selectItem itemLabel="Acidente" itemValue="Acidente"/>
-                                    <f:selectItem itemLabel="Ultrapassagem" itemValue="Ultrapassagem"/>
-                                    <f:selectItem itemLabel="Velocidade Máxima" itemValue="VelocidadeMaxima"/>
-                                </p:selectOneMenu>
-                                <p:fileUpload mode="advanced"
-                                              listener="#{inputController.uploadFile}"/>
-                            </div>
+
+
+
                         </p:fieldset>
                     </div>
                 </div>

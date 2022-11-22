@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="conteudo">
+        <f:metadata>
+            <f:viewAction action="#{inputController.init}"/>
+        </f:metadata>
+        <h:form enctype="multipart/form-data" id="form">
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="ui-fluid p-grid">
+                        <p:fieldset legend="Histórico de cargas efetuadas no banco de dados"
+                                    style="margin: auto;
+                                    width: 70%;
+                                    font-size: 20px;">
+
+<!--                            <p:dataTable var="carga"-->
+<!--                                         id="datatableCarga"-->
+<!--                                         reflow="true"-->
+<!--                                         emptyMessage="Nenhuma carga foi efetuada">-->
+
+<!--                                <p:columnGroup type="header">-->
+<!--                                    <p:column headerText="Data e horario"/>-->
+<!--                                    <p:column headerText="Tipo de carga"/>-->
+<!--                                </p:columnGroup>-->
+
+<!--                            </p:dataTable>-->
+
+                        </p:fieldset>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

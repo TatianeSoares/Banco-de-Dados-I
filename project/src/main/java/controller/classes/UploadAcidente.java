@@ -26,12 +26,7 @@ public class UploadAcidente {
     if(objeto.isEmpty()) {
       return 0;
     } else {
-//      try{
-        return parseInt(objeto);
-//      }catch (Exception e){
-//        System.out.println(objeto);
-//      }
-
+      return parseInt(objeto);
     }
   }
 
@@ -135,8 +130,6 @@ public class UploadAcidente {
       tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 //      data != null && hora != null &&
       if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
-
-
         try(DAOFactory daoFactory = DAOFactory.getInstance()){
           AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
           acidenteDAO.adicionarAcidente(acidente);

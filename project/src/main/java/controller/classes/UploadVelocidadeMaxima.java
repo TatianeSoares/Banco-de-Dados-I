@@ -1,9 +1,11 @@
 package controller.classes;
 
+import DAO.Sinalizacao.VelocidadeMaximaDAO;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import model.VelocidadeMaxima;
 import org.primefaces.model.file.UploadedFile;
 
 import java.io.ByteArrayInputStream;
@@ -64,8 +66,51 @@ public class UploadVelocidadeMaxima {
                 linha = table.get(j);
             }
 
+            //verificar se existe já a rodovia com uma função
+            String descricaoRodovia = linha[i++];
+
+            Integer anoPnvSnc = isObjectEmpty(linha[i++]);
+            String descricaoTrechoRodovia = linha[i++];
+            float km = stringToFloat(linha[i++]);
+            String descricaoTipoPista = linha[i++];
+            String uf = linha[i++];
+            String municipio = linha[i++];
+            String descricaoSentidoRodovia = linha[i++];
+            String direcao = linha[i++];
+            float latitude = stringToFloat(linha[i++]);
+            float longitude = stringToFloat(linha[i++]);
+            float veloVeicLeve = stringToFloat(linha[i++]);
+            float veloVeicPesado = stringToFloat(linha[i++]);
+            String situacao = linha[i++];
+            String dataInativacao = linha[i++];
+
+            VelocidadeMaxima velocidadeMaxima = new VelocidadeMaxima();
+            velocidadeMaxima.setAnoPnvSnc(anoPnvSnc);
+            velocidadeMaxima.setKm(km);
+            velocidadeMaxima.setMunicipio(municipio);
+            velocidadeMaxima.setLatitude(latitude);
+            velocidadeMaxima.setLongitude(longitude);
+            velocidadeMaxima.setVeloVeicLeve(veloVeicLeve);
+            velocidadeMaxima.setVeloVeicPesado(veloVeicPesado);
+            velocidadeMaxima.setSituacao(situacao);
+
+            // TODO retornar ja existente ou criar
+            //Rodovia rodovia = new Rodovia();
+            //rodovia.setDescricaoRodovia(descricaoRodovia);
+            //TrechoRodovia trechoRodovia = new TrechoRodovia();
+            //trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
+            //SentidoRodovia sentidoRodovia = new SentidoRodovia();
+            //sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
+            //TipoPista tipoPista = new TipoPista();
+            //tipoPista.setDescricaoTipoPista(descricaoTipoPista);
 
 
+            if ( descricaoRodovia != null && anoPnvSnc != 0 && uf != null && descricaoTipoPista != null && km >= 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null ) {
+                // TODO implementação dos outros
+                VelocidadeMaximaDAO.adicionarVelocidadeMaxima(velocidadeMaxima);
+                //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
+                //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
+            }
 
 
 

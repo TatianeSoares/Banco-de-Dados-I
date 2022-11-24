@@ -12,11 +12,10 @@ import java.util.logging.Logger;
 
 public class PgAcidenteDAO implements AcidenteDAO{
 
-  private static Connection connect;
   private final Connection connection;
 
   private static final String INSERT_ACIDENTE =
-      "INSERT INTO rodovia.acidente(idAcidente, data" +
+      "INSERT INTO rodovia.acidente(data" +
           "hora, nrOcorrencia, km, automovel, bicicleta, caminhao" +
           "moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario" +
           "ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente)" +
@@ -68,8 +67,8 @@ public class PgAcidenteDAO implements AcidenteDAO{
   }
 
 
-  public static void adicionarAcidente(Acidente acidente) throws SQLException {
-    try (PreparedStatement statement = connect.prepareStatement(INSERT_ACIDENTE)) {
+  public void adicionarAcidente(Acidente acidente) throws SQLException {
+    try (PreparedStatement statement = connection.prepareStatement(INSERT_ACIDENTE)) {
       statement.setDate(1, acidente.getData());
       statement.setTime(2, acidente.getHora());
       statement.setInt(3, acidente.getNrOcorrencia());

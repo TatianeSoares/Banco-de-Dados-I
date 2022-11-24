@@ -1,6 +1,5 @@
 package controller.classes;
 
-import DAO.Acidente.AcidenteDAO;
 import DAO.Sinalizacao.UltrapassagemDAO;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;

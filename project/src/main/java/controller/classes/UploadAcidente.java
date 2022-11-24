@@ -3,6 +3,11 @@ package controller.classes;
 import DAO.Acidente.AcidenteDAO;
 import DAO.Acidente.PgAcidenteDAO;
 import DAO.DAOFactory;
+import DAO.Rodovia.RodoviaDAO;
+import DAO.SentidoRodovia.SentidoRodoviaDAO;
+import DAO.TipoAcidente.TipoAcidenteDAO;
+import DAO.TipoOcorrencia.TipoOcorrenciaDAO;
+import DAO.TrechoRodovia.TrechoRodoviaDAO;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
@@ -60,7 +65,7 @@ public class UploadAcidente {
     tamanhoTable = table.size();
     String[] linha;
     while(j <= tamanhoTable) {
-        j++;
+      j++;
       i = 0;
       linha = table.get(j);
       if(nomeColuna == 1){
@@ -121,18 +126,33 @@ public class UploadAcidente {
       SentidoRodovia sentidoRodovia = new SentidoRodovia();
       sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
 
-      acidente.setIdTrechoRodovia(trechoRodovia.getIdTrechoRodovia());
-
       TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
       tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);
 
       TipoAcidente tipoAcidente = new TipoAcidente();
       tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
-//      data != null && hora != null &&
+
       if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
         try(DAOFactory daoFactory = DAOFactory.getInstance()){
+        //verificar se ja existe as insercoes em rodovia, trechoRod etc
+        //antes de inserir trechorodovia inserir rodovia
+          // inserir primeiro rodovia
+          RodoviaDAO rodoviaDAO = daoFactory.getRodoviaDAO();
+//          rodoviaDAO.create(ro);
+          TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
+          trechoRodoviaDAO.create(trechoRodovia);
+
+          SentidoRodoviaDAO sentidoRodoviaDAO = daoFactory.getSentidoRodoviaDAO();
+          sentidoRodoviaDAO.create(sentidoRodovia);
+
+          TipoOcorrenciaDAO tipoOcorrenciaDAO = daoFactory.getTipoOcorrencia();
+          tipoOcorrenciaDAO.create(tipoOcorrencia);
+
+          TipoAcidenteDAO tipoAcidenteDAO = daoFactory.getTipoAcidenteDAO();
+          tipoAcidenteDAO.create(tipoAcidente);
+
           AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
-          acidenteDAO.adicionarAcidente(acidente);
+          acidenteDAO.create(acidente);
         } catch (ClassNotFoundException e) {
           e.printStackTrace();
         } catch (Exception e) {

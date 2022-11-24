@@ -1,13 +1,13 @@
 CREATE SCHEMA rodovia;
 
 CREATE TABLE "rodovia"."rodovias" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	descricao VARCHAR(30) NOT NULL,
 	CONSTRAINT pk_rodovia PRIMARY KEY(id)
 );
 
 CREATE TABLE "rodovia"."trechoRodovia" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	descricao VARCHAR(30) NOT NULL,
 	idRodovia INT,
 	CONSTRAINT pk_treRod PRIMARY KEY(id),
@@ -16,25 +16,25 @@ CREATE TABLE "rodovia"."trechoRodovia" (
 );
 
 CREATE TABLE "rodovia"."sentidoRodovia" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	descricao VARCHAR(30) NOT NULL,
 	CONSTRAINT pk_sentRod PRIMARY KEY(id)
 );
 
 CREATE TABLE "rodovia"."tipoAcidente" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	descricao VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_tipAcidente PRIMARY KEY(id)
 );
 
 CREATE TABLE "rodovia"."tipoOcorrencia" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	descricao VARCHAR(30) NOT NULL,
 	CONSTRAINT pk_tipOcorrencia PRIMARY KEY(id)
 );
 
 CREATE TABLE "rodovia"."tipoPista" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	descricao VARCHAR(30) NOT NULL,
 	CONSTRAINT pk_tipPista PRIMARY KEY(id)
 );
@@ -75,7 +75,7 @@ CREATE TABLE "rodovia"."acidente" (
 );
 
 CREATE TABLE "rodovia"."velocidadeMaxima" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	situacao VARCHAR(30),
 	uf VARCHAR(2),
 	anoPnvSnv INT,
@@ -99,7 +99,7 @@ CREATE TABLE "rodovia"."velocidadeMaxima" (
 );
 
 CREATE TABLE "rodovia"."ultrapassagem" (
-	id INT NOT NULL,
+	id INT NOT NULL SERIAL,
 	situacao VARCHAR(30),
 	uf VARCHAR(2),
 	anoPnvSnv INT,

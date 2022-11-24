@@ -19,27 +19,27 @@ public class PgRodoviaDAO implements RodoviaDAO {
   private final Connection connection;
 
   private static final String INSERT_RODOVIA =
-      "INSERT INTO rodovia.rodovias(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.rodovias(descricao) " +
+          "VALUES(?)";
 
   private static final String BUSCA_TODAS_RODOVIAS =
-      "SELECT id, descricao" +
-          "FROM rodovia.rodovias" +
-          "ORDER BY id";
+      "SELECT descricao " +
+          "FROM rodovia.rodovias " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_RODOVIA =
-      "SELECT id, descricao" +
-          "FROM rodovia.rodovias" +
-          "WHERE id = ?;";
+      "SELECT descricao " +
+          "FROM rodovia.rodovias " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_RODOVIA =
-      "UPDATE FROM rodovia.rodovias" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE rodovia.rodovias " +
+          "SET descricao " +
+          "WHERE descricao = ;";
 
   private static final String DELETE_RODOVIA =
-      "DELETE FROM rodovia.rodovias" +
-      "WHERE id = ;";
+      "DELETE FROM rodovia.rodovias " +
+      "WHERE descricao = ;";
 
   public PgRodoviaDAO(Connection connection) {
     this.connection = connection;
@@ -48,8 +48,7 @@ public class PgRodoviaDAO implements RodoviaDAO {
   @Override
   public void create(Rodovia rodovia) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_RODOVIA)) {
-      statement.setInt(1, rodovia.getIdRodovia());
-      statement.setString(2, rodovia.getDescricaoRodovia());
+      statement.setString(1, rodovia.getDescricaoRodovia());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir rodovia");

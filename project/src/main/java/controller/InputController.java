@@ -5,6 +5,7 @@ import controller.classes.UploadUltrapassagem;
 import controller.classes.UploadVelocidadeMaxima;
 import lombok.Getter;
 import lombok.Setter;
+import model.Rodovia;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.file.UploadedFile;
 import javax.faces.view.ViewScoped;
@@ -33,6 +34,8 @@ public class InputController implements Serializable {
       throws IOException, SQLException, ParseException {
       UploadedFile file = fileUploadEvent.getFile();
 
+//      Rodovia rodovia = new Rodovia();
+//      rodovia.setDescricaoRodovia("ACO");
       if (file.getFileName() != null) {
         if (tipSelecionado.equals("acidente")) {
           UploadAcidente.readUploadAcidente(file);

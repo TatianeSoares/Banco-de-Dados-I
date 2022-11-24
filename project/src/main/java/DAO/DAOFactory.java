@@ -1,7 +1,16 @@
 package DAO;
 
 import DAO.Acidente.AcidenteDAO;
+import DAO.Rodovia.RodoviaDAO;
+import DAO.SentidoRodovia.SentidoRodoviaDAO;
+import DAO.Sinalizacao.UltrapassagemDAO;
+import DAO.Sinalizacao.VelocidadeMaximaDAO;
+import DAO.TipoAcidente.TipoAcidenteDAO;
+import DAO.TipoOcorrencia.TipoOcorrenciaDAO;
+import DAO.TipoPista.TipoPistaDAO;
+import DAO.TrechoRodovia.TrechoRodoviaDAO;
 import jdbc.ConnectionFactory;
+import model.TrechoRodovia;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -80,4 +89,13 @@ public abstract class DAOFactory implements AutoCloseable{
   }
 
   public abstract AcidenteDAO getAcidenteDAO();
+  public abstract RodoviaDAO getRodoviaDAO();
+  public abstract SentidoRodoviaDAO getSentidoRodoviaDAO();
+  public abstract TipoAcidenteDAO getTipoAcidenteDAO();
+  public abstract TipoOcorrenciaDAO getTipoOcorrencia();
+  public abstract TipoPistaDAO getTipoPistaDAO();
+  public abstract TrechoRodoviaDAO getTrechoRodoviaDAO();
+  public abstract UltrapassagemDAO getUltrapassagemDAO();
+  public abstract VelocidadeMaximaDAO getVelocidadeMaximaDAO();
+
 }

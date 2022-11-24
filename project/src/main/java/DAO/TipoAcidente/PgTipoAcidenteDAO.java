@@ -20,27 +20,27 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
   private final Connection connection;
 
   private static final String INSERT_TIPO_ACIDENTE =
-      "INSERT INTO rodovia.tipoAcidente(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.tipoAcidente(descricao) " +
+          "VALUES(?)";
 
   private static final String BUSCA_TODOS_TIPOSACIDENTES =
-      "SELECT id, descricao" +
-          "FROM rodovia.tipoAcidente" +
-          "ORDER BY id";
+      "SELECT descricao " +
+          "FROM rodovia.tipoAcidente " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_TIPO_ACIDENTE =
-      "SELECT id, descricao" +
-          "FROM rodovia.tipoAcidente" +
-          "WHERE id = ?;";
+      "SELECT descricao " +
+          "FROM rodovia.tipoAcidente " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_TIPO_ACIDENTE =
-      "UPDATE FROM rodovia.tipoAcidente" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE rodovia.tipoAcidente " +
+          "SET descricao " +
+          "WHERE descricao = ?;";
 
   private static final String DELETE_TIPO_ACIDENTE =
-      "DELETE FROM rodovia.tipoAcidente" +
-          "WHERE id = ;";
+      "DELETE FROM rodovia.tipoAcidente " +
+          "WHERE descricao = ?;";
 
   public PgTipoAcidenteDAO(Connection connection) {
     this.connection = connection;

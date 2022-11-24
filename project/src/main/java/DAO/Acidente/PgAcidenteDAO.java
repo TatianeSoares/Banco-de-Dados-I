@@ -15,98 +15,61 @@ public class PgAcidenteDAO implements AcidenteDAO{
   private final Connection connection;
 
   private static final String INSERT_ACIDENTE =
-      "INSERT INTO rodovia.acidente(data" +
-          "hora, nrocorrencia, km, automovel, bicicleta, caminhao" +
-          "moto, onibus, outros, tracaoanimal, cargaespecial, tratormaquina, utilitario" +
-          "ileso, levementeferido, gravementeferido, mortos, idtrechorodovia, idsentidorodovia, idtipoocorrencia, idtipoacidente)" +
-      "VALUES();";
+      "INSERT INTO rodovia.acidente(data, " +
+          "hora, nrocorrencia, km, automovel, bicicleta, caminhao, " +
+          "moto, onibus, outros, tracaoanimal, cargaespecial, tratormaquina, utilitario, " +
+          "ileso, levementeferido, gravementeferido, mortos, idtrechorodovia, idsentidorodovia, idtipoocorrencia, idtipoacidente) " +
+      "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
   private static final String BUSCA_TODOS_ACIDENTES =
-      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente" +
-      "FROM rodovia.acidente" +
+      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente " +
+      "FROM rodovia.acidente " +
       "ORDER BY data, nrOcorrencia;";
 
   private static final String BUSCA_ACIDENTE =
-      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente" +
-      "FROM rodovia.acidente" +
-      "WHERE id = ?;";
+      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente " +
+      "FROM rodovia.acidente " +
+      "WHERE data = ? AND nrOcorrencia = ?;";
 
   private static final String UPDATE_ACIDENTE =
-      "UPDATE FROM rodovia.acidente" +
+      "UPDATE rodovia.acidente " +
           "SET " +
-          "data = " +
-          "hora = " +
-          "nrOcorrencia =" +
-          "km =" +
-          "automovel =" +
-          "bicicleta =" +
-          "caminhao =" +
-          "moto =" +
-          "onibus =" +
-          "outros =" +
-          "tracaoAnimal =" +
-          "cargaEspecial =" +
-          "tratorMaquina =" +
-          "utilitario =" +
-          "ileso =" +
-          "levementeFerido =" +
-          "gravementeFerido =" +
-          "mortos =" +
-          "idTrechoRodovia =" +
-          "idSentidoRodovia =" +
-          "idTipoOcorrencia =" +
-          "idTipoAcidente =" +
-          "WHERE id = ;";
+          "data = ?," +
+          "hora = ?," +
+          "nrOcorrencia = ?," +
+          "km = ?," +
+          "automovel = ?," +
+          "bicicleta = ?," +
+          "caminhao = ?," +
+          "moto = ?," +
+          "onibus = ?," +
+          "outros = ?," +
+          "tracaoAnimal = ?," +
+          "cargaEspecial = ?," +
+          "tratorMaquina = ?," +
+          "utilitario = ?," +
+          "ileso = ?," +
+          "levementeFerido = ?," +
+          "gravementeFerido = ?," +
+          "mortos = ?," +
+          "idTrechoRodovia = ?," +
+          "idSentidoRodovia = ?," +
+          "idTipoOcorrencia = ?," +
+          "idTipoAcidente = ?" +
+          "WHERE data = ? AND nrOcorrencia;";
 
   private static final String DELETE_ACIDENTE =
-      "DELETE FROM rodovia.acidente" +
-      "WHERE id = ;";
+      "DELETE FROM rodovia.acidente " +
+      "WHERE data = ? AND nrOcorrencia;";
 
   public PgAcidenteDAO(Connection connection) {
     this.connection = connection;
   }
 
-  public void adicionarAcidente(Acidente acidente) throws SQLException {
-    try (PreparedStatement statement = connection.prepareStatement(INSERT_ACIDENTE)) {
-      statement.setDate(1, acidente.getData());
-      statement.setTime(2, acidente.getHora());
-      statement.setInt(3, acidente.getNrOcorrencia());
-      statement.setFloat(4, acidente.getKm());
-      statement.setInt(5, acidente.getAutomovel());
-      statement.setInt(6, acidente.getBicicleta());
-      statement.setInt(7, acidente.getCaminhao());
-      statement.setInt(8, acidente.getMoto());
-      statement.setInt(9, acidente.getOnibus());
-      statement.setInt(10, acidente.getOutros());
-      statement.setInt(11, acidente.getTracaoAnimal());
-      statement.setInt(12, acidente.getCargaEspecial());
-      statement.setInt(13, acidente.getTratorMaquina());
-      statement.setInt(14, acidente.getUtilitario());
-      statement.setInt(15, acidente.getIleso());
-      statement.setInt(16, acidente.getLevementeFerido());
-      statement.setInt(17, acidente.getGravementeFerido());
-      statement.setInt(18, acidente.getMortos());
-      //TODO nao foi adicionado as fk
-
-      statement.executeUpdate();
-    } catch (SQLException ex) {
-      Messages.addGlobalError("Erro ao inserir acidente");
-    }
-  }
-
-  @Override
-  public Acidente getAcidente(int id) throws SQLException {
-    return read(id);
-  }
-
-  @Override
-  public List<Acidente> getTodosAcidentes() throws SQLException {
-    return all();
-  }
-
   public boolean verificarInAcidente(Acidente acidente){
     return true;
   }
+
   @Override
   public void create(Acidente acidente) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_ACIDENTE)) {

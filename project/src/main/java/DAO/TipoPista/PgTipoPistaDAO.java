@@ -19,27 +19,27 @@ public class PgTipoPistaDAO implements TipoPistaDAO{
   private final Connection connection;
 
   private static final String INSERT_TIPO_PISTA =
-      "INSERT INTO rodovia.tipoPista(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.tipoPista(descricao) " +
+          "VALUES(?)";
 
   private static final String BUSCA_TODOS_TIPO_PISTA =
-      "SELECT id, descricao" +
-          "FROM rodovia.tipoPista" +
-          "ORDER BY id";
+      "SELECT descricao " +
+          "FROM rodovia.tipoPista " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_TIPO_PISTA =
-      "SELECT id, descricao" +
-          "FROM rodovia.tipoPista" +
-          "WHERE id = ?;";
+      "SELECT descricao " +
+          "FROM rodovia.tipoPista " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_TIPO_PISTA =
-      "UPDATE FROM rodovia.tipoPista" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE FROM rodovia.tipoPista " +
+          "SET descricao " +
+          "WHERE descricao = ?;";
 
   private static final String DELETE_TIPO_PISTA =
       "DELETE FROM rodovia.tipoPista" +
-          "WHERE id = ;";
+          "WHERE descricao = ?;";
 
   public PgTipoPistaDAO(Connection connection) {
     this.connection = connection;
@@ -48,8 +48,7 @@ public class PgTipoPistaDAO implements TipoPistaDAO{
   @Override
   public void create(TipoPista tipoPista) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_TIPO_PISTA)) {
-      statement.setInt(1, tipoPista.getIdTipoPista());
-      statement.setString(2, tipoPista.getDescricaoTipoPista());
+      statement.setString(1, tipoPista.getDescricaoTipoPista());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir trechoRodovia");

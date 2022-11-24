@@ -19,27 +19,27 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   private final Connection connection;
 
   private static final String INSERT_TRECHO_RODOVIA =
-      "INSERT INTO rodovia.trechoRodovia(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.trechoRodovia(descricao) " +
+          "VALUES(?)";
 
   private static final String BUSCA_TODOS_TRECHO_RODOVIA =
-      "SELECT id, descricao" +
-          "FROM rodovia.trechoRodovia" +
-          "ORDER BY id";
+      "SELECT descricao " +
+          "FROM rodovia.trechoRodovia " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_TRECHO_RODOVIA =
-      "SELECT id, descricao" +
-          "FROM rodovia.trechoRodovia" +
-          "WHERE id = ?;";
+      "SELECT descricao " +
+          "FROM rodovia.trechoRodovia " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_TRECHO_RODOVIA =
-      "UPDATE FROM rodovia.trechoRodovia" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE FROM rodovia.trechoRodovia " +
+          "SET descricao " +
+          "WHERE descricao = ?;";
 
   private static final String DELETE_TRECHO_RODOVIA =
-      "DELETE FROM rodovia.trechoRodovia" +
-          "WHERE id = ;";
+      "DELETE FROM rodovia.trechoRodovia " +
+          "WHERE descricao = ?;";
 
   public PgTrechoRodoviaDAO(Connection connection) {
     this.connection = connection;
@@ -48,8 +48,7 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   @Override
   public void create(TrechoRodovia trechoRodovia) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_TRECHO_RODOVIA)) {
-      statement.setInt(1, trechoRodovia.getIdTrechoRodovia());
-      statement.setString(2, trechoRodovia.getDescricaoTrechoRodovia());
+      statement.setString(1, trechoRodovia.getDescricaoTrechoRodovia());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir trechoRodovia");

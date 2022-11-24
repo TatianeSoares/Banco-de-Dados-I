@@ -47,25 +47,9 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
   }
 
   @Override
-  public void adicionarTipoAcidente(TipoAcidente tipoAcidente) throws SQLException {
-    create(tipoAcidente);
-  }
-
-  @Override
-  public TipoAcidente getTipoAcidente(int id) throws SQLException {
-    return read(id);
-  }
-
-  @Override
-  public List<TipoAcidente> getTodosTipoAcidentes() throws SQLException {
-    return all();
-  }
-
-  @Override
   public void create(TipoAcidente tipoAcidente) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_TIPO_ACIDENTE)) {
-      statement.setInt(1, tipoAcidente.getIdTipoAcidente());
-      statement.setString(2, tipoAcidente.getDescricaoTipoAcidente());
+      statement.setString(1, tipoAcidente.getDescricaoTipoAcidente());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir tipoAcidente");

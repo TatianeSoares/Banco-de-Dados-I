@@ -4,7 +4,7 @@ import DAO.DAO;
 import model.Rodovia;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.sql.SQLException;
 
-@ApplicationScoped
 public interface RodoviaDAO extends DAO<Rodovia> {
 }

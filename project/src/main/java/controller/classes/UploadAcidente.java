@@ -54,6 +54,7 @@ public class UploadAcidente {
     int i;
     int j = -1;
     int tamanhoTable;
+    String desSentRod = null;
     byte[] contents = file.getContent();
     CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
     CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
@@ -123,8 +124,6 @@ public class UploadAcidente {
       TrechoRodovia trechoRodovia = new TrechoRodovia();
       trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
 
-      SentidoRodovia sentidoRodovia = new SentidoRodovia();
-      sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
 
       TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
       tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);
@@ -132,35 +131,37 @@ public class UploadAcidente {
       TipoAcidente tipoAcidente = new TipoAcidente();
       tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
 
-      if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
-        try(DAOFactory daoFactory = DAOFactory.getInstance()){
+      try(DAOFactory daoFactory = DAOFactory.getInstance()){
         //verificar se ja existe as insercoes em rodovia, trechoRod etc
         //antes de inserir trechorodovia inserir rodovia
           // inserir primeiro rodovia
-          RodoviaDAO rodoviaDAO = daoFactory.getRodoviaDAO();
+        RodoviaDAO rodoviaDAO = daoFactory.getRodoviaDAO();
 //          rodoviaDAO.create(ro);
-          TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
-          trechoRodoviaDAO.create(trechoRodovia);
+//          TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
+//          trechoRodoviaDAO.create(trechoRodovia);
 
+        if(!(descricaoSentidoRodovia.isEmpty()) && desSentRod != descricaoSentidoRodovia) {
+          desSentRod = descricaoSentidoRodovia;
+          SentidoRodovia sentidoRodovia = new SentidoRodovia();
+          sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
           SentidoRodoviaDAO sentidoRodoviaDAO = daoFactory.getSentidoRodoviaDAO();
           sentidoRodoviaDAO.create(sentidoRodovia);
-
-          TipoOcorrenciaDAO tipoOcorrenciaDAO = daoFactory.getTipoOcorrencia();
-          tipoOcorrenciaDAO.create(tipoOcorrencia);
-
-          TipoAcidenteDAO tipoAcidenteDAO = daoFactory.getTipoAcidenteDAO();
-          tipoAcidenteDAO.create(tipoAcidente);
-
-          AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
-          acidenteDAO.create(acidente);
-        } catch (ClassNotFoundException e) {
-          e.printStackTrace();
-        } catch (Exception e) {
-          e.printStackTrace();
         }
-        // TODO implementação dos outros
 
+//          TipoOcorrenciaDAO tipoOcorrenciaDAO = daoFactory.getTipoOcorrencia();
+//          tipoOcorrenciaDAO.create(tipoOcorrencia);
+//
+//          TipoAcidenteDAO tipoAcidenteDAO = daoFactory.getTipoAcidenteDAO();
+//          tipoAcidenteDAO.create(tipoAcidente);
+//
+//          AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
+//          acidenteDAO.create(acidente);
+      } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+      } catch (Exception e) {
+        e.printStackTrace();
       }
+      // TODO implementação dos outros
     }
   }
 }

@@ -1,10 +1,17 @@
 package controller.classes;
 
+import DAO.DAOFactory;
+import DAO.Rodovia.RodoviaDAO;
+import DAO.SentidoRodovia.SentidoRodoviaDAO;
 import DAO.Sinalizacao.UltrapassagemDAO;
+import DAO.TipoPista.TipoPistaDAO;
+import DAO.TrechoRodovia.TrechoRodoviaDAO;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import lombok.Getter;
+import lombok.Setter;
 import model.*;
 import org.primefaces.model.file.UploadedFile;
 
@@ -43,8 +50,7 @@ public class UploadUltrapassagem {
     }
 
     public static void readUploadUltrapassagem(UploadedFile file)
-            throws IOException, ParseException, SQLException {
-
+        throws IOException, ParseException, SQLException, ClassNotFoundException {
         int nomeColuna = 1;
         int i;
         int j = -1;
@@ -53,12 +59,10 @@ public class UploadUltrapassagem {
         CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
         CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
                 .withCSVParser(parserCv).build();
-
         List<String[]> table = csvReader.readAll();
-        //TODO primeiro ler a linha com os nomes de colunas da table
-
         tamanhoTable = table.size();
         String[] linha;
+
         while(j <= tamanhoTable) {
             j++;
             i = 0;
@@ -68,17 +72,11 @@ public class UploadUltrapassagem {
                 nomeColuna = 0;
                 linha = table.get(j);
             }
-
-            //verificar se existe já a rodovia com uma função
             String descricaoRodovia = linha[i++];
-
             Integer anoPnvSnc = isObjectEmpty(linha[i++]);
             String uf = linha[i++];
-            //verificar se ja existe
             String descricaoTrechoRodovia = linha[i++];
-            //verificar se ja existe
             String descricaoTipoPista = linha[i++];
-            //verificar se ja existe
             String descricaoSentidoRodovia = linha[i++];
             String direcao = linha[i++];
             String situacao = linha[i++];
@@ -101,22 +99,34 @@ public class UploadUltrapassagem {
             ultrapassagem.setLatitudeFinal(latitudeFinal);
             ultrapassagem.setLongitudeFinal(longitudeFinal);
 
-            // TODO retornar ja existente ou criar
-            //Rodovia rodovia = new Rodovia();
-            //rodovia.setDescricaoRodovia(descricaoRodovia);
-            //TrechoRodovia trechoRodovia = new TrechoRodovia();
-            //trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
-            //SentidoRodovia sentidoRodovia = new SentidoRodovia();
-            //sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
-            //TipoPista tipoPista = new TipoPista();
-            //tipoPista.setDescricaoTipoPista(descricaoTipoPista);
-
-
-            if ( descricaoRodovia != null && anoPnvSnc != 0 && uf != null && descricaoTipoPista != null && kmInicial >= 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && kmFinal > kmInicial) {
-                // TODO implementação dos outros
-                UltrapassagemDAO.adicionarUltrapassagem(ultrapassagem);
-                //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
-                //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
+            try(DAOFactory daoFactory = DAOFactory.getInstance()){
+                if (!(descricaoRodovia.isEmpty())){
+                    Rodovia rodovia = new Rodovia();
+                    rodovia.setDescricaoRodovia(descricaoRodovia);
+                    RodoviaDAO rodoviaDAO = daoFactory.getRodoviaDAO();
+                    rodoviaDAO.create(rodovia);
+                }
+                if (!(descricaoRodovia.isEmpty()) && !(descricaoTrechoRodovia.isEmpty())){
+                    TrechoRodovia trechoRodovia = new TrechoRodovia();
+                    trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
+                    trechoRodovia.setIdRodovia(descricaoRodovia);
+                    TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
+                    trechoRodoviaDAO.create(trechoRodovia);
+                }
+                if(!(descricaoSentidoRodovia.isEmpty())) {
+                    SentidoRodovia sentidoRodovia = new SentidoRodovia();
+                    sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
+                    SentidoRodoviaDAO sentidoRodoviaDAO = daoFactory.getSentidoRodoviaDAO();
+                    sentidoRodoviaDAO.create(sentidoRodovia);
+                }
+                if (!(descricaoTipoPista.isEmpty())) {
+                    TipoPista tipoPista = new TipoPista();
+                    tipoPista.setDescricaoTipoPista(descricaoTipoPista);
+                    TipoPistaDAO tipoPistaDAO = daoFactory.getTipoPistaDAO();
+                    tipoPistaDAO.create(tipoPista);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

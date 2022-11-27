@@ -20,7 +20,7 @@ public class PgSentidoRodoviaDAO implements SentidoRodoviaDAO{
 
   private static final String INSERT_SENTIDO_RODOVIA =
       "INSERT INTO rodovia.sentidoRodovia(descricao) " +
-          "VALUES('?')";
+          "VALUES(?)";
 
   private static final String BUSCA_TODOS_SENTIDO_RODOVIAS =
       "SELECT descricao " +

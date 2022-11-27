@@ -58,22 +58,22 @@ public class PgTipoOcorrenciaDAO implements TipoOcorrenciaDAO{
   }
 
   @Override
-  public TipoOcorrencia read(Integer id) throws SQLException {
+  public TipoOcorrencia read(String id) throws SQLException {
     TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
-
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_OCORRENCIA)) {
-      statement.setInt(1, id);
-      try (ResultSet result = statement.executeQuery()) {
-        if (result.next()) {
-          tipoOcorrencia.setIdTipoOcorrencia(result.getInt("idTipoOcorrencia"));
-          tipoOcorrencia.setDescricaoTipoOcorrencia(result.getString("descricaoTipoOcorrencia"));
-        } else {
-          throw new SQLException("Erro ao visualizar: tipoOcorrencia não pode ser encontrado.");
-        }
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(PgTipoOcorrenciaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-    }
+//
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_OCORRENCIA)) {
+//      statement.setInt(1, id);
+//      try (ResultSet result = statement.executeQuery()) {
+//        if (result.next()) {
+//          tipoOcorrencia.setIdTipoOcorrencia(result.getInt("idTipoOcorrencia"));
+//          tipoOcorrencia.setDescricaoTipoOcorrencia(result.getString("descricaoTipoOcorrencia"));
+//        } else {
+//          throw new SQLException("Erro ao visualizar: tipoOcorrencia não pode ser encontrado.");
+//        }
+//      }
+//    } catch (SQLException ex) {
+//      Logger.getLogger(PgTipoOcorrenciaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
     return tipoOcorrencia;
   }
 

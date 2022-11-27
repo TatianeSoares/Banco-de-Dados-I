@@ -22,8 +22,8 @@ public class Ultrapassagem {
     @Getter @Setter private float longitudeInicial;
     @Getter @Setter private float latitudeFinal;
     @Getter @Setter private float latitudeInicial;
-    @Getter @Setter private Integer idTrechoRodovia;
-    @Getter @Setter private Integer idSentidoRodovia;
-    @Getter @Setter private Integer idTipoPista;
+    @Getter @Setter private String idTrechoRodovia;
+    @Getter @Setter private String idSentidoRodovia;
+    @Getter @Setter private String idTipoPista;
 
 }

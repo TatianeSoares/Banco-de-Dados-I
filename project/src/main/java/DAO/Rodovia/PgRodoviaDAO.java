@@ -56,22 +56,22 @@ public class PgRodoviaDAO implements RodoviaDAO {
   }
 
   @Override
-  public Rodovia read(Integer id) throws SQLException {
+  public Rodovia read(String id) throws SQLException {
     Rodovia rodovia = new Rodovia();
-
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_RODOVIA)) {
-      statement.setInt(1, id);
-      try (ResultSet result = statement.executeQuery()) {
-        if (result.next()) {
-          rodovia.setIdRodovia(result.getInt("idRodovia"));
-          rodovia.setDescricaoRodovia(result.getString("descricaoRodovia"));
-        } else {
-          throw new SQLException("Erro ao visualizar: rodovia não pode ser encontrada.");
-        }
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(PgRodoviaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-    }
+//
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_RODOVIA)) {
+//      statement.setInt(1, id);
+//      try (ResultSet result = statement.executeQuery()) {
+//        if (result.next()) {
+//          rodovia.setIdRodovia(result.getInt("idRodovia"));
+//          rodovia.setDescricaoRodovia(result.getString("descricaoRodovia"));
+//        } else {
+//          throw new SQLException("Erro ao visualizar: rodovia não pode ser encontrada.");
+//        }
+//      }
+//    } catch (SQLException ex) {
+//      Logger.getLogger(PgRodoviaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
     return rodovia;
   }
 

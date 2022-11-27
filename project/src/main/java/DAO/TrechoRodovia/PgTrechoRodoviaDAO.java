@@ -57,17 +57,17 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   }
 
   @Override
-  public TrechoRodovia read(Integer id) throws SQLException {
+  public TrechoRodovia read(String id) throws SQLException {
     TrechoRodovia trechoRodovia = new TrechoRodovia();
 
     try (PreparedStatement statement = connection.prepareStatement(BUSCA_TRECHO_RODOVIA)) {
-      statement.setInt(1, id);
+      statement.setString(1, id);
       try (ResultSet result = statement.executeQuery()) {
         if (result.next()) {
           trechoRodovia.setDescricaoTrechoRodovia(result.getString("Descricao"));
           trechoRodovia.setIdRodovia(result.getString("idRodovia"));
         } else {
-          throw new SQLException("Erro ao visualizar: trechoRodovia não pode ser encontrado.");
+          trechoRodovia = null;
         }
       }
     } catch (SQLException ex) {

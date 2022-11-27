@@ -104,16 +104,6 @@ public class UploadVelocidadeMaxima {
             //TipoPista tipoPista = new TipoPista();
             //tipoPista.setDescricaoTipoPista(descricaoTipoPista);
 
-
-            if ( descricaoRodovia != null && anoPnvSnc != 0 && uf != null && descricaoTipoPista != null && km >= 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null ) {
-                // TODO implementação dos outros
-                VelocidadeMaximaDAO.adicionarVelocidadeMaxima(velocidadeMaxima);
-                //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
-                //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
-            }
-
-
-
         }
 
 

@@ -88,17 +88,6 @@ public class UploadUltrapassagem {
             float latitudeFinal = stringToFloat(linha[i++]);
             float longitudeFinal = stringToFloat(linha[i++]);
 
-            Ultrapassagem ultrapassagem = new Ultrapassagem();
-            ultrapassagem.setAnoPnvSnc(anoPnvSnc);
-            ultrapassagem.setUf(uf);
-            ultrapassagem.setSituacao(situacao);
-            ultrapassagem.setKmInicial(kmInicial);
-            ultrapassagem.setLatitudeInicial(latitudeInicial);
-            ultrapassagem.setLongitudeInicial(longitudeInicial);
-            ultrapassagem.setKmFinal(kmFinal);
-            ultrapassagem.setLatitudeFinal(latitudeFinal);
-            ultrapassagem.setLongitudeFinal(longitudeFinal);
-
             try(DAOFactory daoFactory = DAOFactory.getInstance()){
                 if (!(descricaoRodovia.isEmpty())){
                     Rodovia rodovia = new Rodovia();
@@ -124,6 +113,24 @@ public class UploadUltrapassagem {
                     tipoPista.setDescricaoTipoPista(descricaoTipoPista);
                     TipoPistaDAO tipoPistaDAO = daoFactory.getTipoPistaDAO();
                     tipoPistaDAO.create(tipoPista);
+                }
+                if (!(descricaoRodovia.isEmpty()) && !(descricaoTrechoRodovia.isEmpty())
+                    && !(descricaoSentidoRodovia.isEmpty()) && !(descricaoTipoPista.isEmpty())) {
+                    Ultrapassagem ultrapassagem = new Ultrapassagem();
+                    ultrapassagem.setAnoPnvSnc(anoPnvSnc);
+                    ultrapassagem.setUf(uf);
+                    ultrapassagem.setSituacao(situacao);
+                    ultrapassagem.setKmInicial(kmInicial);
+                    ultrapassagem.setLatitudeInicial(latitudeInicial);
+                    ultrapassagem.setLongitudeInicial(longitudeInicial);
+                    ultrapassagem.setKmFinal(kmFinal);
+                    ultrapassagem.setLatitudeFinal(latitudeFinal);
+                    ultrapassagem.setLongitudeFinal(longitudeFinal);
+                    ultrapassagem.setIdTrechoRodovia(descricaoTrechoRodovia);
+                    ultrapassagem.setIdSentidoRodovia(descricaoSentidoRodovia);
+                    ultrapassagem.setIdTipoPista(descricaoTipoPista);
+                    UltrapassagemDAO ultrapassagemDAO = daoFactory.getUltrapassagemDAO();
+                    ultrapassagemDAO.create(ultrapassagem);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

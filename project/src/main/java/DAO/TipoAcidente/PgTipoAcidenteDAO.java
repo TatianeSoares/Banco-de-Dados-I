@@ -57,22 +57,22 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
   }
 
   @Override
-  public TipoAcidente read(Integer id) throws SQLException {
+  public TipoAcidente read(String id) throws SQLException {
     TipoAcidente tipoAcidente = new TipoAcidente();
-
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_ACIDENTE)) {
-      statement.setInt(1, id);
-      try (ResultSet result = statement.executeQuery()) {
-        if (result.next()) {
-          tipoAcidente.setIdTipoAcidente(result.getInt("idTipoAcidente"));
-          tipoAcidente.setDescricaoTipoAcidente(result.getString("descricaoTipoAcidente"));
-        } else {
-          throw new SQLException("Erro ao visualizar: tipoAcidente não pode ser encontrado.");
-        }
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(PgTipoAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-    }
+//
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_ACIDENTE)) {
+//      statement.setInt(1, id);
+//      try (ResultSet result = statement.executeQuery()) {
+//        if (result.next()) {
+//          tipoAcidente.setIdTipoAcidente(result.getInt("idTipoAcidente"));
+//          tipoAcidente.setDescricaoTipoAcidente(result.getString("descricaoTipoAcidente"));
+//        } else {
+//          throw new SQLException("Erro ao visualizar: tipoAcidente não pode ser encontrado.");
+//        }
+//      }
+//    } catch (SQLException ex) {
+//      Logger.getLogger(PgTipoAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
     return tipoAcidente;
   }
 

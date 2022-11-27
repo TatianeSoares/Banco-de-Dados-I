@@ -56,22 +56,22 @@ public class PgTipoPistaDAO implements TipoPistaDAO{
   }
 
   @Override
-  public TipoPista read(Integer id) throws SQLException {
+  public TipoPista read(String id) throws SQLException {
     TipoPista tipoPista = new TipoPista();
-
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_PISTA)) {
-      statement.setInt(1, id);
-      try (ResultSet result = statement.executeQuery()) {
-        if (result.next()) {
-          tipoPista.setIdTipoPista(result.getInt("idTipoPista"));
-          tipoPista.setDescricaoTipoPista(result.getString("descricaoTipoPista"));
-        } else {
-          throw new SQLException("Erro ao visualizar: TipoPista não pode ser encontrado.");
-        }
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(PgTipoPistaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-    }
+//
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_PISTA)) {
+//      statement.setInt(1, id);
+//      try (ResultSet result = statement.executeQuery()) {
+//        if (result.next()) {
+//          tipoPista.setIdTipoPista(result.getInt("idTipoPista"));
+//          tipoPista.setDescricaoTipoPista(result.getString("descricaoTipoPista"));
+//        } else {
+//          throw new SQLException("Erro ao visualizar: TipoPista não pode ser encontrado.");
+//        }
+//      }
+//    } catch (SQLException ex) {
+//      Logger.getLogger(PgTipoPistaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
     return tipoPista;
   }
 

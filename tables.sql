@@ -69,7 +69,6 @@ CREATE TABLE "rodovia"."acidente" (
 );
 
 CREATE TABLE "rodovia"."velocidademaxima" (
-              id SERIAL,
               situacao VARCHAR(30),
               uf VARCHAR(2),
               anoPnvSnv INT,
@@ -82,7 +81,6 @@ CREATE TABLE "rodovia"."velocidademaxima" (
               idTrechoRodovia VARCHAR(30),
               idSentidoRodovia VARCHAR(30),
               idTipoPista VARCHAR(30),
-              CONSTRAINT pk_veloMaxima PRIMARY KEY(id),
               CONSTRAINT fk_sina_treRod FOREIGN KEY(idTrechoRodovia)
                   REFERENCES rodovia.trechorodovia(descricao),
               CONSTRAINT fk_sina_sentRod FOREIGN KEY(idSentidoRodovia)
@@ -93,7 +91,6 @@ CREATE TABLE "rodovia"."velocidademaxima" (
 );
 
 CREATE TABLE "rodovia"."ultrapassagem" (
-               id SERIAL,
                situacao VARCHAR(30),
                uf VARCHAR(2),
                anoPnvSnv INT,
@@ -106,7 +103,6 @@ CREATE TABLE "rodovia"."ultrapassagem" (
                idTrechoRodovia VARCHAR(30),
                idSentidoRodovia VARCHAR(30),
                idTipoPista VARCHAR(30),
-               CONSTRAINT pk_ultrapassagem PRIMARY KEY(id),
                CONSTRAINT fk_sina_treRod FOREIGN KEY(idTrechoRodovia)
                   REFERENCES rodovia.trechorodovia(descricao),
                CONSTRAINT fk_sina_sentRod FOREIGN KEY(idSentidoRodovia)

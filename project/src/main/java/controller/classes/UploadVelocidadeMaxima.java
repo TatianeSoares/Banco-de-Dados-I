@@ -1,11 +1,17 @@
 package controller.classes;
 
+import DAO.DAOFactory;
+import DAO.Rodovia.RodoviaDAO;
+import DAO.SentidoRodovia.SentidoRodoviaDAO;
+import DAO.Sinalizacao.UltrapassagemDAO;
 import DAO.Sinalizacao.VelocidadeMaximaDAO;
+import DAO.TipoPista.TipoPistaDAO;
+import DAO.TrechoRodovia.TrechoRodoviaDAO;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import model.VelocidadeMaxima;
+import model.*;
 import org.primefaces.model.file.UploadedFile;
 
 import java.io.ByteArrayInputStream;
@@ -65,10 +71,7 @@ public class UploadVelocidadeMaxima {
                 nomeColuna = 0;
                 linha = table.get(j);
             }
-
-            //verificar se existe já a rodovia com uma função
             String descricaoRodovia = linha[i++];
-
             Integer anoPnvSnc = isObjectEmpty(linha[i++]);
             String descricaoTrechoRodovia = linha[i++];
             float km = stringToFloat(linha[i++]);
@@ -83,26 +86,53 @@ public class UploadVelocidadeMaxima {
             float veloVeicPesado = stringToFloat(linha[i++]);
             String situacao = linha[i++];
             String dataInativacao = linha[i++];
-
-            VelocidadeMaxima velocidadeMaxima = new VelocidadeMaxima();
-            velocidadeMaxima.setAnoPnvSnc(anoPnvSnc);
-            velocidadeMaxima.setKm(km);
-            velocidadeMaxima.setMunicipio(municipio);
-            velocidadeMaxima.setLatitude(latitude);
-            velocidadeMaxima.setLongitude(longitude);
-            velocidadeMaxima.setVeloVeicLeve(veloVeicLeve);
-            velocidadeMaxima.setVeloVeicPesado(veloVeicPesado);
-            velocidadeMaxima.setSituacao(situacao);
-
-            // TODO retornar ja existente ou criar
-            //Rodovia rodovia = new Rodovia();
-            //rodovia.setDescricaoRodovia(descricaoRodovia);
-            //TrechoRodovia trechoRodovia = new TrechoRodovia();
-            //trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
-            //SentidoRodovia sentidoRodovia = new SentidoRodovia();
-            //sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
-            //TipoPista tipoPista = new TipoPista();
-            //tipoPista.setDescricaoTipoPista(descricaoTipoPista);
+            try(DAOFactory daoFactory = DAOFactory.getInstance()){
+                if (!(descricaoRodovia.isEmpty())){
+                    Rodovia rodovia = new Rodovia();
+                    rodovia.setDescricaoRodovia(descricaoRodovia);
+                    RodoviaDAO rodoviaDAO = daoFactory.getRodoviaDAO();
+                    rodoviaDAO.create(rodovia);
+                }
+                if (!(descricaoRodovia.isEmpty()) && !(descricaoTrechoRodovia.isEmpty())){
+                    TrechoRodovia trechoRodovia = new TrechoRodovia();
+                    trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
+                    trechoRodovia.setIdRodovia(descricaoRodovia);
+                    TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
+                    trechoRodoviaDAO.create(trechoRodovia);
+                }
+                if(!(descricaoSentidoRodovia.isEmpty())) {
+                    SentidoRodovia sentidoRodovia = new SentidoRodovia();
+                    sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
+                    SentidoRodoviaDAO sentidoRodoviaDAO = daoFactory.getSentidoRodoviaDAO();
+                    sentidoRodoviaDAO.create(sentidoRodovia);
+                }
+                if (!(descricaoTipoPista.isEmpty())) {
+                    TipoPista tipoPista = new TipoPista();
+                    tipoPista.setDescricaoTipoPista(descricaoTipoPista);
+                    TipoPistaDAO tipoPistaDAO = daoFactory.getTipoPistaDAO();
+                    tipoPistaDAO.create(tipoPista);
+                }
+                if (!(descricaoRodovia.isEmpty()) && !(descricaoTrechoRodovia.isEmpty())
+                    && !(descricaoSentidoRodovia.isEmpty()) && !(descricaoTipoPista.isEmpty())) {
+                    VelocidadeMaxima velocidadeMaxima = new VelocidadeMaxima();
+                    velocidadeMaxima.setAnoPnvSnc(anoPnvSnc);
+                    velocidadeMaxima.setKm(km);
+                    velocidadeMaxima.setUf(uf);
+                    velocidadeMaxima.setMunicipio(municipio);
+                    velocidadeMaxima.setLatitude(latitude);
+                    velocidadeMaxima.setLongitude(longitude);
+                    velocidadeMaxima.setVeloVeicLeve(veloVeicLeve);
+                    velocidadeMaxima.setVeloVeicPesado(veloVeicPesado);
+                    velocidadeMaxima.setSituacao(situacao);
+                    velocidadeMaxima.setIdTrechoRodovia(descricaoTrechoRodovia);
+                    velocidadeMaxima.setIdSentidoRodovia(descricaoSentidoRodovia);
+                    velocidadeMaxima.setIdTipoPista(descricaoTipoPista);
+                    VelocidadeMaximaDAO velocidadeMaximaDAO = daoFactory.getVelocidadeMaximaDAO();
+                    velocidadeMaximaDAO.create(velocidadeMaxima);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
 

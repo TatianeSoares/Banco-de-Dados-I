@@ -49,7 +49,7 @@ public class UploadUltrapassagem {
         return saida;
     }
 
-    public static void readUploadUltrapassagem(UploadedFile file)
+    public static void   readUploadUltrapassagem(UploadedFile file)
         throws IOException, ParseException, SQLException, ClassNotFoundException {
         int nomeColuna = 1;
         int i;

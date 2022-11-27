@@ -47,6 +47,17 @@ public class UploadAcidente {
     return saida;
   }
 
+  public static String separaTrecho(String entrada){
+    if(entrada.contains("/")){
+      String[] entradaSeparada = entrada.split("/");
+      String saida = entradaSeparada[0];
+      return saida;
+    }
+    else{
+      return entrada;
+    }
+  }
+
 
   public static void readUploadAcidente(UploadedFile file)
       throws IOException, ParseException, SQLException {
@@ -129,31 +140,38 @@ public class UploadAcidente {
           TipoAcidenteDAO tipoAcidenteDAO = daoFactory.getTipoAcidenteDAO();
           tipoAcidenteDAO.create(tipoAcidente);
         }
-
-//        if (data != null && nrOcorrencia != 0 && !(descricaoSentidoRodovia.isEmpty())
-//        && !(descricaoTipoOcorrencia.isEmpty()) && !(descricaoTipoAcidente.isEmpty())) {
-//          Acidente acidente = new Acidente();
-//          acidente.setData(new java.sql.Date(data.getTime()));
-//          acidente.setHora(hora);
-//          acidente.setNrOcorrencia(nrOcorrencia);
-//          acidente.setKm(km);
-//          acidente.setAutomovel(automovel);
-//          acidente.setBicicleta(bicicleta);
-//          acidente.setCaminhao(caminhao);
-//          acidente.setMoto(moto);
-//          acidente.setOnibus(onibus);
-//          acidente.setOutros(outros);
-//          acidente.setTracaoAnimal(tracaoAnimal);
-//          acidente.setCargaEspecial(cargaEspecial);
-//          acidente.setTratorMaquina(tratorMaquina);
-//          acidente.setUtilitario(utilitario);
-//          acidente.setIleso(ileso);
-//          acidente.setLevementeFerido(levementeFerido);
-//          acidente.setGravementeFerido(gravementeFerido);
-//          acidente.setMortos(mortos);
-//          AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
-//          acidenteDAO.create(acidente);
-//        }
+        if (data != null && nrOcorrencia != 0 && !(descricaoSentidoRodovia.isEmpty())
+        && !(descricaoTipoOcorrencia.isEmpty()) && !(descricaoTipoAcidente.isEmpty())) {
+          Acidente acidente = new Acidente();
+          acidente.setData(new java.sql.Date(data.getTime()));
+          acidente.setHora(hora);
+          acidente.setNrOcorrencia(nrOcorrencia);
+          acidente.setKm(km);
+          acidente.setAutomovel(automovel);
+          acidente.setBicicleta(bicicleta);
+          acidente.setCaminhao(caminhao);
+          acidente.setMoto(moto);
+          acidente.setOnibus(onibus);
+          acidente.setOutros(outros);
+          acidente.setTracaoAnimal(tracaoAnimal);
+          acidente.setCargaEspecial(cargaEspecial);
+          acidente.setTratorMaquina(tratorMaquina);
+          acidente.setUtilitario(utilitario);
+          acidente.setIleso(ileso);
+          acidente.setLevementeFerido(levementeFerido);
+          acidente.setGravementeFerido(gravementeFerido);
+          acidente.setMortos(mortos);
+          acidente.setIdTipoOcorrencia(descricaoTipoOcorrencia);
+          acidente.setIdSentidoRodovia(descricaoSentidoRodovia);
+          acidente.setIdTipoAcidente(descricaoTipoAcidente);
+          TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
+          descricaoTrechoRodovia = separaTrecho(descricaoTrechoRodovia);
+          acidente.setIdTrechoRodovia(descricaoTrechoRodovia);
+          if(trechoRodoviaDAO.read(descricaoTrechoRodovia) != null) {
+            AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
+            acidenteDAO.create(acidente);
+          }
+        }
       } catch (ClassNotFoundException e) {
         e.printStackTrace();
       } catch (Exception e) {

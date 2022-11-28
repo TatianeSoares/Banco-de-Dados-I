@@ -1,0 +1,15 @@
+
+]	java:S125>"<This block of commented-out lines of code should be removed.(˜¿ÏÕýÿÿÿÿ8·Û¢ÓË0
+E
+java:S2695R"/This "PreparedStatement" only has 1 parameters.(Ô¿€•
+W
+java:S1128"5Remove this unused import 'DAO.Rodovia.PgRodoviaDAO'.(•÷ö¯þÿÿÿÿ8‘ŸÊÔË0
+G
+java:S1128"*Remove this unused import 'model.Rodovia'.(ãÆø¢8‘ŸÊÔË0
+P
+java:S1068"4Remove this unused "BUSCA_TIPO_PISTA" private field.(€Ë×I8·„¡ÓË0
+r
+java:S1192!"UDefine a constant instead of duplicating this literal "WHERE descricao = ?;" 3 times.(çÑØ8ÕÚæ¼Ê0
+~
+java:S1488<"aImmediately return this expression instead of assigning it to the temporary variable "tipoPista".(ïà©ÿ8÷ö¢ÓË0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†Ó¦

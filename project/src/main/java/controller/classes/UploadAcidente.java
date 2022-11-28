@@ -1,6 +1,13 @@
 package controller.classes;
 
 import DAO.Acidente.AcidenteDAO;
+import DAO.Acidente.PgAcidenteDAO;
+import DAO.DAOFactory;
+import DAO.Rodovia.RodoviaDAO;
+import DAO.SentidoRodovia.SentidoRodoviaDAO;
+import DAO.TipoAcidente.TipoAcidenteDAO;
+import DAO.TipoOcorrencia.TipoOcorrenciaDAO;
+import DAO.TrechoRodovia.TrechoRodoviaDAO;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
@@ -19,6 +26,7 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class UploadAcidente {
+
   public static int isObjectEmpty(String objeto) {
     if(objeto.isEmpty()) {
       return 0;
@@ -39,10 +47,20 @@ public class UploadAcidente {
     return saida;
   }
 
+  public static String separaTrecho(String entrada){
+    if(entrada.contains("/")){
+      String[] entradaSeparada = entrada.split("/");
+      String saida = entradaSeparada[0];
+      return saida;
+    }
+    else{
+      return entrada;
+    }
+  }
+
 
   public static void readUploadAcidente(UploadedFile file)
       throws IOException, ParseException, SQLException {
-
     int nomeColuna = 1;
     int i;
     int j = -1;
@@ -58,7 +76,7 @@ public class UploadAcidente {
     tamanhoTable = table.size();
     String[] linha;
     while(j <= tamanhoTable) {
-        j++;
+      j++;
       i = 0;
       linha = table.get(j);
       if(nomeColuna == 1){
@@ -92,47 +110,74 @@ public class UploadAcidente {
       int moderamenteFerido = isObjectEmpty(linha[i++]);
       int gravementeFerido = isObjectEmpty(linha[i++]);
       int mortos = isObjectEmpty(linha[i++]);
-
-      Acidente acidente = new Acidente();
-      acidente.setData(new java.sql.Date(data.getTime()));
-      acidente.setHora(hora);
-      acidente.setNrOcorrencia(nrOcorrencia);
-      acidente.setKm(km);
-      acidente.setAutomovel(automovel);
-      acidente.setBicicleta(bicicleta);
-      acidente.setCaminhao(caminhao);
-      acidente.setMoto(moto);
-      acidente.setOnibus(onibus);
-      acidente.setOutros(outros);
-      acidente.setTracaoAnimal(tracaoAnimal);
-      acidente.setCargaEspecial(cargaEspecial);
-      acidente.setTratorMaquina(tratorMaquina);
-      acidente.setUtilitario(utilitario);
-      acidente.setIleso(ileso);
-      acidente.setLevementeFerido(levementeFerido);
-      acidente.setGravementeFerido(gravementeFerido);
-      acidente.setMortos(mortos);
       // TODO criar funções verificarIn*'s
-      TrechoRodovia trechoRodovia = new TrechoRodovia();
-      trechoRodovia.setDescricaoTrechoRodovia(descricaoTrechoRodovia);
 
-      SentidoRodovia sentidoRodovia = new SentidoRodovia();
-      sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
 
-      acidente.setIdTrechoRodovia(trechoRodovia.getIdTrechoRodovia());
+      try(DAOFactory daoFactory = DAOFactory.getInstance()){
+        //verificar se ja existe as insercoes em rodovia, trechoRod etc
+        //antes de inserir trechorodovia inserir rodovia
+          // inserir primeiro rodovia
+        //para adicionar um acidente precisamos primeiro buscar os trechos de rodovia já exixtentes e adiiconar outra caso seja necessario
+        //porem temos a questão de que não tem o nome da rodovia no csv de adicente, só o trecho
+        //preciso pensar o que fazer nessa situação
 
-      TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
-      tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);
 
-      TipoAcidente tipoAcidente = new TipoAcidente();
-      tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
-//      data != null && hora != null &&
-      if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
-        // TODO implementação dos outros
-        AcidenteDAO.adicionarAcidente(acidente);
-        //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
-        //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
+        if(!(descricaoSentidoRodovia.isEmpty())) {
+          SentidoRodovia sentidoRodovia = new SentidoRodovia();
+          sentidoRodovia.setDescricaoSentidoRodovia(descricaoSentidoRodovia);
+          SentidoRodoviaDAO sentidoRodoviaDAO = daoFactory.getSentidoRodoviaDAO();
+          sentidoRodoviaDAO.create(sentidoRodovia);
+        }
+        if(!(descricaoTipoOcorrencia.isEmpty())){
+          TipoOcorrencia tipoOcorrencia = new TipoOcorrencia();
+          tipoOcorrencia.setDescricaoTipoOcorrencia(descricaoTipoOcorrencia);
+          TipoOcorrenciaDAO tipoOcorrenciaDAO = daoFactory.getTipoOcorrencia();
+          tipoOcorrenciaDAO.create(tipoOcorrencia);
+        }
+        if (!(descricaoTipoAcidente.isEmpty())) {
+          TipoAcidente tipoAcidente = new TipoAcidente();
+          tipoAcidente.setDescricaoTipoAcidente(descricaoTipoAcidente);
+          TipoAcidenteDAO tipoAcidenteDAO = daoFactory.getTipoAcidenteDAO();
+          tipoAcidenteDAO.create(tipoAcidente);
+        }
+        if (data != null && nrOcorrencia != 0 && !(descricaoSentidoRodovia.isEmpty())
+        && !(descricaoTipoOcorrencia.isEmpty()) && !(descricaoTipoAcidente.isEmpty())) {
+          Acidente acidente = new Acidente();
+          acidente.setData(new java.sql.Date(data.getTime()));
+          acidente.setHora(hora);
+          acidente.setNrOcorrencia(nrOcorrencia);
+          acidente.setKm(km);
+          acidente.setAutomovel(automovel);
+          acidente.setBicicleta(bicicleta);
+          acidente.setCaminhao(caminhao);
+          acidente.setMoto(moto);
+          acidente.setOnibus(onibus);
+          acidente.setOutros(outros);
+          acidente.setTracaoAnimal(tracaoAnimal);
+          acidente.setCargaEspecial(cargaEspecial);
+          acidente.setTratorMaquina(tratorMaquina);
+          acidente.setUtilitario(utilitario);
+          acidente.setIleso(ileso);
+          acidente.setLevementeFerido(levementeFerido);
+          acidente.setGravementeFerido(gravementeFerido);
+          acidente.setMortos(mortos);
+          acidente.setIdTipoOcorrencia(descricaoTipoOcorrencia);
+          acidente.setIdSentidoRodovia(descricaoSentidoRodovia);
+          acidente.setIdTipoAcidente(descricaoTipoAcidente);
+          TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
+          descricaoTrechoRodovia = separaTrecho(descricaoTrechoRodovia);
+          acidente.setIdTrechoRodovia(descricaoTrechoRodovia);
+          if(trechoRodoviaDAO.read(descricaoTrechoRodovia) != null) {
+            AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
+            acidenteDAO.create(acidente);
+          }
+        }
+      } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+      } catch (Exception e) {
+        e.printStackTrace();
       }
+      // TODO implementação dos outros
     }
   }
 }

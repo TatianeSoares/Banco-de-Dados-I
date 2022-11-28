@@ -9,18 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando dependencias do projeto">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/InputController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/jboss-web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/lib/all-themes-1.0.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Commit de dependencias" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +35,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/historicoCargaController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/historicoCarga.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/input.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -233,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669079851803</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit de dependencias">
+      <created>1669671236194</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669671236194</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +264,8 @@
     <MESSAGE value="Arrumando input.xhtml" />
     <MESSAGE value="Arrumando lógica de UploadAcidente" />
     <MESSAGE value="Arrumando dependencias do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arrumando dependencias do projeto" />
+    <MESSAGE value="Commit de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit de dependencias" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

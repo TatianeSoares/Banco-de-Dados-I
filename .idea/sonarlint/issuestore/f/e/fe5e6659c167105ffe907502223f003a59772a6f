@@ -1,0 +1,6 @@
+
+d
+java:S1128"GRemove this unused import 'javax.enterprise.context.ApplicationScoped'.(—ò¸ì8½˜€¸Ê0
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8ºÿý·Ê0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ý²ö×þÿÿÿÿ

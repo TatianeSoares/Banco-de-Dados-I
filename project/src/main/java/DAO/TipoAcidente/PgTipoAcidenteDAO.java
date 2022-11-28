@@ -20,52 +20,36 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
   private final Connection connection;
 
   private static final String INSERT_TIPO_ACIDENTE =
-      "INSERT INTO rodovia.tipoAcidente(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.tipoAcidente(descricao) " +
+          "VALUES(?)";
 
   private static final String BUSCA_TODOS_TIPOSACIDENTES =
-      "SELECT id, descricao" +
-          "FROM rodovia.tipoAcidente" +
-          "ORDER BY id";
+      "SELECT descricao " +
+          "FROM rodovia.tipoAcidente " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_TIPO_ACIDENTE =
-      "SELECT id, descricao" +
-          "FROM rodovia.tipoAcidente" +
-          "WHERE id = ?;";
+      "SELECT descricao " +
+          "FROM rodovia.tipoAcidente " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_TIPO_ACIDENTE =
-      "UPDATE FROM rodovia.tipoAcidente" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE rodovia.tipoAcidente " +
+          "SET descricao " +
+          "WHERE descricao = ?;";
 
   private static final String DELETE_TIPO_ACIDENTE =
-      "DELETE FROM rodovia.tipoAcidente" +
-          "WHERE id = ;";
+      "DELETE FROM rodovia.tipoAcidente " +
+          "WHERE descricao = ?;";
 
   public PgTipoAcidenteDAO(Connection connection) {
     this.connection = connection;
   }
 
   @Override
-  public void adicionarTipoAcidente(TipoAcidente tipoAcidente) throws SQLException {
-    create(tipoAcidente);
-  }
-
-  @Override
-  public TipoAcidente getTipoAcidente(int id) throws SQLException {
-    return read(id);
-  }
-
-  @Override
-  public List<TipoAcidente> getTodosTipoAcidentes() throws SQLException {
-    return all();
-  }
-
-  @Override
   public void create(TipoAcidente tipoAcidente) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_TIPO_ACIDENTE)) {
-      statement.setInt(1, tipoAcidente.getIdTipoAcidente());
-      statement.setString(2, tipoAcidente.getDescricaoTipoAcidente());
+      statement.setString(1, tipoAcidente.getDescricaoTipoAcidente());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir tipoAcidente");
@@ -73,22 +57,22 @@ public class PgTipoAcidenteDAO implements TipoAcidenteDAO{
   }
 
   @Override
-  public TipoAcidente read(Integer id) throws SQLException {
+  public TipoAcidente read(String id) throws SQLException {
     TipoAcidente tipoAcidente = new TipoAcidente();
-
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_ACIDENTE)) {
-      statement.setInt(1, id);
-      try (ResultSet result = statement.executeQuery()) {
-        if (result.next()) {
-          tipoAcidente.setIdTipoAcidente(result.getInt("idTipoAcidente"));
-          tipoAcidente.setDescricaoTipoAcidente(result.getString("descricaoTipoAcidente"));
-        } else {
-          throw new SQLException("Erro ao visualizar: tipoAcidente não pode ser encontrado.");
-        }
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(PgTipoAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-    }
+//
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TIPO_ACIDENTE)) {
+//      statement.setInt(1, id);
+//      try (ResultSet result = statement.executeQuery()) {
+//        if (result.next()) {
+//          tipoAcidente.setIdTipoAcidente(result.getInt("idTipoAcidente"));
+//          tipoAcidente.setDescricaoTipoAcidente(result.getString("descricaoTipoAcidente"));
+//        } else {
+//          throw new SQLException("Erro ao visualizar: tipoAcidente não pode ser encontrado.");
+//        }
+//      }
+//    } catch (SQLException ex) {
+//      Logger.getLogger(PgTipoAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
     return tipoAcidente;
   }
 

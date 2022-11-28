@@ -1,0 +1,17 @@
+
+V	java:S125?"<This block of commented-out lines of code should be removed.(­ÍÖùÿÿÿÿ
+J
+java:S2695S"/This "PreparedStatement" only has 1 parameters.(å îïÿÿÿÿÿ
+W
+java:S1128"5Remove this unused import 'DAO.Rodovia.PgRodoviaDAO'.(•÷ö¯şÿÿÿÿ8—ÊÔË0
+M
+java:S1128"+Remove this unused import 'model.Acidente'.(‚İº¯ùÿÿÿÿ8—ÊÔË0
+G
+java:S1128"*Remove this unused import 'model.Rodovia'.(ãÆø¢8—ÊÔË0
+M
+java:S1068"7Remove this unused "BUSCA_TIPO_ACIDENTE" private field.(§ê‰
+k
+java:S1192""UDefine a constant instead of duplicating this literal "WHERE descricao = ?;" 3 times.(çÑØ
+
+java:S1488="dImmediately return this expression instead of assigning it to the temporary variable "tipoAcidente".(®½®Ìÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¹«ˆıÿÿÿÿ

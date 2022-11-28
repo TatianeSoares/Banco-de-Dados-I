@@ -1,0 +1,13 @@
+
+V	java:S125U"<This block of commented-out lines of code should be removed.(°ÓÌ·øÿÿÿÿ
+G
+java:S2695ˆ"+This "PreparedStatement" has no parameters.(Ù¬È·ûÿÿÿÿ
+Y
+java:S1128"7Remove this unused import 'DAO.Acidente.PgAcidenteDAO'.(óÈ—àşÿÿÿÿ8® ÊÔË0
+M
+java:S1128"+Remove this unused import 'model.Acidente'.(‚İº¯ùÿÿÿÿ8® ÊÔË0
+R
+java:S1068"7Remove this unused "BUSCA_ULTRAPASSAGEM" private field.(Æüúâşÿÿÿÿ
+{
+java:S1488S"eImmediately return this expression instead of assigning it to the temporary variable "ultrapassagem".(³¦Çì
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(çÎÄšûÿÿÿÿ

@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04ecd6ba-e2ac-4dd9-b6f0-be4fcdc38c56" name="Changes" comment="Arrumando dependencias do projeto" />
+    <list default="true" id="04ecd6ba-e2ac-4dd9-b6f0-be4fcdc38c56" name="Changes" comment="Correção PGVelocidadeMaximaDAO">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_2022_20_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_2022_20_56__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_11_2022_23_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_11_2022_23_44__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_00__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_01__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +169,7 @@
       <workItem from="1669037489888" duration="66000" />
       <workItem from="1669059136433" duration="4581000" />
       <workItem from="1669079248523" duration="5238000" />
-      <workItem from="1669670577946" duration="2509000" />
+      <workItem from="1669670577946" duration="2822000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -227,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669079851803</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Correção PGVelocidadeMaximaDAO">
+      <created>1669673110088</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669673110088</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +266,8 @@
     <MESSAGE value="Arrumando input.xhtml" />
     <MESSAGE value="Arrumando lógica de UploadAcidente" />
     <MESSAGE value="Arrumando dependencias do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arrumando dependencias do projeto" />
+    <MESSAGE value="Correção PGVelocidadeMaximaDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção PGVelocidadeMaximaDAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

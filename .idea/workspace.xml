@@ -9,29 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="uploadUltrapassagem e uploadAcidente implementados">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_primefaces_themes_all_themes_1_0_10.xml" beforeDir="false" />
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="uploadVelocidadeMaxima">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorio.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorioGrave.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2022_09_48_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2022_09_48__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/VelocidadeMaximaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadUltrapassagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadUltrapassagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadVelocidadeMaxima.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/classes/UploadVelocidadeMaxima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/UltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/UltrapassagemDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadAcidente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/InputController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadVelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadVelocidadeMaxima.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/UltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/UltrapassagemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadVelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadVelocidadeMaxima.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/jboss-web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/lib/all-themes-1.0.10.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,27 +42,33 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="HTML File" />
-        <option value="jsf" />
         <option value="Tag Library Descriptor" />
+        <option value="jsf" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="desenvolvimento" />
+        <entry key="$PROJECT_DIR$" value="#14-fazer-relatotio" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/relatorioGrave.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2GGMQDSagwQbcRIc9m9zV2CjpfF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -70,18 +76,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
@@ -93,7 +95,7 @@
   </component>
   <component name="RunManager">
     <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="13">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/${project.artifactId}-${project.version}" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/project-1.0-SNAPSHOT/input.xhtml" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -185,10 +187,9 @@
       <workItem from="1667823608651" duration="5960000" />
       <workItem from="1667858621612" duration="5790000" />
       <workItem from="1668778844511" duration="5532000" />
-      <workItem from="1669124056801" duration="3458000" />
-      <workItem from="1669141070162" duration="2370000" />
-      <workItem from="1669144992056" duration="625000" />
-      <workItem from="1669210927153" duration="4050000" />
+      <workItem from="1669037489888" duration="66000" />
+      <workItem from="1669059136433" duration="4581000" />
+      <workItem from="1669079248523" duration="5238000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -232,21 +233,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667861978010</updated>
     </task>
-    <task id="LOCAL-00007" summary="arrumando leitura float e date">
-      <created>1669039690848</created>
+    <task id="LOCAL-00007" summary="Arrumando dependencias do projeto">
+      <created>1669031323765</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1669039690848</updated>
+      <updated>1669031323766</updated>
     </task>
-    <task id="LOCAL-00008" summary="uploadUltrapassagem e uploadAcidente implementados">
-      <created>1669074797549</created>
+    <task id="LOCAL-00008" summary="Arrumando dependencias do projeto">
+      <created>1669031573063</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1669074797549</updated>
+      <updated>1669031573063</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Arrumando dependencias do projeto">
+      <created>1669079851803</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669079851803</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,21 +273,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />
-    <MESSAGE value="Arrumando dependencias do projeto" />
     <MESSAGE value="readUploadAcidente implementado parcialmente" />
     <MESSAGE value="getDAO's e readUploadAcidente" />
     <MESSAGE value="Ajustes controller" />
     <MESSAGE value="Arrumando input.xhtml" />
     <MESSAGE value="Arrumando lógica de UploadAcidente" />
-    <MESSAGE value="arrumando leitura float e date" />
-    <MESSAGE value="uploadUltrapassagem e uploadAcidente implementados" />
-    <option name="LAST_COMMIT_MESSAGE" value="uploadUltrapassagem e uploadAcidente implementados" />
+    <MESSAGE value="Arrumando dependencias do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumando dependencias do projeto" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="JBossConfiguration">
-        <watch expression="contents" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

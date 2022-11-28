@@ -130,7 +130,7 @@ public class UploadAcidente {
 //      data != null && hora != null &&
       if ( nrOcorrencia != null && descricaoTipoOcorrencia != null && km != 0 && descricaoTrechoRodovia != null && descricaoSentidoRodovia != null && descricaoTipoAcidente != null) {
         // TODO implementação dos outros
-        PgAcidenteDAO.adicionarAcidente(acidente);
+        //PgAcidenteDAO.adicionarAcidente(acidente);
         //TipoAcidenteDAO.adicionarTipoAcidente(tipoAcidente);
         //TipoOcorrenciaDAO.adicionarTipoOcorrencia(tipoOcorrencia);
       }

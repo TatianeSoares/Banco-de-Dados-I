@@ -17,6 +17,7 @@ public class InputController implements Serializable {
 
   @Getter @Setter private UploadedFile file;
   @Getter @Setter private String tipoSelecionado;
+  @Getter @Setter private String relatorioSelecionado;
 
   public void init() {
 

@@ -11,34 +11,28 @@
         <h:form enctype="multipart/form-data" id="form">
             <div class="ui-g">
                 <div class="ui-g-12">
-                    <p:toolbar>
-                        <p:toolbarGroup align="right">
-                            <p:commandButton value="Inserir dados" style="margin-right: 15px;"
-                                             action="input.xhtml?faces-redirect=true"/>
-                            <p:commandButton value="Consultar Rodovias" style="margin-right: 15px;"
-                                             action="login.xhtml?faces-redirect=true"/>
-                        </p:toolbarGroup>
-                    </p:toolbar>
                     <div class="ui-fluid p-grid">
-                        <div style="text-align: center"
-                             class="p-col-12 p-md-12">
-                            <h1>Upload dos dados abertos</h1>
-                        </div>
-                        <div class="p-col-12 p-md-12">
-                            <p:outputLabel value="Selecione o arquivo:"/>
-                        </div>
-
-                        <div class="p-col-12 p-md-3">
-                            <p:selectOneMenu id="tipo" value="#{inputController.tipoSelecionado}">
-                                <f:selectItem itemLabel="Select One" itemValue=""/>
-                                <f:selectItem itemLabel="Acidente" itemValue="Acidente"/>
-                                <f:selectItem itemLabel="Ultrapassagem" itemValue="Ultrapassagem"/>
-                                <f:selectItem itemLabel="Velocidade Máxima" itemValue="VelocidadeMaxima"/>
-                            </p:selectOneMenu>
-                            <p:fileUpload mode="advanced"
-                                          listener="#{inputController.uploadFile}"/>
-                        </div>
-
+                        <p:fieldset legend="Carga de Dados"
+                                    style="margin: auto;
+                                    width: 70%;
+                                    font-size: 20px;">
+                            <div class="p-col-12 p-md-12">
+                                <p:outputLabel value="Selecione o conteúdo do arquivo:"/>
+                            </div>
+                            <div class="p-col-12 p-md-5">
+                                <p:selectOneMenu id="tipo" value="#{inputController.tipSelecionado}">
+                                    <f:selectItem itemLabel="Select One" itemDisabled="true"/>
+                                    <f:selectItem itemLabel="Acidente" itemValue="acidente"/>
+                                    <f:selectItem itemLabel="Ultrapassagem" itemValue="ultrapassagem"/>
+                                    <f:selectItem itemLabel="Velocidade Máxima" itemValue="velocidade"/>
+                                    <p:ajax listener="#{inputController.setType(inputController.tipSelecionado)}"/>
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="p-col-12 p-md-3">
+                                <p:fileUpload mode="advanced"
+                                              listener="#{inputController.uploadFile}"/>
+                            </div>
+                        </p:fieldset>
                     </div>
                 </div>
             </div>

@@ -9,10 +9,4 @@ import java.util.List;
 
 public interface TipoAcidenteDAO extends DAO<TipoAcidente> {
 
-    public void adicionarTipoAcidente(TipoAcidente tipoAcidente) throws SQLException;
-
-    public TipoAcidente getTipoAcidente(int id) throws SQLException;
-
-    public List<TipoAcidente> getTodosTipoAcidentes() throws SQLException;
-
 }

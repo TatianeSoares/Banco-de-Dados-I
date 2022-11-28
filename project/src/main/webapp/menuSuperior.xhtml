@@ -8,11 +8,21 @@
     <title/>
 </h:head>
 <h:body>
+    <div style="text-align: center"
+         class="p-col-12 p-md-8">
+        <h1 style="font-size: 30px;
+        font-style: normal;
+        font-family: 'Arial';
+        color: black">Relação de Acidentes com Sinalização por Rodovias</h1>
+    </div>
     <p:toolbar id="menuSessao">
-        <p:toolbarGroup align="left">
-            <p:commandButton value="Relação de Acidentes com Sinalização por Rodovias"
-                             action="index.xhtml?faces-redirect=true"
-                             style="margin-left: 350px; width: 450px; height: 60px"/>
+        <p:toolbarGroup align="right">
+            <p:commandButton value="Inserir dados" style="margin-right: 15px;"
+                             action="input.xhtml?faces-redirect=true"/>
+            <p:commandButton value="Consultar Rodovias" style="margin-right: 15px;"
+                             action="relatorio.xhtml?faces-redirect=true"/>
+            <p:commandButton value="Histórico de cargas" style="margin-right: 15px;"
+                             action="historicoCarga.xhtml?faces-redirect=true"/>
         </p:toolbarGroup>
     </p:toolbar>
 </h:body>

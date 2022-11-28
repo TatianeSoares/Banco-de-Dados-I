@@ -34,9 +34,9 @@ public class Acidente {
     @Getter @Setter private Integer levementeFerido;
     @Getter @Setter private Integer gravementeFerido;
     @Getter @Setter private Integer mortos;
-    @Getter @Setter private Integer idTrechoRodovia;
-    @Getter @Setter private Integer idSentidoRodovia;
-    @Getter @Setter private Integer idTipoOcorrencia;
-    @Getter @Setter private Integer idTipoAcidente;
+    @Getter @Setter private String idTrechoRodovia;
+    @Getter @Setter private String idSentidoRodovia;
+    @Getter @Setter private String idTipoOcorrencia;
+    @Getter @Setter private String idTipoAcidente;
 
 }

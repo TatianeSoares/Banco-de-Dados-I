@@ -19,27 +19,27 @@ public class PgSentidoRodoviaDAO implements SentidoRodoviaDAO{
   private final Connection connection;
 
   private static final String INSERT_SENTIDO_RODOVIA =
-      "INSERT INTO rodovia.sentidoRodovia(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.sentidoRodovia(descricao) " +
+          "VALUES(?)";
 
   private static final String BUSCA_TODOS_SENTIDO_RODOVIAS =
-      "SELECT id, descricao" +
-          "FROM rodovia.sentidoRodovia" +
-          "ORDER BY id";
+      "SELECT descricao " +
+          "FROM rodovia.sentidoRodovia " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_SENTIDO_RODOVIA =
-      "SELECT id, descricao" +
-          "FROM rodovia.sentidoRodovia" +
-          "WHERE id = ?;";
+      "SELECT descricao " +
+          "FROM rodovia.sentidoRodovia " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_SENTIDO_RODOVIA =
-      "UPDATE FROM rodovia.sentidoRodovia" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE FROM rodovia.sentidoRodovia " +
+          "SET descricao " +
+          "WHERE descricao = ?;";
 
   private static final String DELETE_SENTIDO_RODOVIA =
-      "DELETE FROM rodovia.sentidoRodovia" +
-          "WHERE id = ;";
+      "DELETE FROM rodovia.sentidoRodovia " +
+          "WHERE descricao = ?;";
 
   public PgSentidoRodoviaDAO(Connection connection) {
     this.connection = connection;
@@ -48,8 +48,7 @@ public class PgSentidoRodoviaDAO implements SentidoRodoviaDAO{
   @Override
   public void create(SentidoRodovia sentidoRodovia) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_SENTIDO_RODOVIA)) {
-      statement.setInt(1, sentidoRodovia.getIdSentidoRodovia());
-      statement.setString(2, sentidoRodovia.getDescricaoSentidoRodovia());
+      statement.setString(1, sentidoRodovia.getDescricaoSentidoRodovia());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir sentidoRodovia");
@@ -57,22 +56,22 @@ public class PgSentidoRodoviaDAO implements SentidoRodoviaDAO{
   }
 
   @Override
-  public SentidoRodovia read(Integer id) throws SQLException {
+  public SentidoRodovia read(String id) throws SQLException {
     SentidoRodovia sentidoRodovia = new SentidoRodovia();
-
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_SENTIDO_RODOVIA)) {
-      statement.setInt(1, id);
-      try (ResultSet result = statement.executeQuery()) {
-        if (result.next()) {
-          sentidoRodovia.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
-          sentidoRodovia.setDescricaoSentidoRodovia(result.getString("descricaoSentidoRodovia"));
-        } else {
-          throw new SQLException("Erro ao visualizar: sentidoRodovia não pode ser encontrado.");
-        }
-      }
-    } catch (SQLException ex) {
-      Logger.getLogger(PgSentidoRodoviaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-    }
+//
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_SENTIDO_RODOVIA)) {
+//      statement.setInt(1, id);
+//      try (ResultSet result = statement.executeQuery()) {
+//        if (result.next()) {
+//          sentidoRodovia.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+//          sentidoRodovia.setDescricaoSentidoRodovia(result.getString("descricaoSentidoRodovia"));
+//        } else {
+//          throw new SQLException("Erro ao visualizar: sentidoRodovia não pode ser encontrado.");
+//        }
+//      }
+//    } catch (SQLException ex) {
+//      Logger.getLogger(PgSentidoRodoviaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
     return sentidoRodovia;
   }
 

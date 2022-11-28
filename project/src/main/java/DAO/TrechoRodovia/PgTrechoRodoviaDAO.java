@@ -19,27 +19,27 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   private final Connection connection;
 
   private static final String INSERT_TRECHO_RODOVIA =
-      "INSERT INTO rodovia.trechoRodovia(id, descricao)" +
-          "VALUES()";
+      "INSERT INTO rodovia.trechoRodovia(descricao, idRodovia) " +
+          "VALUES(?, ?)";
 
   private static final String BUSCA_TODOS_TRECHO_RODOVIA =
-      "SELECT id, descricao" +
-          "FROM rodovia.trechoRodovia" +
-          "ORDER BY id";
+      "SELECT descricao, idRodovia " +
+          "FROM rodovia.trechoRodovia " +
+          "ORDER BY descricao";
 
   private static final String BUSCA_TRECHO_RODOVIA =
-      "SELECT id, descricao" +
-          "FROM rodovia.trechoRodovia" +
-          "WHERE id = ?;";
+      "SELECT descricao, idRodovia " +
+          "FROM rodovia.trechoRodovia " +
+          "WHERE descricao = ?;";
 
   private static final String UPDATE_TRECHO_RODOVIA =
-      "UPDATE FROM rodovia.trechoRodovia" +
-          "SET id, descricao" +
-          "WHERE id = ;";
+      "UPDATE FROM rodovia.trechoRodovia " +
+          "SET descricao, idRodovia " +
+          "WHERE descricao = ?;";
 
   private static final String DELETE_TRECHO_RODOVIA =
-      "DELETE FROM rodovia.trechoRodovia" +
-          "WHERE id = ;";
+      "DELETE FROM rodovia.trechoRodovia " +
+          "WHERE descricao = ?;";
 
   public PgTrechoRodoviaDAO(Connection connection) {
     this.connection = connection;
@@ -48,8 +48,8 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   @Override
   public void create(TrechoRodovia trechoRodovia) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(INSERT_TRECHO_RODOVIA)) {
-      statement.setInt(1, trechoRodovia.getIdTrechoRodovia());
-      statement.setString(2, trechoRodovia.getDescricaoTrechoRodovia());
+      statement.setString(1, trechoRodovia.getDescricaoTrechoRodovia());
+      statement.setString(2, trechoRodovia.getIdRodovia());
       statement.executeUpdate();
     } catch (SQLException ex) {
       Messages.addGlobalError("Erro ao inserir trechoRodovia");
@@ -57,17 +57,17 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   }
 
   @Override
-  public TrechoRodovia read(Integer id) throws SQLException {
+  public TrechoRodovia read(String id) throws SQLException {
     TrechoRodovia trechoRodovia = new TrechoRodovia();
 
     try (PreparedStatement statement = connection.prepareStatement(BUSCA_TRECHO_RODOVIA)) {
-      statement.setInt(1, id);
+      statement.setString(1, id);
       try (ResultSet result = statement.executeQuery()) {
         if (result.next()) {
-          trechoRodovia.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
           trechoRodovia.setDescricaoTrechoRodovia(result.getString("Descricao"));
+          trechoRodovia.setIdRodovia(result.getString("idRodovia"));
         } else {
-          throw new SQLException("Erro ao visualizar: trechoRodovia não pode ser encontrado.");
+          trechoRodovia = null;
         }
       }
     } catch (SQLException ex) {
@@ -79,8 +79,8 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
   @Override
   public void update(TrechoRodovia trechoRodovia) throws SQLException {
     try (PreparedStatement statement = connection.prepareStatement(UPDATE_TRECHO_RODOVIA)){
-      statement.setInt(1, trechoRodovia.getIdTrechoRodovia());
-      statement.setInt(1, trechoRodovia.getIdTrechoRodovia());
+      statement.setString(1, trechoRodovia.getDescricaoTrechoRodovia());
+      statement.setString(2, trechoRodovia.getIdRodovia());
     } catch (SQLException ex) {
       Logger.getLogger(PgTrechoRodoviaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
     }
@@ -104,8 +104,8 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
          ResultSet result = statement.executeQuery()) {
       while (result.next()) {
         TrechoRodovia trechoRodovia = new TrechoRodovia();
-        trechoRodovia.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
         trechoRodovia.setDescricaoTrechoRodovia(result.getString("Descricao"));
+        trechoRodovia.setIdRodovia(result.getString("idRodovia"));
 
         trechoRodoviaList.add(trechoRodovia);
       }

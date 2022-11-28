@@ -6,18 +6,28 @@
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="conteudo">
         <f:metadata>
-            <f:viewAction action="#{inputController.init}"/>
+            <f:viewAction action="#{historicoCargaController.init}"/>
         </f:metadata>
         <h:form enctype="multipart/form-data" id="form">
             <div class="ui-g">
                 <div class="ui-g-12">
                     <div class="ui-fluid p-grid">
-                        <p:fieldset legend="Carga de Dados"
+                        <p:fieldset legend="Histórico de cargas efetuadas no banco de dados"
                                     style="margin: auto;
                                     width: 70%;
                                     font-size: 20px;">
 
+<!--                            <p:dataTable var="carga"-->
+<!--                                         id="datatableCarga"-->
+<!--                                         reflow="true"-->
+<!--                                         emptyMessage="Nenhuma carga foi efetuada">-->
 
+<!--                                <p:columnGroup type="header">-->
+<!--                                    <p:column headerText="Data e horario"/>-->
+<!--                                    <p:column headerText="Tipo de carga"/>-->
+<!--                                </p:columnGroup>-->
+
+<!--                            </p:dataTable>-->
 
                         </p:fieldset>
                     </div>

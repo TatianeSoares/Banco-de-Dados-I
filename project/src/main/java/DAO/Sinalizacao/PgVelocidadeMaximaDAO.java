@@ -59,17 +59,6 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
         this.connection = connection;
     }
 
-    public void adicionarVelocidadeMaxima(VelocidadeMaxima velocidadeMaxima) throws SQLException {
-        create(velocidadeMaxima);
-    }
-    public VelocidadeMaxima getVelocidadeMaxima(int id) throws SQLException {
-        return read(id);
-
-    }
-    public List<VelocidadeMaxima> getTodasVelocidadeMaximas() throws SQLException {
-        return all();
-    }
-
     @Override
     public void create(VelocidadeMaxima velocidadeMaxima) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(INSERT_VELOCIDADE_MAXIMA)) {
@@ -93,33 +82,33 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
     }
 
     @Override
-    public VelocidadeMaxima read(Integer id) throws SQLException {
+    public VelocidadeMaxima read(String id) throws SQLException {
         VelocidadeMaxima velocidadeMaxima = new VelocidadeMaxima();
-
-        try (PreparedStatement statement = connection.prepareStatement(BUSCA_VELOCIDADE_MAXIMA)) {
-            statement.setInt(1, id);
-            try (ResultSet result = statement.executeQuery()) {
-                if (result.next()) {
-                    velocidadeMaxima.setIdVelocidadeMaxima(result.getInt("idVelocidadeMaxima"));
-                    velocidadeMaxima.setSituacao(result.getString("situacao"));
-                    velocidadeMaxima.setUf(result.getString("uf"));
-                    velocidadeMaxima.setAnoPnvSnc(result.getInt("anoPnvSnc"));
-                    velocidadeMaxima.setVeloVeicPesado(result.getFloat("veloVeicPesado"));
-                    velocidadeMaxima.setVeloVeicLeve(result.getFloat("veloVeicLeve"));
-                    velocidadeMaxima.setLatitude(result.getFloat("latitude"));
-                    velocidadeMaxima.setLongitude(result.getFloat("longitude"));
-                    velocidadeMaxima.setMunicipio(result.getString("municipio"));
-                    velocidadeMaxima.setKm(result.getFloat("km"));
-                    velocidadeMaxima.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
-                    velocidadeMaxima.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
-                    velocidadeMaxima.setIdTipoPista(result.getInt("idTipoPista"));
-                } else {
-                    throw new SQLException("Erro ao visualizar: placa de velocidade máxima não pode ser encontrada.");
-                }
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(PgVelocidadeMaximaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
-        }
+//
+//        try (PreparedStatement statement = connection.prepareStatement(BUSCA_VELOCIDADE_MAXIMA)) {
+//            statement.setInt(1, id);
+//            try (ResultSet result = statement.executeQuery()) {
+//                if (result.next()) {
+//                    velocidadeMaxima.setIdVelocidadeMaxima(result.getInt("idVelocidadeMaxima"));
+//                    velocidadeMaxima.setSituacao(result.getString("situacao"));
+//                    velocidadeMaxima.setUf(result.getString("uf"));
+//                    velocidadeMaxima.setAnoPnvSnc(result.getInt("anoPnvSnc"));
+//                    velocidadeMaxima.setVeloVeicPesado(result.getFloat("veloVeicPesado"));
+//                    velocidadeMaxima.setVeloVeicLeve(result.getFloat("veloVeicLeve"));
+//                    velocidadeMaxima.setLatitude(result.getFloat("latitude"));
+//                    velocidadeMaxima.setLongitude(result.getFloat("longitude"));
+//                    velocidadeMaxima.setMunicipio(result.getString("municipio"));
+//                    velocidadeMaxima.setKm(result.getFloat("km"));
+//                    velocidadeMaxima.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
+//                    velocidadeMaxima.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
+//                    velocidadeMaxima.setIdTipoPista(result.getInt("idTipoPista"));
+//                } else {
+//                    throw new SQLException("Erro ao visualizar: placa de velocidade máxima não pode ser encontrada.");
+//                }
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(PgVelocidadeMaximaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//        }
         return velocidadeMaxima;
     }
 

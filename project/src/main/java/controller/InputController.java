@@ -15,7 +15,9 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.*;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.text.ParseException;
+import java.util.Calendar;
 import java.util.List;
 
 @Named
@@ -37,6 +39,16 @@ public class InputController implements Serializable {
   public void uploadFile(FileUploadEvent fileUploadEvent)
       throws IOException, SQLException, ParseException, ClassNotFoundException {
       UploadedFile file = fileUploadEvent.getFile();
+
+    /* Inserting Time in Carga */
+    Calendar date = Calendar.getInstance();
+    int hora = date.get(Calendar.HOUR_OF_DAY);
+    int minutos = date.get(Calendar.MINUTE);
+    int segundos = date.get(Calendar.SECOND);
+    String timeInString = hora + ":" + minutos + ":" + segundos;
+    timeInString = null;
+//    carga.setHora_carga(Time.valueOf(timeInString));
+//    logger.info("Hora da carga: " + carga.getHora_carga());
 
       if (file.getFileName() != null) {
         if (tipSelecionado.equals("acidente")) {

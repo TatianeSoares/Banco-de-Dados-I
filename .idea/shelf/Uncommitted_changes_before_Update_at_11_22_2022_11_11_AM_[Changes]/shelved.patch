@@ -1,0 +1,387 @@
+Index: project/src/main/webapp/historicoCarga.xhtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><ui:composition xmlns=\"http://www.w3.org/1999/xhtml\"\r\n                xmlns:h=\"http://xmlns.jcp.org/jsf/html\"\r\n                xmlns:p=\"http://primefaces.org/ui\"\r\n                xmlns:ui=\"http://xmlns.jcp.org/jsf/facelets\"\r\n                xmlns:f=\"http://xmlns.jcp.org/jsf/core\"\r\n                template=\"/WEB-INF/templates/default.xhtml\">\r\n    <ui:define name=\"conteudo\">\r\n        <f:metadata>\r\n            <f:viewAction action=\"#{inputController.init}\"/>\r\n        </f:metadata>\r\n        <h:form enctype=\"multipart/form-data\" id=\"form\">\r\n            <div class=\"ui-g\">\r\n                <div class=\"ui-g-12\">\r\n                    <div class=\"ui-fluid p-grid\">\r\n                        <p:fieldset legend=\"Histórico de cargas efetuadas no banco de dados\"\r\n                                    style=\"margin: auto;\r\n                                    width: 70%;\r\n                                    font-size: 20px;\">\r\n\r\n<!--                            <p:dataTable var=\"carga\"-->\r\n<!--                                         id=\"datatableCarga\"-->\r\n<!--                                         reflow=\"true\"-->\r\n<!--                                         emptyMessage=\"Nenhuma carga foi efetuada\">-->\r\n\r\n<!--                                <p:columnGroup type=\"header\">-->\r\n<!--                                    <p:column headerText=\"Data e horario\"/>-->\r\n<!--                                    <p:column headerText=\"Tipo de carga\"/>-->\r\n<!--                                </p:columnGroup>-->\r\n\r\n<!--                            </p:dataTable>-->\r\n\r\n                        </p:fieldset>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </h:form>\r\n    </ui:define>\r\n</ui:composition>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project/src/main/webapp/historicoCarga.xhtml b/project/src/main/webapp/historicoCarga.xhtml
+--- a/project/src/main/webapp/historicoCarga.xhtml	(revision a6da1331a38eb0e5a215ea6811093e133fc05104)
++++ b/project/src/main/webapp/historicoCarga.xhtml	(date 1669125326534)
+@@ -6,7 +6,7 @@
+                 template="/WEB-INF/templates/default.xhtml">
+     <ui:define name="conteudo">
+         <f:metadata>
+-            <f:viewAction action="#{inputController.init}"/>
++            <f:viewAction action="#{historicoCargaController.init}"/>
+         </f:metadata>
+         <h:form enctype="multipart/form-data" id="form">
+             <div class="ui-g">
+Index: project/src/main/java/controller/InputController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\r\n\r\nimport controller.classes.UploadAcidente;\r\nimport controller.classes.UploadUltrapassagem;\r\nimport controller.classes.UploadVelocidadeMaxima;\r\nimport lombok.Getter;\r\nimport lombok.Setter;\r\nimport org.primefaces.event.FileUploadEvent;\r\nimport org.primefaces.model.file.UploadedFile;\r\nimport javax.faces.view.ViewScoped;\r\nimport javax.inject.Named;\r\nimport java.io.*;\r\nimport java.sql.SQLException;\r\nimport java.text.ParseException;\r\n\r\n@Named\r\n@ViewScoped\r\npublic class InputController implements Serializable {\r\n\r\n  @Getter @Setter private UploadedFile file;\r\n  @Getter @Setter private String tipSelecionado;\r\n  @Getter @Setter private int tipo = 0;\r\n\r\n  public void init() {\r\n\r\n  }\r\n\r\n  public void setType(String tipSelecionado){\r\n    tipSelecionado = this.tipSelecionado;\r\n  }\r\n\r\n  public void uploadFile(FileUploadEvent fileUploadEvent)\r\n      throws IOException, SQLException, ParseException {\r\n      UploadedFile file = fileUploadEvent.getFile();\r\n\r\n      if (file.getFileName() != null) {\r\n        if (tipSelecionado.equals(\"acidente\")) {\r\n          UploadAcidente.readUploadAcidente(file);\r\n        }\r\n        if (tipSelecionado.equals(\"ultrapassagem\")) {\r\n          UploadUltrapassagem.readUploadUltrapassagem(file);\r\n        }\r\n        if (tipSelecionado.equals(\"velocidade\")) {\r\n          UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file);\r\n        }\r\n      }\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project/src/main/java/controller/InputController.java b/project/src/main/java/controller/InputController.java
+--- a/project/src/main/java/controller/InputController.java	(revision a6da1331a38eb0e5a215ea6811093e133fc05104)
++++ b/project/src/main/java/controller/InputController.java	(date 1669125326625)
+@@ -19,13 +19,13 @@
+ 
+   @Getter @Setter private UploadedFile file;
+   @Getter @Setter private String tipSelecionado;
+-  @Getter @Setter private int tipo = 0;
+ 
+   public void init() {
+ 
+   }
+ 
+   public void setType(String tipSelecionado){
++
+     tipSelecionado = this.tipSelecionado;
+   }
+ 
+@@ -44,5 +44,7 @@
+           UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file);
+         }
+       }
++
++      tipSelecionado = null;
+   }
+ }
+Index: project/src/main/java/DAO/HistoricoCarga/HistoricoCargaDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project/src/main/java/DAO/HistoricoCarga/HistoricoCargaDAO.java b/project/src/main/java/DAO/HistoricoCarga/HistoricoCargaDAO.java
+new file mode 100644
+--- /dev/null	(date 1669126312920)
++++ b/project/src/main/java/DAO/HistoricoCarga/HistoricoCargaDAO.java	(date 1669126312920)
+@@ -0,0 +1,4 @@
++package DAO.HistoricoCarga;
++
++public class HistoricoCargaDAO {
++}
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-212.4746.92\">\r\n    <data-source name=\"tatiane@sicm.dc.uel.br\" uuid=\"f37362ac-7719-4081-a13e-0626517c85ce\">\r\n      <database-info product=\"\" version=\"\" jdbc-version=\"\" driver-name=\"\" driver-version=\"\" dbms=\"POSTGRES\" exact-version=\"0\" />\r\n      <secret-storage>forget</secret-storage>\r\n      <schema-mapping />\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision a6da1331a38eb0e5a215ea6811093e133fc05104)
++++ b/.idea/dataSources.local.xml	(date 1669125630038)
+@@ -2,9 +2,19 @@
+ <project version="4">
+   <component name="dataSourceStorageLocal" created-in="IU-212.4746.92">
+     <data-source name="tatiane@sicm.dc.uel.br" uuid="f37362ac-7719-4081-a13e-0626517c85ce">
+-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+-      <secret-storage>forget</secret-storage>
+-      <schema-mapping />
++      <database-info product="PostgreSQL" version="13.4 (Ubuntu 13.4-4.pgdg20.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="13.4" exact-driver-version="42.5">
++        <identifier-quote-string>&quot;</identifier-quote-string>
++      </database-info>
++      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
++      <secret-storage>master_key</secret-storage>
++      <user-name>tatiane</user-name>
++      <schema-mapping>
++        <introspection-scope>
++          <node kind="database" qname="@">
++            <node kind="schema" qname="@" />
++          </node>
++        </introspection-scope>
++      </schema-mapping>
+     </data-source>
+   </component>
+ </project>
+\ No newline at end of file
+Index: tables.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>CREATE SCHEMA rodovia;\r\n\r\nCREATE TABLE \"rodovia\".\"rodovias\" (\r\n\tid INT NOT NULL,\r\n\tdescricao VARCHAR(30) NOT NULL,\r\n\tCONSTRAINT pk_rodovia PRIMARY KEY(id)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"trechoRodovia\" (\r\n\tid INT NOT NULL,\r\n\tdescricao VARCHAR(30) NOT NULL,\r\n\tidRodovia INT,\r\n\tCONSTRAINT pk_treRod PRIMARY KEY(id),\r\n\tCONSTRAINT fk_treRod_rod FOREIGN KEY(idRodovia)\r\n\t\tREFERENCES rodovia.rodovias(id)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"sentidoRodovia\" (\r\n\tid INT NOT NULL,\r\n\tdescricao VARCHAR(30) NOT NULL,\r\n\tCONSTRAINT pk_sentRod PRIMARY KEY(id)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"tipoAcidente\" (\r\n\tid INT NOT NULL,\r\n\tdescricao VARCHAR(50) NOT NULL,\r\n\tCONSTRAINT pk_tipAcidente PRIMARY KEY(id)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"tipoOcorrencia\" (\r\n\tid INT NOT NULL,\r\n\tdescricao VARCHAR(30) NOT NULL,\r\n\tCONSTRAINT pk_tipOcorrencia PRIMARY KEY(id)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"tipoPista\" (\r\n\tid INT NOT NULL,\r\n\tdescricao VARCHAR(30) NOT NULL,\r\n\tCONSTRAINT pk_tipPista PRIMARY KEY(id)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"acidente\" (\r\n    idAcidente NOT NULL,\r\n\tdata DATE NOT NULL,\r\n\thora TIME,\r\n\tnrOcorrencia Integer NOT NULL,\r\n\tkm REAL, \r\n\tautomovel INT DEFAULT 0,\r\n\tbicicleta INT DEFAULT 0, \r\n\tcaminhao INT DEFAULT 0, \r\n\tmoto INT DEFAULT 0, \r\n\tonibus INT DEFAULT 0, \r\n\toutros INT DEFAULT 0, \r\n\ttracaoAnimal INT DEFAULT 0, \r\n\tcargaEspecial INT DEFAULT 0, \r\n\ttratorMaquina INT DEFAULT 0, \r\n\tutilitario INT DEFAULT 0, \r\n\tileso INT DEFAULT 0, \r\n\tlevementeFerido INT DEFAULT 0, \r\n\tgravementeFerido INT DEFAULT 0, \r\n\tmortos INT DEFAULT 0,\r\n\tidTrechoRodovia INT DEFAULT 0,\r\n\tidSentidoRodovia INT DEFAULT 0,\r\n\tidTipoAcidente INT DEFAULT 0,\r\n\tidTipoOcorrencia INT DEFAULT 0,\r\n\tCONSTRAINT pk_acidente PRIMARY KEY(idAcidente),\r\n\tCONSTRAINT fk_aci_trechoRod FOREIGN KEY(idTrechoRodovia)\r\n\t\tREFERENCES rodovia.\"trechoRodovia\"(id),\r\n\tCONSTRAINT fk_aci_sentRod FOREIGN KEY(idSentidoRodovia)\r\n\t\tREFERENCES rodovia.\"sentidoRodovia\"(id),\r\n\tCONSTRAINT fk_aci_tipAci FOREIGN KEY(idTipoAcidente)\r\n\t\tREFERENCES rodovia.\"tipoAcidente\"(id),\r\n\tCONSTRAINT fk_aci_tipOco FOREIGN KEY(idTipoOcorrencia)\r\n\t\tREFERENCES rodovia.\"tipoOcorrencia\"(id),\r\n\tCONSTRAINT ck_aci CHECK (km >= 0.00)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"velocidadeMaxima\" (\r\n\tid INT NOT NULL,\r\n\tsituacao VARCHAR(30),\r\n\tuf VARCHAR(2),\r\n\tanoPnvSnv INT,\r\n\tveloVeicPesado REAL, \r\n\tveloVeicLeve REAL, \r\n\tlatitude REAL, \r\n\tlongitude REAL, \r\n\tmunicipio VARCHAR(40), \r\n\tkm REAL,\r\n\tidTrechoRodovia INT,\r\n\tidSentidoRodovia INT,\r\n\tidTipoPista INT,\r\n\tCONSTRAINT pk_veloMaxima PRIMARY KEY(id),\r\n\tCONSTRAINT fk_sina_treRod FOREIGN KEY(idTrechoRodovia)\r\n\t\tREFERENCES rodovia.\"trechoRodovia\"(id),\r\n\tCONSTRAINT fk_sina_sentRod FOREIGN KEY(idSentidoRodovia)\r\n\t\tREFERENCES rodovia.\"sentidoRodovia\"(id),\r\n\tCONSTRAINT fk_sina_tipPista FOREIGN KEY(idTipoPista)\r\n\t\tREFERENCES rodovia.\"tipoPista\"(id),\r\n\tCONSTRAINT ck_velMax CHECK (km >= 0.00)\r\n);\r\n\r\nCREATE TABLE \"rodovia\".\"ultrapassagem\" (\r\n\tid INT NOT NULL,\r\n\tsituacao VARCHAR(30),\r\n\tuf VARCHAR(2),\r\n\tanoPnvSnv INT,\r\n\tkmInicial REAL, \r\n\tkmFinal REAL, \r\n\tlongitudeFinal REAL, \r\n\tlongitudeInicial REAL, \r\n\tlatitudeFinal REAL, \r\n\tlatitudeInicial REAL,\r\n\tidTrechoRodovia INT,\r\n\tidSentidoRodovia INT,\r\n\tidTipoPista INT,\r\n\tCONSTRAINT pk_ultrapassagem PRIMARY KEY(id),\r\n\tCONSTRAINT fk_sina_treRod FOREIGN KEY(idTrechoRodovia)\r\n\t\tREFERENCES rodovia.\"trechoRodovia\"(id),\r\n\tCONSTRAINT fk_sina_sentRod FOREIGN KEY(idSentidoRodovia)\r\n\t\tREFERENCES rodovia.\"sentidoRodovia\"(id),\r\n\tCONSTRAINT fk_sina_tipPista FOREIGN KEY(idTipoPista)\r\n\t\tREFERENCES rodovia.\"tipoPista\"(id),\r\n\tCONSTRAINT ck_ultra CHECK (kmInicial >= 0.00 AND (kmFinal >= 0.00))\r\n);\r\n\r\n-- 3 RODOVIAS\r\nINSERT INTO rodovia.rodovias(id, descricao)\r\n\tVALUES (1, 'Rodovia do Aço');\r\nINSERT INTO rodovia.rodovias(id, descricao)\r\n\tVALUES (2, 'Autopista Fernão Dias');\r\nINSERT INTO rodovia.rodovias(id, descricao)\r\n\tVALUES (3, 'CRO');\r\n    \r\n-- TRECHO RODOVIA\r\nINSERT INTO rodovia.\"trechoRodovia\"(id, descricao, idRodovia)\r\n\tVALUES (1, 'BR-393', 1);\r\nINSERT INTO rodovia.\"trechoRodovia\"(id, descricao, idRodovia)\r\n\tVALUES (2, 'BR-381', 2); \r\nINSERT INTO rodovia.\"trechoRodovia\"(id, descricao, idRodovia)\r\n\tVALUES (3, 'BR-163', 3); \r\n    \r\n-- SENTIDO RODOVIA\r\nINSERT INTO rodovia.\"sentidoRodovia\"(id, descricao)\r\n\tVALUES (1, 'Decrescente');\r\nINSERT INTO rodovia.\"sentidoRodovia\"(id, descricao)\r\n\tVALUES (2, 'Crescente');   \r\nINSERT INTO rodovia.\"sentidoRodovia\"(id, descricao)\r\n\tVALUES (3, 'Norte');\r\nINSERT INTO rodovia.\"sentidoRodovia\"(id, descricao)\r\n\tVALUES (4, 'Sul');\r\n    \r\n-- TIPO PISTA\r\nINSERT INTO rodovia.\"tipoPista\"(id, descricao)\r\n\tVALUES (1, 'Principal');\r\nINSERT INTO rodovia.\"tipoPista\"(id, descricao)\r\n\tVALUES (2, 'Marginal');  \r\n\r\n-- TIPO ACIDENTE \r\nINSERT INTO rodovia.\"tipoAcidente\"(id, descricao)\r\n\tVALUES (1, 'Derrapagem');\r\nINSERT INTO rodovia.\"tipoAcidente\"(id, descricao)\r\n\tVALUES (2, 'Colisão lateral no sentido contrário');\r\nINSERT INTO rodovia.\"tipoAcidente\"(id, descricao)\r\n\tVALUES (3, 'Tombamento');\r\nINSERT INTO rodovia.\"tipoAcidente\"(id, descricao)\r\n\tVALUES (4, 'Colisão Traseira');\r\n    \r\n-- TIPO OCORRÊNCIA\r\nINSERT INTO rodovia.\"tipoOcorrencia\"(id, descricao)\r\n\tVALUES (1, 'sem vítima');\r\nINSERT INTO rodovia.\"tipoOcorrencia\"(id, descricao)\r\n\tVALUES (2, 'com vítima');\r\n    \r\n-- PLACAS VELOCIDADE MAXIMA\r\n-- caso 1 - Sinalização VelMax AÇO\r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (1, 'Ativo', 'RJ', 2016, 60, 60, -22.4466, -43.7943, 'Barra do Piraí', 250.35, 1, 1, 1);\r\n\r\n-- caso 2 - Sinalização VelMax AÇO\r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (2, 'Ativo', 'RJ', 2016, 60, 60, -22.4441, -43.7916, 'Barra do Piraí', 249.94, 1, 1, 1);\r\n    \r\n-- caso 3 - Sinalização VelMax Fernão Dias\r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (3, 'Ativo', 'MG', 2007, 60, 60, -19.9642, -44.1714, 'Betim', 493.235, 2, 2, 1);\r\n\r\n-- caso 4 - Sinalização VelMax Fernão Dias\r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (4, 'Ativo', 'MG', 2007, 90, 110, -19.9805, -44.2009, 'Betim', 497.16, 2, 2, 1);\r\n    \r\n-- caso 5 - Sinalização VelMax Fernão Dias\r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (5, 'Ativo', 'SP', 2007, 40, 40, -23.3424, -46.5734, 'Mairiporã', 68, 2, 1, 1);\r\n    \r\n-- caso 6 - Sinalização VelMax Fernão Dias\r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (6, 'Ativo', 'SP', 2007, 80, 100, -23.3468, -46.5638, 'Mairiporã', 69.22, 2, 1, 1);\r\n\r\n-- caso 7 - Sinalização VelMax CRO \r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (7, 'Ativo', 'MT', 2016, 60, 60, -15.7005, -56.0453, 'Cuiabá', 503.93, 3, 2, 1);\r\n\r\n-- caso 8 - Sinalização VelMax CRO \r\nINSERT INTO rodovia.\"velocidadeMaxima\"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (8, 'Ativo', 'MT', 2016, 80, 80, -15.701, -56.0502, 'Cuiabá', 504.43, 3, 2, 1);\r\n\r\n-- PLACAS ULTRAPASSAGEM\r\n-- caso 1 - Sinalização Ultrapassagem AÇO\r\nINSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (1, 'Ativo', 'RJ', 2016, 248.32, 251.66, -43.8057, -43.7788, -22.4531, -22.4359, 1, 2, 1);\r\n-- caso 2 - Sinalização Ultrapassagem AÇO\r\nINSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (2, 'Ativo', 'RJ', 2016, 252.03, 256.81, -43.8505, -43.8082, -22.4612, -22.4534, 1, 2, 1); \r\n-- caso 3 - Sinalização Ultrapassagem CRO\r\nINSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (3, 'Ativo', 'MT', 2016, 671.2, 671.8, -55.9958, -55.998, -13.2052, -13.2101, 3, 1, 1); \r\n-- caso 4 - Sinalização Ultrapassagem CRO\r\nINSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)\r\n\tVALUES (4, 'Ativo', 'MT', 2016, 630.8, 631.1, -56.0262, -56.0261, -13.5303, -13.5312, 3, 1, 1);    \r\n\r\n-- ACIDENTES\r\n-- caso 1 - Acidente AÇO\r\nINSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)\r\n\tVALUES ('2010-01-01', '04:21:00', 18, 167, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 3, 1, 1);\r\n-- caso 2 - Acidente AÇO \r\nINSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)\r\n\tVALUES ('2017-01-18', '11:33:00', 36, 168, 1, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 1, 3, 2, 2);\r\n-- caso 3 - Acidente Fernão Dias\r\n INSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)\r\n\tVALUES ('2019-06-30', '09:05:00', 93, 529.5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 4, 3, 2);\r\n-- caso 4 - Acidente Fernão Dias\r\n INSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)\r\n\tVALUES ('2019-06-30', '09:16:00', 100, 529.5, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 4, 4, 2);\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tables.sql b/tables.sql
+--- a/tables.sql	(revision a6da1331a38eb0e5a215ea6811093e133fc05104)
++++ b/tables.sql	(date 1669125426871)
+@@ -40,10 +40,9 @@
+ );
+ 
+ CREATE TABLE "rodovia"."acidente" (
+-    idAcidente NOT NULL,
+ 	data DATE NOT NULL,
+ 	hora TIME,
+-	nrOcorrencia Integer NOT NULL,
++	nrOcorrencia REAL NOT NULL,
+ 	km REAL, 
+ 	automovel INT DEFAULT 0,
+ 	bicicleta INT DEFAULT 0, 
+@@ -59,11 +58,11 @@
+ 	levementeFerido INT DEFAULT 0, 
+ 	gravementeFerido INT DEFAULT 0, 
+ 	mortos INT DEFAULT 0,
+-	idTrechoRodovia INT DEFAULT 0,
+-	idSentidoRodovia INT DEFAULT 0,
+-	idTipoAcidente INT DEFAULT 0,
+-	idTipoOcorrencia INT DEFAULT 0,
+-	CONSTRAINT pk_acidente PRIMARY KEY(idAcidente),
++	idTrechoRodovia INT,
++	idSentidoRodovia INT,
++	idTipoAcidente INT,
++	idTipoOcorrencia INT,
++	CONSTRAINT pk_acidente PRIMARY KEY(data, nrOcorrencia),
+ 	CONSTRAINT fk_aci_trechoRod FOREIGN KEY(idTrechoRodovia)
+ 		REFERENCES rodovia."trechoRodovia"(id),
+ 	CONSTRAINT fk_aci_sentRod FOREIGN KEY(idSentidoRodovia)
+@@ -123,111 +122,9 @@
+ 	CONSTRAINT ck_ultra CHECK (kmInicial >= 0.00 AND (kmFinal >= 0.00))
+ );
+ 
+--- 3 RODOVIAS
+-INSERT INTO rodovia.rodovias(id, descricao)
+-	VALUES (1, 'Rodovia do Aço');
+-INSERT INTO rodovia.rodovias(id, descricao)
+-	VALUES (2, 'Autopista Fernão Dias');
+-INSERT INTO rodovia.rodovias(id, descricao)
+-	VALUES (3, 'CRO');
+-    
+--- TRECHO RODOVIA
+-INSERT INTO rodovia."trechoRodovia"(id, descricao, idRodovia)
+-	VALUES (1, 'BR-393', 1);
+-INSERT INTO rodovia."trechoRodovia"(id, descricao, idRodovia)
+-	VALUES (2, 'BR-381', 2); 
+-INSERT INTO rodovia."trechoRodovia"(id, descricao, idRodovia)
+-	VALUES (3, 'BR-163', 3); 
+-    
+--- SENTIDO RODOVIA
+-INSERT INTO rodovia."sentidoRodovia"(id, descricao)
+-	VALUES (1, 'Decrescente');
+-INSERT INTO rodovia."sentidoRodovia"(id, descricao)
+-	VALUES (2, 'Crescente');   
+-INSERT INTO rodovia."sentidoRodovia"(id, descricao)
+-	VALUES (3, 'Norte');
+-INSERT INTO rodovia."sentidoRodovia"(id, descricao)
+-	VALUES (4, 'Sul');
+-    
+--- TIPO PISTA
+-INSERT INTO rodovia."tipoPista"(id, descricao)
+-	VALUES (1, 'Principal');
+-INSERT INTO rodovia."tipoPista"(id, descricao)
+-	VALUES (2, 'Marginal');  
+-
+--- TIPO ACIDENTE 
+-INSERT INTO rodovia."tipoAcidente"(id, descricao)
+-	VALUES (1, 'Derrapagem');
+-INSERT INTO rodovia."tipoAcidente"(id, descricao)
+-	VALUES (2, 'Colisão lateral no sentido contrário');
+-INSERT INTO rodovia."tipoAcidente"(id, descricao)
+-	VALUES (3, 'Tombamento');
+-INSERT INTO rodovia."tipoAcidente"(id, descricao)
+-	VALUES (4, 'Colisão Traseira');
+-    
+--- TIPO OCORRÊNCIA
+-INSERT INTO rodovia."tipoOcorrencia"(id, descricao)
+-	VALUES (1, 'sem vítima');
+-INSERT INTO rodovia."tipoOcorrencia"(id, descricao)
+-	VALUES (2, 'com vítima');
+-    
+--- PLACAS VELOCIDADE MAXIMA
+--- caso 1 - Sinalização VelMax AÇO
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (1, 'Ativo', 'RJ', 2016, 60, 60, -22.4466, -43.7943, 'Barra do Piraí', 250.35, 1, 1, 1);
+-
+--- caso 2 - Sinalização VelMax AÇO
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (2, 'Ativo', 'RJ', 2016, 60, 60, -22.4441, -43.7916, 'Barra do Piraí', 249.94, 1, 1, 1);
+-    
+--- caso 3 - Sinalização VelMax Fernão Dias
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (3, 'Ativo', 'MG', 2007, 60, 60, -19.9642, -44.1714, 'Betim', 493.235, 2, 2, 1);
+-
+--- caso 4 - Sinalização VelMax Fernão Dias
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (4, 'Ativo', 'MG', 2007, 90, 110, -19.9805, -44.2009, 'Betim', 497.16, 2, 2, 1);
+-    
+--- caso 5 - Sinalização VelMax Fernão Dias
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (5, 'Ativo', 'SP', 2007, 40, 40, -23.3424, -46.5734, 'Mairiporã', 68, 2, 1, 1);
+-    
+--- caso 6 - Sinalização VelMax Fernão Dias
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (6, 'Ativo', 'SP', 2007, 80, 100, -23.3468, -46.5638, 'Mairiporã', 69.22, 2, 1, 1);
+-
+--- caso 7 - Sinalização VelMax CRO 
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (7, 'Ativo', 'MT', 2016, 60, 60, -15.7005, -56.0453, 'Cuiabá', 503.93, 3, 2, 1);
+-
+--- caso 8 - Sinalização VelMax CRO 
+-INSERT INTO rodovia."velocidadeMaxima"(id, situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (8, 'Ativo', 'MT', 2016, 80, 80, -15.701, -56.0502, 'Cuiabá', 504.43, 3, 2, 1);
+-
+--- PLACAS ULTRAPASSAGEM
+--- caso 1 - Sinalização Ultrapassagem AÇO
+-INSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (1, 'Ativo', 'RJ', 2016, 248.32, 251.66, -43.8057, -43.7788, -22.4531, -22.4359, 1, 2, 1);
+--- caso 2 - Sinalização Ultrapassagem AÇO
+-INSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (2, 'Ativo', 'RJ', 2016, 252.03, 256.81, -43.8505, -43.8082, -22.4612, -22.4534, 1, 2, 1); 
+--- caso 3 - Sinalização Ultrapassagem CRO
+-INSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (3, 'Ativo', 'MT', 2016, 671.2, 671.8, -55.9958, -55.998, -13.2052, -13.2101, 3, 1, 1); 
+--- caso 4 - Sinalização Ultrapassagem CRO
+-INSERT INTO rodovia.ultrapassagem(id, situacao, uf, anoPnvSnv, kmInicial, kmFinal, longitudeFinal, longitudeInicial, latitudeFinal, latitudeInicial, idTrechoRodovia, idSentidoRodovia, idTipoPista)
+-	VALUES (4, 'Ativo', 'MT', 2016, 630.8, 631.1, -56.0262, -56.0261, -13.5303, -13.5312, 3, 1, 1);    
+-
+--- ACIDENTES
+--- caso 1 - Acidente AÇO
+-INSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)
+-	VALUES ('2010-01-01', '04:21:00', 18, 167, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 3, 1, 1);
+--- caso 2 - Acidente AÇO 
+-INSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)
+-	VALUES ('2017-01-18', '11:33:00', 36, 168, 1, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 1, 3, 2, 2);
+--- caso 3 - Acidente Fernão Dias
+- INSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)
+-	VALUES ('2019-06-30', '09:05:00', 93, 529.5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 4, 3, 2);
+--- caso 4 - Acidente Fernão Dias
+- INSERT INTO rodovia.acidente(data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoAcidente, idTipoOcorrencia)
+-	VALUES ('2019-06-30', '09:16:00', 100, 529.5, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 4, 4, 2);
++CREATE TABLE "rodovia"."historicoCarga" (
++	dataCarga DATE,
++	horaCarga TIME,
++	tipoCarga VARCHAR(25),
++	CONSTRAINT pk_historicoCarga PRIMARY KEY(dataCarga, horaCarga)
++);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"project:war exploded\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"af8ac1c3-bd85-4e41-afda-c05f89d3ef93\" name=\"Changes\" comment=\"Arrumando dependencias do projeto\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/src/main/java/controller/InputController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/project/src/main/java/controller/InputController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/src/main/webapp/input.xhtml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/project/src/main/webapp/input.xhtml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/target/classes/controller/InputController.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/jboss-web.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/lib/all-themes-1.0.10.jar\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Jsp File\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"Tag Library Descriptor\" />\r\n        <option value=\"jsf\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"#18-incluir-histórico-cargas\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"HARD\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GGMQDSagwQbcRIc9m9zV2CjpfF\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"SONARLINT_PRECOMMIT_ANALYSIS\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Tatiane\\Documents\\UEL3\\Banco-de-Dados-I\\project\\src\\main\\webapp\\WEB-INF\" />\r\n      <recent name=\"C:\\Users\\kauee\\OneDrive\\Documentos\\IntelliJ\\Banco-de-Dados-I\\project\\src\\main\\webapp\" />\r\n      <recent name=\"C:\\Users\\Tatiane\\Documents\\UEL3\\Banco-de-Dados-1\\project\\src\\main\\webapp\" />\r\n      <recent name=\"C:\\Users\\Tatiane\\Documents\\UEL3\\Banco-de-Dados-1\\project\\src\\main\" />\r\n      <recent name=\"C:\\Users\\Tatiane\\Documents\\UEL3\\Banco-de-Dados-1\\project\\src\\main\\java\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"JBoss/WildFly 26.1.2.Final\" type=\"JBossConfiguration\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"JBoss/WildFly 26.1.2.Final\" ALTERNATIVE_JRE_ENABLED=\"true\" ALTERNATIVE_JRE_PATH=\"13\">\r\n      <option name=\"OPEN_IN_BROWSER_URL\" value=\"http://localhost:8080/project-1.0-SNAPSHOT/input.xhtml\" />\r\n      <option name=\"UPDATE_ON_FRAME_DEACTIVATION\" value=\"true\" />\r\n      <option name=\"UPDATE_CLASSES_ON_FRAME_DEACTIVATION\" value=\"true\" />\r\n      <deployment>\r\n        <artifact name=\"project:war exploded\">\r\n          <settings />\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"SERVER\" />\r\n        <option name=\"BINDING_SET_NAME\" value=\"\" />\r\n        <option name=\"DOMAIN\" value=\"false\" />\r\n        <option name=\"SERVER_GROUP\" value=\"main-server-group\" />\r\n        <option name=\"USERNAME\" value=\"\" />\r\n        <option name=\"CREDENTIAL_ALIAS\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"JBoss\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"55633\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"project:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"af8ac1c3-bd85-4e41-afda-c05f89d3ef93\" name=\"Changes\" comment=\"\" />\r\n      <created>1666010465653</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666010465653</updated>\r\n      <workItem from=\"1666010516626\" duration=\"412000\" />\r\n      <workItem from=\"1666011039881\" duration=\"858000\" />\r\n      <workItem from=\"1666098330674\" duration=\"1075000\" />\r\n      <workItem from=\"1666100476601\" duration=\"230000\" />\r\n      <workItem from=\"1666102492931\" duration=\"1053000\" />\r\n      <workItem from=\"1666103908436\" duration=\"517000\" />\r\n      <workItem from=\"1666186502427\" duration=\"255000\" />\r\n      <workItem from=\"1667778640291\" duration=\"457000\" />\r\n      <workItem from=\"1667823608651\" duration=\"5960000\" />\r\n      <workItem from=\"1667858621612\" duration=\"5790000\" />\r\n      <workItem from=\"1668778844511\" duration=\"5532000\" />\r\n      <workItem from=\"1669037489888\" duration=\"66000\" />\r\n      <workItem from=\"1669059136433\" duration=\"4581000\" />\r\n      <workItem from=\"1669079248523\" duration=\"5238000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"commit na branch de desenvolvimento\">\r\n      <created>1666103964967</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666103964967</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Arrumando dependencias do projeto\">\r\n      <created>1667706133310</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667706133310</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"readUploadAcidente implementado parcialmente\">\r\n      <created>1667790528026</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667790528026</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"getDAO's e readUploadAcidente\">\r\n      <created>1667792152159</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667792152159</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Ajustes controller\">\r\n      <created>1667854052704</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667854052704</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Arrumando input.xhtml\">\r\n      <created>1667861978009</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667861978010</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Arrumando dependencias do projeto\">\r\n      <created>1669031323765</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669031323766</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Arrumando dependencias do projeto\">\r\n      <created>1669031573063</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669031573063</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Arrumando dependencias do projeto\">\r\n      <created>1669079851803</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669079851803</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"commit na branch de desenvolvimento\" />\r\n    <MESSAGE value=\"readUploadAcidente implementado parcialmente\" />\r\n    <MESSAGE value=\"getDAO's e readUploadAcidente\" />\r\n    <MESSAGE value=\"Ajustes controller\" />\r\n    <MESSAGE value=\"Arrumando input.xhtml\" />\r\n    <MESSAGE value=\"Arrumando lógica de UploadAcidente\" />\r\n    <MESSAGE value=\"Arrumando dependencias do projeto\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Arrumando dependencias do projeto\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java</url>\r\n          <line>133</line>\r\n          <option name=\"timeStamp\" value=\"11\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java</url>\r\n          <line>35</line>\r\n          <option name=\"timeStamp\" value=\"16\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a6da1331a38eb0e5a215ea6811093e133fc05104)
++++ b/.idea/workspace.xml	(date 1669125725817)
+@@ -9,17 +9,19 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Arrumando dependencias do projeto">
++    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="SelectOneMenu do tipo de carga arrumado.">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/InputController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/InputController.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/jboss-web.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/lib/all-themes-1.0.10.jar" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/historicoCarga.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/historicoCarga.xhtml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/UltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/UltrapassagemDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadVelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadVelocidadeMaxima.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/UltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/UltrapassagemDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadVelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadVelocidadeMaxima.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -60,6 +62,7 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="DatabaseDriversLRU" value="postgresql" />
+     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+   </component>
+@@ -168,7 +171,9 @@
+       <workItem from="1668778844511" duration="5532000" />
+       <workItem from="1669037489888" duration="66000" />
+       <workItem from="1669059136433" duration="4581000" />
+-      <workItem from="1669079248523" duration="5238000" />
++      <workItem from="1669079248523" duration="5485000" />
++      <workItem from="1669124827017" duration="771000" />
++      <workItem from="1669125645456" duration="81000" />
+     </task>
+     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
+       <created>1666103964967</created>
+@@ -233,7 +238,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1669079851803</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="SelectOneMenu do tipo de carga arrumado.">
++      <created>1669084704954</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1669084704954</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -259,7 +271,8 @@
+     <MESSAGE value="Arrumando input.xhtml" />
+     <MESSAGE value="Arrumando lógica de UploadAcidente" />
+     <MESSAGE value="Arrumando dependencias do projeto" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Arrumando dependencias do projeto" />
++    <MESSAGE value="SelectOneMenu do tipo de carga arrumado." />
++    <option name="LAST_COMMIT_MESSAGE" value="SelectOneMenu do tipo de carga arrumado." />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -268,11 +281,6 @@
+           <url>file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java</url>
+           <line>133</line>
+           <option name="timeStamp" value="11" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java</url>
+-          <line>35</line>
+-          <option name="timeStamp" value="16" />
+         </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n9\n\tREADME.md\u0012,8\\e\\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d\n[\n+project/src/main/java/DAO/PgDAOFactory.java\u0012,a\\1\\a1ee7f280bfafdb780cabc313c4a3adc767cab89\nY\n)project/src/main/java/DAO/DAOFactory.java\u0012,d\\c\\dc7e5fd3052743be083ec65d1ff379a853023f6f\n_\n/project/src/main/java/model/TipoOcorrencia.java\u0012,8\\6\\86a56da76d79b29cfb622fcb866a0a7c65b3ceb1\nZ\n*project/src/main/java/model/TipoPista.java\u0012,9\\4\\94286efb900ac02b4e912f097ada9f7f012b4150\ne\n5project/src/main/java/DAO/TipoPista/TipoPistaDAO.java\u0012,a\\3\\a33ad763f7d06e115e3084afd9948c6cc7c7143d\n^\n.project/src/main/java/model/TrechoRodovia.java\u0012,3\\5\\355bf5502299917e6f76b0313104278d4556e4cb\nm\n=project/src/main/java/DAO/TrechoRodovia/TrechoRodoviaDAO.java\u0012,2\\7\\27ba34173ff8c9b26cc8014102cf9f75b9c6a7f5\n^\n.project/src/main/java/model/Ultrapassagem.java\u0012,4\\c\\4ce029f09989fa052e62a6f79b03028f5a5bc9cf\na\n1project/src/main/java/model/VelocidadeMaxima.java\u0012,2\\1\\21008d2ccc526f2d47b981caca8a75ae01dfefaa\nj\n:project/src/main/webapp/configuracao/datasource.properties\u0012,a\\5\\a582b8e70cf7ef459dfc65c97e7bd251119b1e8d\nc\n3project/src/main/java/DAO/Acidente/AcidenteDAO.java\u0012,b\\0\\b04081f8694d1865739bdb78ab48dfe70eb124b3\ne\n5project/src/main/java/DAO/Acidente/PgAcidenteDAO.java\u0012,6\\3\\633e09a4250ebde0b513b11b215a6012bdaac199\n_\n/project/src/main/java/model/SentidoRodovia.java\u0012,3\\9\\394da36c73102b8369f2d58543240ba1309b196b\n]\n-project/src/main/java/model/TipoAcidente.java\u0012,6\\8\\683af7dab1d2f68c632ca0428b4fd370f1dbbfbf\nf\n6project/src/main/webapp/WEB-INF/templates/pagina.xhtml\u0012,0\\0\\00f7d04d70592d69a4880ae67214bf8014b69a7e\ng\n7project/src/main/webapp/WEB-INF/templates/default.xhtml\u0012,d\\b\\db6d886762cb9268e250e8a37a5d76dde89d86c1\nC\n\u0013project/project.iml\u0012,a\\b\\abeff7ab0ea3bd0f994e38b7fea586872692fc97\nl\n<project/src/main/java/controller/classes/UploadAcidente.java\u0012,7\\1\\7105c3244a7d069ed80e012130a14d37d1a6a556
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision a6da1331a38eb0e5a215ea6811093e133fc05104)
++++ b/.idea/sonarlint/issuestore/index.pb	(date 1669126263715)
+@@ -19,8 +19,6 @@
+ .project/src/main/java/model/Ultrapassagem.java,4\c\4ce029f09989fa052e62a6f79b03028f5a5bc9cf
+ a
+ 1project/src/main/java/model/VelocidadeMaxima.java,2\1\21008d2ccc526f2d47b981caca8a75ae01dfefaa
+-j
+-:project/src/main/webapp/configuracao/datasource.properties,a\5\a582b8e70cf7ef459dfc65c97e7bd251119b1e8d
+ c
+ 3project/src/main/java/DAO/Acidente/AcidenteDAO.java,b\0\b04081f8694d1865739bdb78ab48dfe70eb124b3
+ e
+@@ -36,4 +34,12 @@
+ C
+ project/project.iml,a\b\abeff7ab0ea3bd0f994e38b7fea586872692fc97
+ l
+-<project/src/main/java/controller/classes/UploadAcidente.java,7\1\7105c3244a7d069ed80e012130a14d37d1a6a556
+\ No newline at end of file
++<project/src/main/java/controller/classes/UploadAcidente.java,7\1\7105c3244a7d069ed80e012130a14d37d1a6a556
++Z
++*project/src/main/webapp/menuSuperior.xhtml,e\2\e239fb383fe4fa764f296ec4ed6f2dabea755070
++W
++'project/src/main/webapp/relatorio.xhtml,7\4\740245505d3be641f00d51e83f8573748a7a59b3
++q
++Aproject/src/main/java/controller/classes/UploadUltrapassagem.java,2\2\22bd2af9119747ca671cadb521966a0d4fffbda6
++j
++:project/src/main/webapp/configuracao/datasource.properties,a\5\a582b8e70cf7ef459dfc65c97e7bd251119b1e8d
+\ No newline at end of file

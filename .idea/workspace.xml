@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04ecd6ba-e2ac-4dd9-b6f0-be4fcdc38c56" name="Changes" comment="Gráfico Pie Velocidade x Mortos implementado">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="commit de dependencias" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="#14-fazer-relatotio" />
+        <entry key="$PROJECT_DIR$" value="#22-arrumar-metodos-CRUD" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +37,13 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/relatorioGrave.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/input.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/webapp/historicoCarga.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/main/java/controller/historicoCargaController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,11 +57,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.13908207" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
@@ -68,10 +74,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="13">
+    <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk-11.0.7">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/project-1.0-SNAPSHOT/input.xhtml" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="project:war exploded">
           <settings />
@@ -145,7 +149,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="04ecd6ba-e2ac-4dd9-b6f0-be4fcdc38c56" name="Changes" comment="Arrumando dependencias do projeto" />
+      <changelist id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="" />
       <created>1666010465653</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -164,8 +168,8 @@
       <workItem from="1669037489888" duration="66000" />
       <workItem from="1669059136433" duration="4581000" />
       <workItem from="1669079248523" duration="5238000" />
-      <workItem from="1669670577946" duration="10846000" />
-      <workItem from="1669721622790" duration="6553000" />
+      <workItem from="1669678634452" duration="3749000" />
+      <workItem from="1669721987417" duration="5922000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -230,28 +234,49 @@
       <option name="project" value="LOCAL" />
       <updated>1669079851803</updated>
     </task>
-    <task id="LOCAL-00010" summary="Correção PGVelocidadeMaximaDAO">
-      <created>1669673110088</created>
+    <task id="LOCAL-00010" summary="Commit de dependencias">
+      <created>1669671236194</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1669673110088</updated>
+      <updated>1669671236194</updated>
     </task>
-    <task id="LOCAL-00011" summary="Dependences">
-      <created>1669673418571</created>
+    <task id="LOCAL-00011" summary="Alterações não salvas do VelocidadeMaxima e dependencias">
+      <created>1669672951727</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1669673418571</updated>
+      <updated>1669672951727</updated>
     </task>
-    <task id="LOCAL-00012" summary="Gráfico Pie Velocidade x Mortos implementado">
-      <created>1669728922281</created>
+    <task id="LOCAL-00012" summary="Alterações não salvas do VelocidadeMaxima e dependencias">
+      <created>1669673002341</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1669728922282</updated>
+      <updated>1669673002341</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Historico de cargas finalizado">
+      <created>1669728177151</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669728177151</updated>
+    </task>
+    <task id="LOCAL-00014" summary="commit de dependencias">
+      <created>1669729044699</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669729044699</updated>
+    </task>
+    <task id="LOCAL-00015" summary="commit de dependencias">
+      <created>1669729142709</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669729142709</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +292,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit na branch de desenvolvimento" />
@@ -276,16 +302,10 @@
     <MESSAGE value="Arrumando input.xhtml" />
     <MESSAGE value="Arrumando lógica de UploadAcidente" />
     <MESSAGE value="Arrumando dependencias do projeto" />
-    <MESSAGE value="Correção PGVelocidadeMaximaDAO" />
-    <MESSAGE value="Dependences" />
-    <MESSAGE value="Gráfico Pie Velocidade x Mortos implementado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gráfico Pie Velocidade x Mortos implementado" />
-  </component>
-  <component name="XDebuggerManager">
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
-      </pinned-members>
-    </pin-to-top-manager>
+    <MESSAGE value="Commit de dependencias" />
+    <MESSAGE value="Alterações não salvas do VelocidadeMaxima e dependencias" />
+    <MESSAGE value="Historico de cargas finalizado" />
+    <MESSAGE value="commit de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit de dependencias" />
   </component>
 </project>

@@ -23,12 +23,14 @@ DAO\Rodovia\PgRodoviaDAO.class
 controller\historicoCargaController.class
 DAO\TipoOcorrencia\TipoOcorrenciaDAO.class
 model\TipoPista.class
+model\HistoricoCarga.class
 model\Acidente.class
 DAO\SentidoRodovia\SentidoRodoviaDAO.class
 DAO\Sinalizacao\VelocidadeMaximaDAO.class
 DAO\Sinalizacao\PgVelocidadeMaximaDAO.class
 model\TipoOcorrencia.class
 DAO\Rodovia\RodoviaDAO.class
+DAO\HistoricoCarga\PgHistoricoCargaDAO.class
 DAO\TipoAcidente\PgTipoAcidenteDAO.class
 DAO\TipoPista\PgTipoPistaDAO.class
 DAO\DAO.class

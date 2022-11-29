@@ -1,7 +1,5 @@
 package DAO.SentidoRodovia;
 
-import DAO.Rodovia.PgRodoviaDAO;
-import model.Rodovia;
 import model.SentidoRodovia;
 import org.omnifaces.util.Messages;
 

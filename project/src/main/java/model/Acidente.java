@@ -2,16 +2,11 @@ package model;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.sql.Time;
+import javax.validation.constraints.NotNull;
 
 public class Acidente {
-
-    //rodovia.acidente
-    // PK = (data, nrOcorrencia)
-
     @NotNull
     @Getter @Setter private Integer idAcidente;
     @NotNull

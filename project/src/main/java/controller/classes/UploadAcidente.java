@@ -3,6 +3,7 @@ package controller.classes;
 import DAO.Acidente.AcidenteDAO;
 import DAO.Acidente.PgAcidenteDAO;
 import DAO.DAOFactory;
+import DAO.HistoricoCarga.HistoricoCargaDAO;
 import DAO.Rodovia.RodoviaDAO;
 import DAO.SentidoRodovia.SentidoRodoviaDAO;
 import DAO.TipoAcidente.TipoAcidenteDAO;
@@ -59,12 +60,13 @@ public class UploadAcidente {
   }
 
 
-  public static void readUploadAcidente(UploadedFile file)
+  public static void readUploadAcidente(UploadedFile file, String dataString, String horaString, String tipSelecionado)
       throws IOException, ParseException, SQLException {
     int nomeColuna = 1;
     int i;
     int j = -1;
     int tamanhoTable;
+    Boolean flgCalendar = false;
     byte[] contents = file.getContent();
     CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
     CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
@@ -170,6 +172,18 @@ public class UploadAcidente {
           if(trechoRodoviaDAO.read(descricaoTrechoRodovia) != null) {
             AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
             acidenteDAO.create(acidente);
+          }
+          if(!flgCalendar){
+            HistoricoCarga historicoCarga = new HistoricoCarga();
+            java.util.Date dateUtil = new SimpleDateFormat("dd/MM/yyyy").parse(dataString);
+            java.sql.Date date = new java.sql.Date(dateUtil.getTime());
+            Time hour = Time.valueOf(horaString);
+            historicoCarga.setDataCarga(date);
+            historicoCarga.setHoraCarga(hour);
+            historicoCarga.setTipoCarga(tipSelecionado);
+            HistoricoCargaDAO historicoCargaDAO = daoFactory.getHistoricoCargaDAO();
+            historicoCargaDAO.create(historicoCarga);
+            flgCalendar = true;
           }
         }
       } catch (ClassNotFoundException e) {

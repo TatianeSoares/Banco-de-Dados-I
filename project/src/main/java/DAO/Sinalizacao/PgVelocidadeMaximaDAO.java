@@ -20,38 +20,38 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
 
     private static final String INSERT_VELOCIDADE_MAXIMA =
             "INSERT INTO rodovia.velocidademaxima(situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, " +
-                    "longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)" +
+                    "longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista) " +
                     "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
     private static final String BUSCA_TODAS_VELOCIDADES =
-            "SELECT situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
+            "SELECT situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista " +
                     "FROM rodovia.velocidadeMaxima" +
                     "ORDER BY km;";
 
     private static final String BUSCA_VELOCIDADE_MAXIMA =
-            "SELECT situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
-                    "FROM rodovia.velocidadeMaxima" +
+            "SELECT situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista " +
+                    "FROM rodovia.velocidadeMaxima " +
                     "WHERE id = ?;";
 
     private static final String UPDATE_VELOCIDADE_MAXIMA =
-            "UPDATE FROM rodovia.velocidademaxima" +
+            "UPDATE FROM rodovia.velocidadeMaxima " +
                     "SET " +
-                    "situacao = " +
-                    "uf = " +
-                    "anoPnvSnv =" +
-                    "veloVeicPesado =" +
-                    "veloVeicLeve =" +
-                    "latitude =" +
-                    "longitude =" +
-                    "municipio =" +
-                    "km =" +
-                    "idTrechoRodovia =" +
-                    "idSentidoRodovia =" +
-                    "idTipoPista =" +
-                    "WHERE id = ;";
+                    "situacao = ?," +
+                    "uf = ?," +
+                    "anoPnvSnv = ?," +
+                    "veloVeicPesado = ?," +
+                    "veloVeicLeve = ?," +
+                    "latitude = ?," +
+                    "longitude = ?," +
+                    "municipio = ?," +
+                    "km = ?," +
+                    "idTrechoRodovia = ?," +
+                    "idSentidoRodovia = ?," +
+                    "idTipoPista = ? " +
+                    "WHERE id = ?;";
 
     private static final String DELETE_VELOCIDADE_MAXIMA =
-            "DELETE FROM rodovia.velocidademaxima" +
+            "DELETE FROM rodovia.velocidadeMaxima " +
                     "WHERE id = ;";
 
     public PgVelocidadeMaximaDAO(Connection connection) {

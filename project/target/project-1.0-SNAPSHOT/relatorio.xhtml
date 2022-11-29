@@ -6,14 +6,23 @@
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="conteudo">
         <f:metadata>
-            <f:viewAction action="#{relatorioController.init}"/>
+            <f:viewAction action="#{inputController.init}"/>
         </f:metadata>
         <h:form enctype="multipart/form-data" id="form">
-            <p:commandButton value="Gerar" actionListener="#{relatorioController.getDataVelocidadeObitos()}" update="panel"/>
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="ui-fluid p-grid">
+                        <p:fieldset legend="Carga de Dados"
+                                    style="margin: auto;
+                                    width: 70%;
+                                    font-size: 20px;">
 
-            <h:panelGroup id="panel" layout="block">
-                <p:chart type="pie" model="#{relatorioController.pieModel}" style="width:400px;height: 300px" rendered="#{relatorioController.pieModel != null}" />
-            </h:panelGroup>
+
+
+                        </p:fieldset>
+                    </div>
+                </div>
+            </div>
         </h:form>
     </ui:define>
 </ui:composition>

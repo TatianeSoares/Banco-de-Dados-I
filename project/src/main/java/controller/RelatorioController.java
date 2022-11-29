@@ -42,6 +42,7 @@ public class RelatorioController implements Serializable {
             TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
             AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
             acidenteList = acidenteDAO.all();
+
             gerarVelocidadeObitos(acidenteList);
         }
 
@@ -66,37 +67,5 @@ public class RelatorioController implements Serializable {
         pieModel.setDiameter(150);
     }
 
-//    private void gerarVelocidadeObitos(List<Acidente> acidenteList){
-//
-//        pieModel = new PieChartModel();
-//        int i = 0;
-//        for(Acidente acidente : acidenteList){
-//            if(i == 10){
-//                break;
-//            }
-//            pieModel.set(String.valueOf(acidente.getKm()), acidente.getMortos());
-//            i++;
-//        }
-//        pieModel.setTitle("Relação de Velocidades regulamentadas com acidentes graves");
-//        pieModel.setLegendPosition("e");
-//        pieModel.setFill(false);
-//        pieModel.setShowDataLabels(true);
-//        pieModel.setDiameter(1500);
-//    }
-
-//    public void getDataVelocidadeObitos() throws Exception {
-//
-//        List<Acidente> acidenteList;
-//        float trecho40, trecho60, trecho80;
-//
-//        try(DAOFactory daoFactory = DAOFactory.getInstance()){
-//            VelocidadeMaximaDAO velocidadeMaximaDAO = daoFactory.getVelocidadeMaximaDAO();
-//            TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
-//            AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
-//            acidenteList = acidenteDAO.all();
-//            gerarVelocidadeObitos(acidenteList);
-//        }
-//
-//    }
 
 }

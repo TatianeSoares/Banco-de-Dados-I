@@ -1,4 +1,7 @@
 package DAO.HistoricoCarga;
 
-public class HistoricoCargaDAO {
+import DAO.DAO;
+import model.HistoricoCarga;
+
+public interface HistoricoCargaDAO extends DAO<HistoricoCarga> {
 }

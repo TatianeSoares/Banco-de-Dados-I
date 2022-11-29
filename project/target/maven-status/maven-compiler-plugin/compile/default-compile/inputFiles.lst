@@ -19,6 +19,7 @@ C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\TipoO
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\TipoAcidente\TipoAcidenteDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\TrechoRodovia\TrechoRodoviaDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\controller\classes\UploadUltrapassagem.java
+C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\model\HistoricoCarga.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\TipoAcidente\PgTipoAcidenteDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\model\TipoOcorrencia.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\jdbc\ConnectionFactory.java
@@ -26,6 +27,8 @@ C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\PgDAO
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\Sinalizacao\VelocidadeMaximaDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\Acidente\PgAcidenteDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\model\Acidente.java
+C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\HistoricoCarga\PgHistoricoCargaDAO.java
+C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\HistoricoCarga\HistoricoCargaDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\Sinalizacao\PgUltrapassagemDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\model\SentidoRodovia.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\SentidoRodovia\PgSentidoRodoviaDAO.java
@@ -35,3 +38,4 @@ C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\controlle
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\controller\InputController.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\DAO\Rodovia\RodoviaDAO.java
 C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\jdbc\PgConnectionFactory.java
+C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\java\controller\historicoCargaController.java

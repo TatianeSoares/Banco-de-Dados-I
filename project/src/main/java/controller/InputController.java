@@ -1,22 +1,16 @@
 package controller;
 
-import DAO.DAOFactory;
-import DAO.TrechoRodovia.TrechoRodoviaDAO;
 import controller.classes.UploadAcidente;
 import controller.classes.UploadUltrapassagem;
 import controller.classes.UploadVelocidadeMaxima;
 import lombok.Getter;
 import lombok.Setter;
-import model.Rodovia;
-import model.TrechoRodovia;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.file.UploadedFile;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.*;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.List;
+import java.util.Calendar;
 
 @Named
 @ViewScoped
@@ -35,18 +29,30 @@ public class InputController implements Serializable {
   }
 
   public void uploadFile(FileUploadEvent fileUploadEvent)
-      throws IOException, SQLException, ParseException, ClassNotFoundException {
+      throws Exception {
       UploadedFile file = fileUploadEvent.getFile();
+
+    Calendar date = Calendar.getInstance();
+    int dia = date.get(Calendar.DAY_OF_MONTH);
+    int mes = date.get(Calendar.MONTH) + 1;
+    int ano = date.get(Calendar.YEAR);
+    int semana = date.get(Calendar.DAY_OF_WEEK);
+    int hora = date.get(Calendar.HOUR_OF_DAY);
+    int minutos = date.get(Calendar.MINUTE);
+    int segundos = date.get(Calendar.SECOND);
+    String dataString = dia + "/" + mes + "/" + ano;
+    String horaString = hora + ":" + minutos + ":" + segundos;
+
 
       if (file.getFileName() != null) {
         if (tipSelecionado.equals("acidente")) {
-          UploadAcidente.readUploadAcidente(file);
+          UploadAcidente.readUploadAcidente(file, dataString, horaString, tipSelecionado);
         }
         if (tipSelecionado.equals("ultrapassagem")) {
-          UploadUltrapassagem.readUploadUltrapassagem(file);
+          UploadUltrapassagem.readUploadUltrapassagem(file, dataString, horaString, tipSelecionado);
         }
         if (tipSelecionado.equals("velocidade")) {
-          UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file);
+          UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file, dataString, horaString, tipSelecionado);
         }
       }
 

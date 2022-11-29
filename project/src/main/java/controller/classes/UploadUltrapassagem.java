@@ -1,6 +1,7 @@
 package controller.classes;
 
 import DAO.DAOFactory;
+import DAO.HistoricoCarga.HistoricoCargaDAO;
 import DAO.Rodovia.RodoviaDAO;
 import DAO.SentidoRodovia.SentidoRodoviaDAO;
 import DAO.Sinalizacao.UltrapassagemDAO;
@@ -18,11 +19,11 @@ import org.primefaces.model.file.UploadedFile;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -49,12 +50,13 @@ public class UploadUltrapassagem {
         return saida;
     }
 
-    public static void   readUploadUltrapassagem(UploadedFile file)
+    public static void   readUploadUltrapassagem(UploadedFile file, String dataString, String horaString, String tipSelecionado)
         throws IOException, ParseException, SQLException, ClassNotFoundException {
         int nomeColuna = 1;
         int i;
         int j = -1;
         int tamanhoTable;
+        Boolean flgCalendar = false;
         byte[] contents = file.getContent();
         CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
         CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
@@ -131,6 +133,18 @@ public class UploadUltrapassagem {
                     ultrapassagem.setIdTipoPista(descricaoTipoPista);
                     UltrapassagemDAO ultrapassagemDAO = daoFactory.getUltrapassagemDAO();
                     ultrapassagemDAO.create(ultrapassagem);
+                }
+                if(!flgCalendar){
+                    HistoricoCarga historicoCarga = new HistoricoCarga();
+                    java.util.Date dateUtil = new SimpleDateFormat("dd/MM/yyyy").parse(dataString);
+                    Date date = new java.sql.Date(dateUtil.getTime());
+                    Time hour = Time.valueOf(horaString);
+                    historicoCarga.setDataCarga(date);
+                    historicoCarga.setHoraCarga(hour);
+                    historicoCarga.setTipoCarga(tipSelecionado);
+                    HistoricoCargaDAO historicoCargaDAO = daoFactory.getHistoricoCargaDAO();
+                    historicoCargaDAO.create(historicoCarga);
+                    flgCalendar = true;
                 }
             } catch (Exception e) {
                 e.printStackTrace();

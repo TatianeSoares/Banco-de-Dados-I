@@ -41,9 +41,34 @@ public class PgTrechoRodoviaDAO implements TrechoRodoviaDAO{
       "DELETE FROM rodovia.trechoRodovia " +
           "WHERE descricao = ?;";
 
+  private static final String BUSCA_TRECHO_ID_RODOVIA =
+          "SELECT descricao, idRodovia " +
+                  "FROM rodovia.trechoRodovia " +
+                  "WHERE idrodovia = ?;";
+
   public PgTrechoRodoviaDAO(Connection connection) {
     this.connection = connection;
   }
+
+  public TrechoRodovia getTrechoRodovia(String id) throws SQLException {
+    TrechoRodovia trechoRodovia = new TrechoRodovia();
+
+    try (PreparedStatement statement = connection.prepareStatement(BUSCA_TRECHO_ID_RODOVIA)) {
+      statement.setString(2, id);
+      try (ResultSet result = statement.executeQuery()) {
+        if (result.next()) {
+          trechoRodovia.setDescricaoTrechoRodovia(result.getString("Descricao"));
+          trechoRodovia.setIdRodovia(result.getString("idRodovia"));
+        } else {
+          trechoRodovia = null;
+        }
+      }
+    } catch (SQLException ex) {
+      Logger.getLogger(PgTrechoRodoviaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+    }
+    return trechoRodovia;
+  }
+
 
   @Override
   public void create(TrechoRodovia trechoRodovia) throws SQLException {

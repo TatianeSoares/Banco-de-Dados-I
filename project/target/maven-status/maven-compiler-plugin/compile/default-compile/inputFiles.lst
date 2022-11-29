@@ -8,6 +8,7 @@ C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\ja
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\TipoAcidente\TipoAcidenteDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\TipoOcorrencia\TipoOcorrenciaDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\TrechoRodovia\TrechoRodoviaDAO.java
+C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\controller\historicoCargaController.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\controller\classes\UploadUltrapassagem.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\jdbc\ConnectionFactory.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\TipoOcorrencia\PgTipoOcorrenciaDAO.java
@@ -18,6 +19,7 @@ C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\ja
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\Sinalizacao\PgVelocidadeMaximaDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\Sinalizacao\UltrapassagemDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\model\TipoOcorrencia.java
+C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\controller\RelatorioController.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\SentidoRodovia\PgSentidoRodoviaDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\client\RodoviaClient.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\TipoPista\TipoPistaDAO.java
@@ -26,6 +28,7 @@ C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\ja
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\Acidente\AcidenteDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\model\VelocidadeMaxima.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\controller\InputController.java
+C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\HistoricoCarga\HistoricoCargaDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\model\Acidente.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\DAO\Rodovia\PgRodoviaDAO.java
 C:\Users\kauee\OneDrive\Documentos\IntelliJ\Banco-de-Dados-I\project\src\main\java\model\SentidoRodovia.java

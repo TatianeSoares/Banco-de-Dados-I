@@ -16,9 +16,11 @@ controller\classes\UploadUltrapassagem.class
 DAO\Acidente\PgAcidenteDAO.class
 DAO\Acidente\AcidenteDAO.class
 jdbc\PgConnectionFactory.class
+controller\RelatorioController.class
 controller\classes\UploadAcidente.class
 DAO\PgDAOFactory.class
 DAO\Rodovia\PgRodoviaDAO.class
+controller\historicoCargaController.class
 DAO\TipoOcorrencia\TipoOcorrenciaDAO.class
 model\TipoPista.class
 model\Acidente.class
@@ -31,6 +33,7 @@ DAO\TipoAcidente\PgTipoAcidenteDAO.class
 DAO\TipoPista\PgTipoPistaDAO.class
 DAO\DAO.class
 model\TipoAcidente.class
+DAO\HistoricoCarga\HistoricoCargaDAO.class
 DAO\SentidoRodovia\PgSentidoRodoviaDAO.class
 DAO\TipoPista\TipoPistaDAO.class
 DAO\TrechoRodovia\PgTrechoRodoviaDAO.class

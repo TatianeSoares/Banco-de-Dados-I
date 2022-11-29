@@ -20,7 +20,7 @@ public class PgAcidenteDAO implements AcidenteDAO{
       "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
   private static final String BUSCA_TODOS_ACIDENTES =
-      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente " +
+      "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente " +
       "FROM rodovia.acidente " +
       "ORDER BY data, nrOcorrencia;";
 
@@ -60,8 +60,51 @@ public class PgAcidenteDAO implements AcidenteDAO{
       "DELETE FROM rodovia.acidente " +
       "WHERE data = ? AND nrOcorrencia;";
 
+
+  private static final String BUSCA_FATAIS_ACIDENTES =
+          "SELECT data, hora, nrOcorrencia, km, automovel, bicicleta, caminhao, moto, onibus, outros, tracaoAnimal, cargaEspecial, tratorMaquina, utilitario, ileso, levementeFerido, gravementeFerido, mortos, idTrechoRodovia, idSentidoRodovia, idTipoOcorrencia, idTipoAcidente " +
+                  "FROM rodovia.acidente " +
+                  "WHERE mortos != 0;";
+
+
   public PgAcidenteDAO(Connection connection) {
     this.connection = connection;
+  }
+
+  public List<Acidente> getAcidentesFatais(Acidente acidente) throws SQLException {
+
+    List<Acidente> acidenteList = new ArrayList<>();
+    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES)) {
+      statement.setDate(1, acidente.getData());
+      statement.setTime(2, acidente.getHora());
+      statement.setInt(3, acidente.getNrOcorrencia());
+      statement.setFloat(4, acidente.getKm());
+      statement.setInt(5, acidente.getAutomovel());
+      statement.setInt(6, acidente.getBicicleta());
+      statement.setInt(7, acidente.getCaminhao());
+      statement.setInt(8, acidente.getMoto());
+      statement.setInt(9, acidente.getOnibus());
+      statement.setInt(10, acidente.getOutros());
+      statement.setInt(11, acidente.getTracaoAnimal());
+      statement.setInt(12, acidente.getCargaEspecial());
+      statement.setInt(13, acidente.getTratorMaquina());
+      statement.setInt(14, acidente.getUtilitario());
+      statement.setInt(15, acidente.getIleso());
+      statement.setInt(16, acidente.getLevementeFerido());
+      statement.setInt(17, acidente.getGravementeFerido());
+      statement.setInt(18, acidente.getMortos());
+      statement.setString(19, acidente.getIdTrechoRodovia());
+      statement.setString(20, acidente.getIdSentidoRodovia());
+      statement.setString(21, acidente.getIdTipoOcorrencia());
+      statement.setString(22, acidente.getIdTipoAcidente());
+
+      acidenteList.add(acidente);
+
+    } catch (SQLException ex) {
+      Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+    }
+
+    return acidenteList;
   }
 
   public boolean verificarInAcidente(Acidente acidente){
@@ -202,11 +245,11 @@ public class PgAcidenteDAO implements AcidenteDAO{
         acidente.setOutros(result.getInt("outros"));
         acidente.setTracaoAnimal(result.getInt("tracaoAnimal"));
         acidente.setCargaEspecial(result.getInt("cargaEspecial"));
-        acidente.setTratorMaquina(result.getInt("tratorMaquin"));
+        acidente.setTratorMaquina(result.getInt("tratorMaquina"));
         acidente.setUtilitario(result.getInt("utilitario"));
         acidente.setIleso(result.getInt("ileso"));
-        acidente.setLevementeFerido(result.getInt("levementeFeridos"));
-        acidente.setGravementeFerido(result.getInt("gravementeFeridos"));
+        acidente.setLevementeFerido(result.getInt("levementeFerido"));
+        acidente.setGravementeFerido(result.getInt("gravementeFerido"));
         acidente.setMortos(result.getInt("mortos"));
         acidente.setIdTrechoRodovia(result.getString("idTrechoRodovia"));
         acidente.setIdSentidoRodovia(result.getString("idSentidoRodovia"));

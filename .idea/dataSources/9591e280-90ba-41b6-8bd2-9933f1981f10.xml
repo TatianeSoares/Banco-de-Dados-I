@@ -9,7 +9,7 @@
 69104||-9223372036854775808|T|G
 69104||52541|T|G
 69104||52542|T|G</Grants>
-      <IntrospectionStateNumber>410691</IntrospectionStateNumber>
+      <IntrospectionStateNumber>435654</IntrospectionStateNumber>
       <ServerVersion>13.4</ServerVersion>
       <StartupTime>1666764346</StartupTime>
       <TimeZones>true ACDT
@@ -1648,7 +1648,7 @@ false posixrules
 13132||10|C|G
 13132||-9223372036854775808|U|G
 13132||10|U|G</Grants>
-      <IntrospectionStateNumber>410691</IntrospectionStateNumber>
+      <IntrospectionStateNumber>435654</IntrospectionStateNumber>
       <ObjectId>52600</ObjectId>
       <OwnerName>tatiane</OwnerName>
     </database>
@@ -5266,763 +5266,697 @@ false posixrules
     <schema id="372" parent="56" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>410689</IntrospectionStateNumber>
+      <IntrospectionStateNumber>435654</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>286</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
     <schema id="373" parent="56" name="rodovia">
-      <IntrospectionStateNumber>410691</IntrospectionStateNumber>
-      <ObjectId>103202</ObjectId>
-      <StateNumber>410675</StateNumber>
+      <IntrospectionStateNumber>435654</IntrospectionStateNumber>
+      <ObjectId>106085</ObjectId>
+      <StateNumber>431852</StateNumber>
       <OwnerName>tatiane</OwnerName>
     </schema>
     <table id="374" parent="373" name="acidente">
-      <ObjectId>103238</ObjectId>
-      <StateNumber>410675</StateNumber>
+      <ObjectId>106121</ObjectId>
+      <StateNumber>431859</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="375" parent="373" name="historicoCarga">
-      <ObjectId>103320</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="375" parent="373" name="historicocarga">
+      <ObjectId>106199</ObjectId>
+      <StateNumber>431862</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
     <table id="376" parent="373" name="rodovias">
-      <ObjectId>103203</ObjectId>
-      <StateNumber>410675</StateNumber>
+      <ObjectId>106086</ObjectId>
+      <StateNumber>431854</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="377" parent="373" name="sentidoRodovia">
-      <ObjectId>103218</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="377" parent="373" name="sentidorodovia">
+      <ObjectId>106101</ObjectId>
+      <StateNumber>431859</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="378" parent="373" name="tipoAcidente">
-      <ObjectId>103223</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="378" parent="373" name="tipoacidente">
+      <ObjectId>106106</ObjectId>
+      <StateNumber>431859</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="379" parent="373" name="tipoOcorrencia">
-      <ObjectId>103228</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="379" parent="373" name="tipoocorrencia">
+      <ObjectId>106111</ObjectId>
+      <StateNumber>431859</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="380" parent="373" name="tipoPista">
-      <ObjectId>103233</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="380" parent="373" name="tipopista">
+      <ObjectId>106116</ObjectId>
+      <StateNumber>431860</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="381" parent="373" name="trechoRodovia">
-      <ObjectId>103208</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="381" parent="373" name="trechorodovia">
+      <ObjectId>106091</ObjectId>
+      <StateNumber>431854</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
     <table id="382" parent="373" name="ultrapassagem">
-      <ObjectId>103299</ObjectId>
-      <StateNumber>410675</StateNumber>
+      <ObjectId>106180</ObjectId>
+      <StateNumber>431861</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
-    <table id="383" parent="373" name="velocidadeMaxima">
-      <ObjectId>103278</ObjectId>
-      <StateNumber>410675</StateNumber>
+    <table id="383" parent="373" name="velocidademaxima">
+      <ObjectId>106161</ObjectId>
+      <StateNumber>431860</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>tatiane</OwnerName>
     </table>
     <check id="384" parent="374" name="ck_aci">
       <ColNames>km</ColNames>
-      <ObjectId>103255</ObjectId>
+      <ObjectId>106138</ObjectId>
       <Predicate>km &gt;= (0.00)::double precision</Predicate>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
     </check>
     <column id="385" parent="374" name="data">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="386" parent="374" name="hora">
       <DataType>time|0s</DataType>
       <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>1083</TypeId>
     </column>
     <column id="387" parent="374" name="nrocorrencia">
       <DataType>real|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>700</TypeId>
     </column>
     <column id="388" parent="374" name="km">
       <DataType>real|0s</DataType>
       <Position>4</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>700</TypeId>
     </column>
     <column id="389" parent="374" name="automovel">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>5</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="390" parent="374" name="bicicleta">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>6</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="391" parent="374" name="caminhao">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>7</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="392" parent="374" name="moto">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>8</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="393" parent="374" name="onibus">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>9</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="394" parent="374" name="outros">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>10</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="395" parent="374" name="tracaoanimal">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>11</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="396" parent="374" name="cargaespecial">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>12</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="397" parent="374" name="tratormaquina">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>13</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="398" parent="374" name="utilitario">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>14</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="399" parent="374" name="ileso">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>15</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="400" parent="374" name="levementeferido">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>16</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="401" parent="374" name="gravementeferido">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>17</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="402" parent="374" name="mortos">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>18</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="403" parent="374" name="idtrechorodovia">
-      <DataType>integer|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <Position>19</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431859</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="404" parent="374" name="idsentidorodovia">
-      <DataType>integer|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <Position>20</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431859</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="405" parent="374" name="idtipoacidente">
-      <DataType>integer|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <Position>21</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431859</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="406" parent="374" name="idtipoocorrencia">
-      <DataType>integer|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <Position>22</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431859</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <foreign-key id="407" parent="374" name="fk_aci_trechorod">
       <ColNames>idtrechorodovia</ColNames>
-      <ObjectId>103258</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106141</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103208</RefTableId>
-      <RefTableName>trechoRodovia</RefTableName>
+      <StateNumber>431859</StateNumber>
+      <RefTableId>106091</RefTableId>
+      <RefTableName>trechorodovia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="408" parent="374" name="fk_aci_sentrod">
       <ColNames>idsentidorodovia</ColNames>
-      <ObjectId>103263</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106146</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103218</RefTableId>
-      <RefTableName>sentidoRodovia</RefTableName>
+      <StateNumber>431859</StateNumber>
+      <RefTableId>106101</RefTableId>
+      <RefTableName>sentidorodovia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="409" parent="374" name="fk_aci_tipaci">
       <ColNames>idtipoacidente</ColNames>
-      <ObjectId>103268</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106151</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103223</RefTableId>
-      <RefTableName>tipoAcidente</RefTableName>
+      <StateNumber>431859</StateNumber>
+      <RefTableId>106106</RefTableId>
+      <RefTableName>tipoacidente</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="410" parent="374" name="fk_aci_tipoco">
       <ColNames>idtipoocorrencia</ColNames>
-      <ObjectId>103273</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106156</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103228</RefTableId>
-      <RefTableName>tipoOcorrencia</RefTableName>
+      <StateNumber>431859</StateNumber>
+      <RefTableId>106111</RefTableId>
+      <RefTableName>tipoocorrencia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="411" parent="374" name="pk_acidente">
       <ColNames>data
 nrocorrencia</ColNames>
-      <ObjectId>103256</ObjectId>
+      <ObjectId>106139</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431859</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="412" parent="374" name="pk_acidente">
-      <ObjectId>103257</ObjectId>
+      <ObjectId>106140</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103256</UnderlyingIndexId>
+      <StateNumber>431859</StateNumber>
+      <UnderlyingIndexId>106139</UnderlyingIndexId>
     </key>
     <column id="413" parent="375" name="datacarga">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431862</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="414" parent="375" name="horacarga">
       <DataType>time|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431862</StateNumber>
       <TypeId>1083</TypeId>
     </column>
     <column id="415" parent="375" name="tipocarga">
       <DataType>varchar(25)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431862</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="416" parent="375" name="pk_historicocarga">
       <ColNames>datacarga
 horacarga</ColNames>
-      <ObjectId>103323</ObjectId>
+      <ObjectId>106202</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431862</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="417" parent="375" name="pk_historicocarga">
-      <ObjectId>103324</ObjectId>
+      <ObjectId>106203</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103323</UnderlyingIndexId>
+      <StateNumber>431862</StateNumber>
+      <UnderlyingIndexId>106202</UnderlyingIndexId>
     </key>
-    <column id="418" parent="376" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="419" parent="376" name="descricao">
+    <column id="418" parent="376" name="descricao">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431853</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="420" parent="376" name="pk_rodovia">
-      <ColNames>id</ColNames>
-      <ObjectId>103206</ObjectId>
+    <index id="419" parent="376" name="pk_rodovia">
+      <ColNames>descricao</ColNames>
+      <ObjectId>106089</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431853</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="421" parent="376" name="pk_rodovia">
-      <ObjectId>103207</ObjectId>
+    <key id="420" parent="376" name="pk_rodovia">
+      <ObjectId>106090</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103206</UnderlyingIndexId>
+      <StateNumber>431853</StateNumber>
+      <UnderlyingIndexId>106089</UnderlyingIndexId>
     </key>
-    <column id="422" parent="377" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="423" parent="377" name="descricao">
+    <column id="421" parent="377" name="descricao">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431855</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="424" parent="377" name="pk_sentrod">
-      <ColNames>id</ColNames>
-      <ObjectId>103221</ObjectId>
+    <index id="422" parent="377" name="pk_sentrod">
+      <ColNames>descricao</ColNames>
+      <ObjectId>106104</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431855</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="425" parent="377" name="pk_sentrod">
-      <ObjectId>103222</ObjectId>
+    <key id="423" parent="377" name="pk_sentrod">
+      <ObjectId>106105</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103221</UnderlyingIndexId>
+      <StateNumber>431855</StateNumber>
+      <UnderlyingIndexId>106104</UnderlyingIndexId>
     </key>
-    <column id="426" parent="378" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="427" parent="378" name="descricao">
+    <column id="424" parent="378" name="descricao">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431856</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="428" parent="378" name="pk_tipacidente">
-      <ColNames>id</ColNames>
-      <ObjectId>103226</ObjectId>
+    <index id="425" parent="378" name="pk_tipacidente">
+      <ColNames>descricao</ColNames>
+      <ObjectId>106109</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431856</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="429" parent="378" name="pk_tipacidente">
-      <ObjectId>103227</ObjectId>
+    <key id="426" parent="378" name="pk_tipacidente">
+      <ObjectId>106110</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103226</UnderlyingIndexId>
+      <StateNumber>431856</StateNumber>
+      <UnderlyingIndexId>106109</UnderlyingIndexId>
     </key>
-    <column id="430" parent="379" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="431" parent="379" name="descricao">
+    <column id="427" parent="379" name="descricao">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431857</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="432" parent="379" name="pk_tipocorrencia">
-      <ColNames>id</ColNames>
-      <ObjectId>103231</ObjectId>
+    <index id="428" parent="379" name="pk_tipocorrencia">
+      <ColNames>descricao</ColNames>
+      <ObjectId>106114</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431857</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="433" parent="379" name="pk_tipocorrencia">
-      <ObjectId>103232</ObjectId>
+    <key id="429" parent="379" name="pk_tipocorrencia">
+      <ObjectId>106115</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103231</UnderlyingIndexId>
+      <StateNumber>431857</StateNumber>
+      <UnderlyingIndexId>106114</UnderlyingIndexId>
     </key>
-    <column id="434" parent="380" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="435" parent="380" name="descricao">
+    <column id="430" parent="380" name="descricao">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431858</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="436" parent="380" name="pk_tippista">
-      <ColNames>id</ColNames>
-      <ObjectId>103236</ObjectId>
+    <index id="431" parent="380" name="pk_tippista">
+      <ColNames>descricao</ColNames>
+      <ObjectId>106119</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431858</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="437" parent="380" name="pk_tippista">
-      <ObjectId>103237</ObjectId>
+    <key id="432" parent="380" name="pk_tippista">
+      <ObjectId>106120</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103236</UnderlyingIndexId>
+      <StateNumber>431858</StateNumber>
+      <UnderlyingIndexId>106119</UnderlyingIndexId>
     </key>
-    <column id="438" parent="381" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="439" parent="381" name="descricao">
+    <column id="433" parent="381" name="descricao">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431854</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="440" parent="381" name="idrodovia">
-      <DataType>integer|0s</DataType>
-      <Position>3</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+    <column id="434" parent="381" name="idrodovia">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>431854</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="441" parent="381" name="fk_trerod_rod">
+    <foreign-key id="435" parent="381" name="fk_trerod_rod">
       <ColNames>idrodovia</ColNames>
-      <ObjectId>103213</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106096</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103203</RefTableId>
+      <StateNumber>431854</StateNumber>
+      <RefTableId>106086</RefTableId>
       <RefTableName>rodovias</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="442" parent="381" name="pk_trerod">
-      <ColNames>id</ColNames>
-      <ObjectId>103211</ObjectId>
+    <index id="436" parent="381" name="pk_trerod">
+      <ColNames>descricao</ColNames>
+      <ObjectId>106094</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431854</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="443" parent="381" name="pk_trerod">
-      <ObjectId>103212</ObjectId>
+    <key id="437" parent="381" name="pk_trerod">
+      <ObjectId>106095</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103211</UnderlyingIndexId>
+      <StateNumber>431854</StateNumber>
+      <UnderlyingIndexId>106094</UnderlyingIndexId>
     </key>
-    <check id="444" parent="382" name="ck_ultra">
+    <check id="438" parent="382" name="ck_ultra">
       <ColNames>kminicial
 kmfinal</ColNames>
-      <ObjectId>103302</ObjectId>
+      <ObjectId>106183</ObjectId>
       <Predicate>(kminicial &gt;= (0.00)::double precision) AND (kmfinal &gt;= (0.00)::double precision)</Predicate>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431861</StateNumber>
     </check>
-    <column id="445" parent="382" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="446" parent="382" name="situacao">
+    <column id="439" parent="382" name="situacao">
       <DataType>varchar(30)|0s</DataType>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431861</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="447" parent="382" name="uf">
+    <column id="440" parent="382" name="uf">
       <DataType>varchar(2)|0s</DataType>
-      <Position>3</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>2</Position>
+      <StateNumber>431861</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="448" parent="382" name="anopnvsnv">
+    <column id="441" parent="382" name="anopnvsnv">
       <DataType>integer|0s</DataType>
-      <Position>4</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>3</Position>
+      <StateNumber>431861</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="449" parent="382" name="kminicial">
+    <column id="442" parent="382" name="kminicial">
+      <DataType>real|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>431861</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="443" parent="382" name="kmfinal">
       <DataType>real|0s</DataType>
       <Position>5</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431861</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="450" parent="382" name="kmfinal">
+    <column id="444" parent="382" name="longitudefinal">
       <DataType>real|0s</DataType>
       <Position>6</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431861</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="451" parent="382" name="longitudefinal">
+    <column id="445" parent="382" name="longitudeinicial">
       <DataType>real|0s</DataType>
       <Position>7</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431861</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="452" parent="382" name="longitudeinicial">
+    <column id="446" parent="382" name="latitudefinal">
       <DataType>real|0s</DataType>
       <Position>8</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431861</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="453" parent="382" name="latitudefinal">
+    <column id="447" parent="382" name="latitudeinicial">
       <DataType>real|0s</DataType>
       <Position>9</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431861</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="454" parent="382" name="latitudeinicial">
-      <DataType>real|0s</DataType>
+    <column id="448" parent="382" name="idtrechorodovia">
+      <DataType>varchar(30)|0s</DataType>
       <Position>10</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>700</TypeId>
+      <StateNumber>431861</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="455" parent="382" name="idtrechorodovia">
-      <DataType>integer|0s</DataType>
+    <column id="449" parent="382" name="idsentidorodovia">
+      <DataType>varchar(30)|0s</DataType>
       <Position>11</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431861</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="456" parent="382" name="idsentidorodovia">
-      <DataType>integer|0s</DataType>
+    <column id="450" parent="382" name="idtipopista">
+      <DataType>varchar(30)|0s</DataType>
       <Position>12</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431861</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="457" parent="382" name="idtipopista">
-      <DataType>integer|0s</DataType>
-      <Position>13</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="458" parent="382" name="fk_sina_trerod">
+    <foreign-key id="451" parent="382" name="fk_sina_trerod">
       <ColNames>idtrechorodovia</ColNames>
-      <ObjectId>103305</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106184</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103208</RefTableId>
-      <RefTableName>trechoRodovia</RefTableName>
+      <StateNumber>431861</StateNumber>
+      <RefTableId>106091</RefTableId>
+      <RefTableName>trechorodovia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="459" parent="382" name="fk_sina_sentrod">
+    <foreign-key id="452" parent="382" name="fk_sina_sentrod">
       <ColNames>idsentidorodovia</ColNames>
-      <ObjectId>103310</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106189</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103218</RefTableId>
-      <RefTableName>sentidoRodovia</RefTableName>
+      <StateNumber>431861</StateNumber>
+      <RefTableId>106101</RefTableId>
+      <RefTableName>sentidorodovia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="460" parent="382" name="fk_sina_tippista">
+    <foreign-key id="453" parent="382" name="fk_sina_tippista">
       <ColNames>idtipopista</ColNames>
-      <ObjectId>103315</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106194</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103233</RefTableId>
-      <RefTableName>tipoPista</RefTableName>
+      <StateNumber>431861</StateNumber>
+      <RefTableId>106116</RefTableId>
+      <RefTableName>tipopista</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="461" parent="382" name="pk_ultrapassagem">
-      <ColNames>id</ColNames>
-      <ObjectId>103303</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="462" parent="382" name="pk_ultrapassagem">
-      <ObjectId>103304</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103303</UnderlyingIndexId>
-    </key>
-    <check id="463" parent="383" name="ck_velmax">
+    <check id="454" parent="383" name="ck_velmax">
       <ColNames>km</ColNames>
-      <ObjectId>103281</ObjectId>
+      <ObjectId>106164</ObjectId>
       <Predicate>km &gt;= (0.00)::double precision</Predicate>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431860</StateNumber>
     </check>
-    <column id="464" parent="383" name="id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="465" parent="383" name="situacao">
+    <column id="455" parent="383" name="situacao">
       <DataType>varchar(30)|0s</DataType>
-      <Position>2</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>1</Position>
+      <StateNumber>431860</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="466" parent="383" name="uf">
+    <column id="456" parent="383" name="uf">
       <DataType>varchar(2)|0s</DataType>
-      <Position>3</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>2</Position>
+      <StateNumber>431860</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="467" parent="383" name="anopnvsnv">
+    <column id="457" parent="383" name="anopnvsnv">
       <DataType>integer|0s</DataType>
-      <Position>4</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>3</Position>
+      <StateNumber>431860</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="468" parent="383" name="veloveicpesado">
+    <column id="458" parent="383" name="veloveicpesado">
+      <DataType>real|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>431860</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="459" parent="383" name="veloveicleve">
       <DataType>real|0s</DataType>
       <Position>5</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431860</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="469" parent="383" name="veloveicleve">
+    <column id="460" parent="383" name="latitude">
       <DataType>real|0s</DataType>
       <Position>6</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431860</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="470" parent="383" name="latitude">
+    <column id="461" parent="383" name="longitude">
       <DataType>real|0s</DataType>
       <Position>7</Position>
-      <StateNumber>410675</StateNumber>
+      <StateNumber>431860</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="471" parent="383" name="longitude">
-      <DataType>real|0s</DataType>
-      <Position>8</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>700</TypeId>
-    </column>
-    <column id="472" parent="383" name="municipio">
+    <column id="462" parent="383" name="municipio">
       <DataType>varchar(40)|0s</DataType>
-      <Position>9</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>8</Position>
+      <StateNumber>431860</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="473" parent="383" name="km">
+    <column id="463" parent="383" name="km">
       <DataType>real|0s</DataType>
-      <Position>10</Position>
-      <StateNumber>410675</StateNumber>
+      <Position>9</Position>
+      <StateNumber>431860</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="474" parent="383" name="idtrechorodovia">
-      <DataType>integer|0s</DataType>
+    <column id="464" parent="383" name="idtrechorodovia">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>10</Position>
+      <StateNumber>431860</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="465" parent="383" name="idsentidorodovia">
+      <DataType>varchar(30)|0s</DataType>
       <Position>11</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431860</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="475" parent="383" name="idsentidorodovia">
-      <DataType>integer|0s</DataType>
+    <column id="466" parent="383" name="idtipopista">
+      <DataType>varchar(30)|0s</DataType>
       <Position>12</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>431860</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="476" parent="383" name="idtipopista">
-      <DataType>integer|0s</DataType>
-      <Position>13</Position>
-      <StateNumber>410675</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="477" parent="383" name="fk_sina_trerod">
+    <foreign-key id="467" parent="383" name="fk_sina_trerod">
       <ColNames>idtrechorodovia</ColNames>
-      <ObjectId>103284</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106165</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103208</RefTableId>
-      <RefTableName>trechoRodovia</RefTableName>
+      <StateNumber>431860</StateNumber>
+      <RefTableId>106091</RefTableId>
+      <RefTableName>trechorodovia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="478" parent="383" name="fk_sina_sentrod">
+    <foreign-key id="468" parent="383" name="fk_sina_sentrod">
       <ColNames>idsentidorodovia</ColNames>
-      <ObjectId>103289</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106170</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103218</RefTableId>
-      <RefTableName>sentidoRodovia</RefTableName>
+      <StateNumber>431860</StateNumber>
+      <RefTableId>106101</RefTableId>
+      <RefTableName>sentidorodovia</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="479" parent="383" name="fk_sina_tippista">
+    <foreign-key id="469" parent="383" name="fk_sina_tippista">
       <ColNames>idtipopista</ColNames>
-      <ObjectId>103294</ObjectId>
-      <RefColNames>id</RefColNames>
+      <ObjectId>106175</ObjectId>
+      <RefColNames>descricao</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>410675</StateNumber>
-      <RefTableId>103233</RefTableId>
-      <RefTableName>tipoPista</RefTableName>
+      <StateNumber>431860</StateNumber>
+      <RefTableId>106116</RefTableId>
+      <RefTableName>tipopista</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="480" parent="383" name="pk_velomaxima">
-      <ColNames>id</ColNames>
-      <ObjectId>103282</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="481" parent="383" name="pk_velomaxima">
-      <ObjectId>103283</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>410675</StateNumber>
-      <UnderlyingIndexId>103282</UnderlyingIndexId>
-    </key>
   </database-model>
 </dataSource>

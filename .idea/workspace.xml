@@ -9,13 +9,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04ecd6ba-e2ac-4dd9-b6f0-be4fcdc38c56" name="Changes" comment="Correção PGVelocidadeMaximaDAO">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_2022_20_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_2022_20_56__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_11_2022_23_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_11_2022_23_44__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_00__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_01__Changes_.xml" afterDir="false" />
+    <list default="true" id="04ecd6ba-e2ac-4dd9-b6f0-be4fcdc38c56" name="Changes" comment="Dependences">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/RelatorioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/rodovia.hrulUQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/rodovia.hrulUQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/AcidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Sinalizacao/PgVelocidadeMaximaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/TrechoRodovia/PgTrechoRodoviaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/TrechoRodovia/PgTrechoRodoviaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/relatorio.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorio.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/AcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/AcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/PgDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/PgDAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Rodovia/PgRodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Rodovia/PgRodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Rodovia/RodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Rodovia/RodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/SentidoRodovia/PgSentidoRodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/SentidoRodovia/PgSentidoRodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/PgUltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/PgUltrapassagemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/PgVelocidadeMaximaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/PgVelocidadeMaximaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/UltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/UltrapassagemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/TipoAcidente/PgTipoAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/TipoAcidente/PgTipoAcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/TipoAcidente/TipoAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/TipoAcidente/TipoAcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/TipoOcorrencia/TipoOcorrenciaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/TipoOcorrencia/TipoOcorrenciaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/TipoPista/PgTipoPistaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/TipoPista/PgTipoPistaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/TrechoRodovia/PgTrechoRodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/TrechoRodovia/PgTrechoRodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadAcidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadAcidente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadUltrapassagem.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadUltrapassagem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadVelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/classes/UploadVelocidadeMaxima.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/jdbc/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/jdbc/ConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/model/Acidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/model/Acidente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/model/TrechoRodovia.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/model/TrechoRodovia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/model/Ultrapassagem.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/model/Ultrapassagem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/classes/model/VelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/model/VelocidadeMaxima.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/AcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/AcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/DAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/PgDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/PgDAOFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Rodovia/PgRodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Rodovia/PgRodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Rodovia/RodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Rodovia/RodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/SentidoRodovia/PgSentidoRodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/SentidoRodovia/PgSentidoRodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/PgUltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/PgUltrapassagemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/PgVelocidadeMaximaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/PgVelocidadeMaximaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/UltrapassagemDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/UltrapassagemDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Sinalizacao/VelocidadeMaximaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoAcidente/PgTipoAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoAcidente/PgTipoAcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoAcidente/TipoAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoAcidente/TipoAcidenteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoOcorrencia/PgTipoOcorrenciaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoOcorrencia/TipoOcorrenciaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoOcorrencia/TipoOcorrenciaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoPista/PgTipoPistaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TipoPista/PgTipoPistaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TrechoRodovia/PgTrechoRodoviaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/TrechoRodovia/PgTrechoRodoviaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/InputController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadAcidente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadUltrapassagem.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadUltrapassagem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadVelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/classes/UploadVelocidadeMaxima.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/jdbc/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/jdbc/ConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/Acidente.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/Acidente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/TrechoRodovia.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/TrechoRodovia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/Ultrapassagem.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/Ultrapassagem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/VelocidadeMaxima.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/model/VelocidadeMaxima.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/configuracao/datasource.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/relatorio.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/relatorio.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +121,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tatiane\Documents\UEL3\Banco-de-Dados-I\project\src\main\webapp\WEB-INF" />
@@ -169,7 +232,8 @@
       <workItem from="1669037489888" duration="66000" />
       <workItem from="1669059136433" duration="4581000" />
       <workItem from="1669079248523" duration="5238000" />
-      <workItem from="1669670577946" duration="2822000" />
+      <workItem from="1669670577946" duration="10846000" />
+      <workItem from="1669721622790" duration="5467000" />
     </task>
     <task id="LOCAL-00001" summary="commit na branch de desenvolvimento">
       <created>1666103964967</created>
@@ -241,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669673110088</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Dependences">
+      <created>1669673418571</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669673418571</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,22 +338,14 @@
     <MESSAGE value="Arrumando lógica de UploadAcidente" />
     <MESSAGE value="Arrumando dependencias do projeto" />
     <MESSAGE value="Correção PGVelocidadeMaximaDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção PGVelocidadeMaximaDAO" />
+    <MESSAGE value="Dependences" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dependences" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/controller/classes/UploadAcidente.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/project/src/main/java/controller/InputController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

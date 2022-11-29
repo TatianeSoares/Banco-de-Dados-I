@@ -19,27 +19,26 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
     private final Connection connection;
 
     private static final String INSERT_VELOCIDADE_MAXIMA =
-            "INSERT INTO rodovia.acidente(idVelocidadeMaxima," +
-                    "situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude" +
+            "INSERT INTO rodovia.velocidademaxima(situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, " +
                     "longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista)" +
-                    "VALUES();";
+                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
     private static final String BUSCA_TODAS_VELOCIDADES =
-            "SELECT situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
+            "SELECT situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
                     "FROM rodovia.velocidadeMaxima" +
                     "ORDER BY km;";
 
     private static final String BUSCA_VELOCIDADE_MAXIMA =
-            "SELECT situacao, uf, anoPnvSnc, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
+            "SELECT situacao, uf, anoPnvSnv, veloVeicPesado, veloVeicLeve, latitude, longitude, municipio, km, idTrechoRodovia, idSentidoRodovia, idTipoPista" +
                     "FROM rodovia.velocidadeMaxima" +
                     "WHERE id = ?;";
 
     private static final String UPDATE_VELOCIDADE_MAXIMA =
-            "UPDATE FROM rodovia.velocidadeMaxima" +
+            "UPDATE FROM rodovia.velocidademaxima" +
                     "SET " +
                     "situacao = " +
                     "uf = " +
-                    "anoPnvSnc =" +
+                    "anoPnvSnv =" +
                     "veloVeicPesado =" +
                     "veloVeicLeve =" +
                     "latitude =" +
@@ -52,7 +51,7 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
                     "WHERE id = ;";
 
     private static final String DELETE_VELOCIDADE_MAXIMA =
-            "DELETE FROM rodovia.velocidadeMaxima" +
+            "DELETE FROM rodovia.velocidademaxima" +
                     "WHERE id = ;";
 
     public PgVelocidadeMaximaDAO(Connection connection) {
@@ -71,9 +70,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
             statement.setFloat(7, velocidadeMaxima.getLongitude());
             statement.setString(8, velocidadeMaxima.getMunicipio());
             statement.setFloat(9, velocidadeMaxima.getKm());
-            statement.setInt(10, velocidadeMaxima.getIdTrechoRodovia());
-            statement.setInt(11, velocidadeMaxima.getIdSentidoRodovia());
-            statement.setInt(12, velocidadeMaxima.getIdTipoPista());
+            statement.setString(10, velocidadeMaxima.getIdTrechoRodovia());
+            statement.setString(11, velocidadeMaxima.getIdSentidoRodovia());
+            statement.setString(12, velocidadeMaxima.getIdTipoPista());
 
             statement.executeUpdate();
         } catch (SQLException ex) {
@@ -125,9 +124,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
             statement.setFloat(8, velocidadeMaxima.getLongitude());
             statement.setString(9, velocidadeMaxima.getMunicipio());
             statement.setFloat(10, velocidadeMaxima.getKm());
-            statement.setInt(11, velocidadeMaxima.getIdTrechoRodovia());
-            statement.setInt(12, velocidadeMaxima.getIdSentidoRodovia());
-            statement.setInt(13, velocidadeMaxima.getIdTipoPista());
+            statement.setString(11, velocidadeMaxima.getIdTrechoRodovia());
+            statement.setString(12, velocidadeMaxima.getIdSentidoRodovia());
+            statement.setString(13, velocidadeMaxima.getIdTipoPista());
 
         } catch (SQLException ex) {
             Logger.getLogger(PgVelocidadeMaximaDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
@@ -162,9 +161,9 @@ public class PgVelocidadeMaximaDAO implements VelocidadeMaximaDAO{
                 velocidadeMaxima.setLongitude(result.getFloat("longitude"));
                 velocidadeMaxima.setMunicipio(result.getString("municipio"));
                 velocidadeMaxima.setKm(result.getFloat("km"));
-                velocidadeMaxima.setIdTrechoRodovia(result.getInt("idTrechoRodovia"));
-                velocidadeMaxima.setIdSentidoRodovia(result.getInt("idSentidoRodovia"));
-                velocidadeMaxima.setIdTipoPista(result.getInt("idTipoPista"));
+                velocidadeMaxima.setIdTrechoRodovia(result.getString("idTrechoRodovia"));
+                velocidadeMaxima.setIdSentidoRodovia(result.getString("idSentidoRodovia"));
+                velocidadeMaxima.setIdTipoPista(result.getString("idTipoPista"));
 
                 velocidadeMaximaList.add(velocidadeMaxima);
             }

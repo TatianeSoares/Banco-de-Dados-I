@@ -57,7 +57,5 @@ _
 /project/src/main/java/model/HistoricoCarga.java,5\a\5a6a2991416ec312f6a177a104c5be0bf1352146
 \
 ,project/src/main/webapp/historicoCarga.xhtml,d\e\de05a8d73ba65a9ad70f2775bba99f46586b5054
-n
->project/src/main/java/controller/historicoCargaController.java,3\d\3ddfbdef614a8ae6a56577207149bacda9761948
 q
 Aproject/src/main/java/controller/classes/UploadUltrapassagem.java,2\2\22bd2af9119747ca671cadb521966a0d4fffbda6

@@ -17,6 +17,7 @@ import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Named
@@ -35,17 +36,22 @@ public class RelatorioController implements Serializable {
     public void getDataVelocidadeObitos() throws Exception {
 
         List<Acidente> acidenteList;
+        List<Float> kmList = new ArrayList<>();
         float trecho40, trecho60, trecho80;
 
         try(DAOFactory daoFactory = DAOFactory.getInstance()){
             VelocidadeMaximaDAO velocidadeMaximaDAO = daoFactory.getVelocidadeMaximaDAO();
             TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
             AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
-            acidenteList = acidenteDAO.all();
+            acidenteList = acidenteDAO.getAcidentesFataisProximos1Km();
+
+//            for(Acidente acidente : acidenteList){
+//                kmList.add(acidente.getKm());
+//
+//            }
 
             gerarVelocidadeObitos(acidenteList);
         }
-
     }
 
     private void gerarVelocidadeObitos(List<Acidente> acidenteList){

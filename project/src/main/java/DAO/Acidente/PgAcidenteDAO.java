@@ -66,39 +66,91 @@ public class PgAcidenteDAO implements AcidenteDAO{
                   "FROM rodovia.acidente " +
                   "WHERE mortos != 0;";
 
+  private static final String BUSCA_FATAIS_ACIDENTES_PROXIMOS_1KM =
+      "SELECT * FROM rodovia.acidente a " +
+      "JOIN rodovia.trechoRodovia tr ON a.idTrechoRodovia = tr.descricao " +
+      "JOIN rodovia.sentidoRodovia sr ON a.idSentidoRodovia = sr.descricao " +
+      "JOIN rodovia.rodovias r ON tr.descricao = r.descricao " +
+      "JOIN rodovia.velocidadeMaxima vm ON vm.idTrechoRodovia = tr.descricao AND vm.idSentidoRodovia = sr.descricao " +
+      "WHERE ABS(a.km - vm.km) < 1000;";
 
   public PgAcidenteDAO(Connection connection) {
     this.connection = connection;
   }
 
-  public List<Acidente> getAcidentesFatais(Acidente acidente) throws SQLException {
+//String idTrechoRodovia, Integer idSentidoRodovia, Integer idRodovia, int velocidadeMaxima
+  //TODO teria que fazer um pra cada velocidade
+  public List<Acidente> getAcidentesFataisProximos1Km(){
+    List<Acidente> acidenteList = new ArrayList<>();
+    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES_PROXIMOS_1KM);
+      ResultSet result = statement.executeQuery()) {
+        while (result.next()) {
+          Acidente acidente = new Acidente();
+          acidente.setData(result.getDate("data"));
+          acidente.setHora(result.getTime("hora"));
+          acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
+          acidente.setKm(result.getFloat("km"));
+          acidente.setAutomovel(result.getInt("automovel"));
+          acidente.setBicicleta(result.getInt("bicicleta"));
+          acidente.setCaminhao(result.getInt("caminhao"));
+          acidente.setMoto(result.getInt("moto"));
+          acidente.setOnibus(result.getInt("onibus"));
+          acidente.setOutros(result.getInt("outros"));
+          acidente.setTracaoAnimal(result.getInt("tracaoAnimal"));
+          acidente.setCargaEspecial(result.getInt("cargaEspecial"));
+          acidente.setTratorMaquina(result.getInt("tratorMaquina"));
+          acidente.setUtilitario(result.getInt("utilitario"));
+          acidente.setIleso(result.getInt("ileso"));
+          acidente.setLevementeFerido(result.getInt("levementeFerido"));
+          acidente.setGravementeFerido(result.getInt("gravementeFerido"));
+          acidente.setMortos(result.getInt("mortos"));
+          acidente.setIdTrechoRodovia(result.getString("idTrechoRodovia"));
+          acidente.setIdSentidoRodovia(result.getString("idSentidoRodovia"));
+          acidente.setIdTipoOcorrencia(result.getString("idTipoOcorrencia"));
+          acidente.setIdTipoAcidente(result.getString("idTipoAcidente"));
+
+          acidenteList.add(acidente);
+        }
+
+    }catch (SQLException ex) {
+      Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+    }
+
+    return acidenteList;
+  }
+
+  public List<Acidente> getAcidentesFatais() throws SQLException {
 
     List<Acidente> acidenteList = new ArrayList<>();
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES)) {
-      statement.setDate(1, acidente.getData());
-      statement.setTime(2, acidente.getHora());
-      statement.setInt(3, acidente.getNrOcorrencia());
-      statement.setFloat(4, acidente.getKm());
-      statement.setInt(5, acidente.getAutomovel());
-      statement.setInt(6, acidente.getBicicleta());
-      statement.setInt(7, acidente.getCaminhao());
-      statement.setInt(8, acidente.getMoto());
-      statement.setInt(9, acidente.getOnibus());
-      statement.setInt(10, acidente.getOutros());
-      statement.setInt(11, acidente.getTracaoAnimal());
-      statement.setInt(12, acidente.getCargaEspecial());
-      statement.setInt(13, acidente.getTratorMaquina());
-      statement.setInt(14, acidente.getUtilitario());
-      statement.setInt(15, acidente.getIleso());
-      statement.setInt(16, acidente.getLevementeFerido());
-      statement.setInt(17, acidente.getGravementeFerido());
-      statement.setInt(18, acidente.getMortos());
-      statement.setString(19, acidente.getIdTrechoRodovia());
-      statement.setString(20, acidente.getIdSentidoRodovia());
-      statement.setString(21, acidente.getIdTipoOcorrencia());
-      statement.setString(22, acidente.getIdTipoAcidente());
+    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES);
+          ResultSet result = statement.executeQuery()) {
+      while (result.next()) {
+        Acidente acidente = new Acidente();
+        statement.setDate(1, acidente.getData());
+        statement.setTime(2, acidente.getHora());
+        statement.setInt(3, acidente.getNrOcorrencia());
+        statement.setFloat(4, acidente.getKm());
+        statement.setInt(5, acidente.getAutomovel());
+        statement.setInt(6, acidente.getBicicleta());
+        statement.setInt(7, acidente.getCaminhao());
+        statement.setInt(8, acidente.getMoto());
+        statement.setInt(9, acidente.getOnibus());
+        statement.setInt(10, acidente.getOutros());
+        statement.setInt(11, acidente.getTracaoAnimal());
+        statement.setInt(12, acidente.getCargaEspecial());
+        statement.setInt(13, acidente.getTratorMaquina());
+        statement.setInt(14, acidente.getUtilitario());
+        statement.setInt(15, acidente.getIleso());
+        statement.setInt(16, acidente.getLevementeFerido());
+        statement.setInt(17, acidente.getGravementeFerido());
+        statement.setInt(18, acidente.getMortos());
+        statement.setString(19, acidente.getIdTrechoRodovia());
+        statement.setString(20, acidente.getIdSentidoRodovia());
+        statement.setString(21, acidente.getIdTipoOcorrencia());
+        statement.setString(22, acidente.getIdTipoAcidente());
 
-      acidenteList.add(acidente);
+        acidenteList.add(acidente);
+      }
 
     } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);

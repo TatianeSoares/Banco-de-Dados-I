@@ -9,49 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/rodovia.hrulUQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9591e280-90ba-41b6-8bd2-9933f1981f10/storage_v2/_src_/database/tatiane.9shspA/schema/rodovia.hrulUQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_2022_20_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_2022_20_56__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_11_2022_23_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_11_2022_23_44__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2022_21_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_00__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_11_2022_20_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_2022_8_45_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_2022_8_45_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2022_09_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2022_09_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Acidente/PgAcidenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/PgDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/PgDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Relatorio/PgRelatorioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Relatorio/PgRelatorioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Relatorio/RelatorioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Relatorio/RelatorioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/RelatorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/RelatorioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/relatorio.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorio.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/DAO/PgDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/DAO/PgDAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/RelatorioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/RelatorioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/Acidente/PgAcidenteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/PgDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/DAO/PgDAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/RelatorioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/RelatorioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/templates/default.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/templates/pagina.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/historicoCarga.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/input.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/menuSuperior.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/relatorio.xhtml" beforeDir="false" />
-    </list>
+    <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="Implementando 2 relatorio e testando selects" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,8 +41,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/project/src/main/webapp/input.xhtml" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.13908207" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -184,8 +147,16 @@
       <workItem from="1669814788148" duration="9286000" />
       <workItem from="1669862665936" duration="41000" />
       <workItem from="1670266264177" duration="651000" />
-      <workItem from="1670267038793" duration="3182000" />
+      <workItem from="1670267038793" duration="3537000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementando 2 relatorio e testando selects">
+      <created>1670270895736</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670270895736</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +173,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implementando 2 relatorio e testando selects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementando 2 relatorio e testando selects" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Banco_de_Dados$JBoss_WildFly_26_1_2_Final.ic" NAME="JBoss/WildFly 26.1.2.Final Coverage Results" MODIFIED="1669816815252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

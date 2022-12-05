@@ -61,3 +61,13 @@ R
 "project/src/main/java/DAO/DAO.java,5\d\5d934d30763962566ad83ea98203bd288666e2ac
 o
 ?project/src/main/java/DAO/TrechoRodovia/PgTrechoRodoviaDAO.java,a\c\ac9128fe0993bc27b4c8631f51f056631d06e638
+Y
+)project/src/main/java/DAO/DAOFactory.java,d\c\dc7e5fd3052743be083ec65d1ff379a853023f6f
+e
+5project/src/main/java/DAO/Acidente/PgAcidenteDAO.java,6\3\633e09a4250ebde0b513b11b215a6012bdaac199
+[
++project/src/main/java/DAO/PgDAOFactory.java,a\1\a1ee7f280bfafdb780cabc313c4a3adc767cab89
+g
+7project/src/main/java/DAO/Relatorio/PgRelatorioDAO.java,c\1\c12bbf668806d14a2117dbe01af02de35a6cd66b
+?
+project/pom.xml,0\0\00979e68cce0a80a1582935642fd51153462c088

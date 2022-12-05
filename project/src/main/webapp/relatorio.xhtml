@@ -16,19 +16,19 @@
                                     style="margin: auto;
                                     width: 70%;
                                     font-size: 20px;">
-                            <div class="p-col-12 p-md-12">
-                                <p:outputLabel value="Selecione o tipo de relatório:"/>
-                            </div>
-                            <div class="p-col-12 p-md-5">
-                                <p:selectOneMenu id="tipo" value="#{relatorioController.relatorioSelecionado}">
-                                    <f:selectItem itemLabel="Selecione uma opção" itemDisabled="true"/>
-                                    <f:selectItem itemLabel="grafico kauee" itemValue="obitos"/>
-                                    <f:selectItem itemLabel="grafico tati" itemValue="compara"/>
-                                    <f:selectItem itemLabel="kauee 2" itemValue="colocaNome"/>
-                                    <f:selectItem itemLabel="tati 2" itemValue="colocaNome"/>
-                                    <p:ajax listener="#{relatorioController.setType(relatorioController.relatorioSelecionado)}"/>
-                                </p:selectOneMenu>
-                            </div>
+<!--                            <div class="p-col-12 p-md-12">-->
+<!--                                <p:outputLabel value="Selecione o tipo de relatório:"/>-->
+<!--                            </div>-->
+<!--                            <div class="p-col-12 p-md-5">-->
+<!--                                <p:selectOneMenu id="tipo" value="#{relatorioController.relatorioSelecionado}">-->
+<!--                                    <f:selectItem itemLabel="Selecione uma opção" itemDisabled="true"/>-->
+<!--                                    <f:selectItem itemLabel="Relação de Velocidades e acidentes com feridos" itemValue="feridos"/>-->
+<!--                                    <f:selectItem itemLabel="Relação quantidade de placas e acidentes" itemValue="quantidadeAciUlVel"/>-->
+<!--                                    <f:selectItem itemLabel="Quantidade de acidentes por tipo" itemValue="acidenteTipo"/>-->
+<!--                                    <f:selectItem itemLabel="kauee 2" itemValue="colocaNome"/>-->
+<!--                                    <p:ajax listener="#{relatorioController.setType(relatorioController.relatorioSelecionado)}"/>-->
+<!--                                </p:selectOneMenu>-->
+<!--                            </div>-->
                             <div class="p-col-12 p-md-4">
                                 <p:commandButton value="Gerar relatório"
                                                  actionListener="#{relatorioController.gerarRelatorio}"
@@ -40,6 +40,10 @@
                                              model="#{relatorioController.pieModel}"
                                              style="width:400px;height: 300px"
                                              rendered="#{relatorioController.pieModel != null}" />
+                                    <p:barChart model="#{relatorioController.barModel2}"
+                                                rendered="#{relatorioController.barModel2 != null}"
+                                                style="width: 100%;
+                                                height: 500px;"/>
                                 </h:panelGroup>
                             </div>
                         </p:fieldset>

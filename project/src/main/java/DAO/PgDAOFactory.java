@@ -4,6 +4,8 @@ import DAO.Acidente.AcidenteDAO;
 import DAO.Acidente.PgAcidenteDAO;
 import DAO.HistoricoCarga.HistoricoCargaDAO;
 import DAO.HistoricoCarga.PgHistoricoCargaDAO;
+import DAO.Relatorio.PgRelatorioDAO;
+import DAO.Relatorio.RelatorioDAO;
 import DAO.Rodovia.PgRodoviaDAO;
 import DAO.Rodovia.RodoviaDAO;
 import DAO.SentidoRodovia.PgSentidoRodoviaDAO;
@@ -50,5 +52,5 @@ public class PgDAOFactory extends DAOFactory {
   }
   public VelocidadeMaximaDAO getVelocidadeMaximaDAO(){return new PgVelocidadeMaximaDAO(this.connection);}
   public HistoricoCargaDAO getHistoricoCargaDAO() {return new PgHistoricoCargaDAO(this.connection);}
-  public HistoricoCargaDAO getRelatorioDAO() {return new PgHistoricoCargaDAO(this.connection);}
+  public RelatorioDAO getRelatorioDAO() {return new PgRelatorioDAO(this.connection);}
 }

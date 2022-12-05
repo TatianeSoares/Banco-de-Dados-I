@@ -1416,7 +1416,7 @@ false posix/WET
 false posix/Zulu
 false posixrules
 </TimeZones>
-      <IntrospectionStateNumber>992107</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196079</IntrospectionStateNumber>
       <StartupTime>1669934630</StartupTime>
     </root>
     <database id="2" parent="1" name="tatiane">
@@ -1432,7 +1432,7 @@ false posixrules
 13132||-9223372036854775808|U|G
 13132||10|U|G</Grants>
       <Owner>tatiane</Owner>
-      <IntrospectionStateNumber>992112</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196079</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|108103|106161|13
 sequence|table|108111|106180|13
@@ -2002,7 +2002,7 @@ sequence|table|108111|106180|13
       <Comment>standard public schema</Comment>
       <StateNumber>286</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>992112</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196079</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <schema id="135" parent="2" name="pg_catalog">
@@ -2020,7 +2020,7 @@ sequence|table|108111|106180|13
       <ObjectId>106085</ObjectId>
       <StateNumber>431852</StateNumber>
       <Owner>tatiane</Owner>
-      <IntrospectionStateNumber>992112</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196079</IntrospectionStateNumber>
     </schema>
     <extension id="138" parent="2" name="plpgsql">
       <ObjectId>13402</ObjectId>

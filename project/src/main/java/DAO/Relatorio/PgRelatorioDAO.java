@@ -2,7 +2,6 @@ package DAO.Relatorio;
 
 import DAO.Acidente.PgAcidenteDAO;
 import model.Relatorio;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +30,7 @@ public class PgRelatorioDAO implements RelatorioDAO{
           "group by tr.descricao, a.idTipoOcorrencia, a.idTipoAcidente, a.data;";
 
   private static final String BUSCA_ACI_ULT_VELO =
-          "SELECT tr.descricao, " +
+      "SELECT tr.descricao, " +
           "       COALESCE(sum(A.QtdeAcidente), 0) QtdeAcidente, " +
           "       COALESCE(sum(UT.QtdeUltrapassagem), 0) QtdeUltrapassagem, " +
           "       COALESCE(sum(VM.QtdeVelMaxima), 0) QtdeVelMaxima " +
@@ -89,7 +88,7 @@ public class PgRelatorioDAO implements RelatorioDAO{
 
     try (PreparedStatement statement = connection.prepareStatement(BUSCA_ACIDENTE_POR_TIPO);
          ResultSet result = statement.executeQuery()) {
-         statement.setString(22, tipoOcorrencia);
+      statement.setString(22, tipoOcorrencia);
       while (result.next()) {
         Relatorio relatorio = new Relatorio();
         relatorio.setTrechoRodovia(result.getString("trecho"));

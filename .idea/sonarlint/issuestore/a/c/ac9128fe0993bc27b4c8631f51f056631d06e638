@@ -1,8 +1,18 @@
 
+Q
+java:S26959"/This "PreparedStatement" only has 1 parameters.(Û½âºıÿÿÿÿ8ãßÍŠÎ0
 E
-java:S2695S"/This "PreparedStatement" only has 1 parameters.(ö¡ûÖ
+java:S2695l"/This "PreparedStatement" only has 1 parameters.(ö¡ûÖ
 4
 java:S1128"Remove this duplicated import.(öÌş
+z
+java:S1192"]Define a constant instead of duplicating this literal "SELECT descricao, idRodovia " 3 times.(ÏêÖ¤8ÀàÍŠÎ0
+~
+java:S1192"\Define a constant instead of duplicating this literal "FROM rodovia.trechoRodovia " 3 times.(…ı…­ıÿÿÿÿ8ÁàÍŠÎ0
+l
+java:S1192="JDefine a constant instead of duplicating this literal "idRodovia" 3 times.(Ò¤Òàøÿÿÿÿ8ÁàÍŠÎ0
+l
+java:S1192<"JDefine a constant instead of duplicating this literal "Descricao" 3 times.(İ¿ëñüÿÿÿÿ8ÂàÍŠÎ0
 k
 java:S1192!"UDefine a constant instead of duplicating this literal "WHERE descricao = ?;" 3 times.(çÑØ
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÇÍˆ²úÿÿÿÿ

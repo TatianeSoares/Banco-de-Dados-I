@@ -60,7 +60,7 @@ public class UploadUltrapassagem {
         byte[] contents = file.getContent();
         CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
         CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
-                .withCSVParser(parserCv).build();
+            .withCSVParser(parserCv).build();
         List<String[]> table = csvReader.readAll();
         tamanhoTable = table.size();
         String[] linha;

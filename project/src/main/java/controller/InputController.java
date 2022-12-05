@@ -30,7 +30,7 @@ public class InputController implements Serializable {
 
   public void uploadFile(FileUploadEvent fileUploadEvent)
       throws Exception {
-      UploadedFile file = fileUploadEvent.getFile();
+    UploadedFile file = fileUploadEvent.getFile();
 
     Calendar date = Calendar.getInstance();
     int dia = date.get(Calendar.DAY_OF_MONTH);
@@ -44,17 +44,17 @@ public class InputController implements Serializable {
     String horaString = hora + ":" + minutos + ":" + segundos;
 
 
-      if (file.getFileName() != null) {
-        if (tipSelecionado.equals("acidente")) {
-          UploadAcidente.readUploadAcidente(file, dataString, horaString, tipSelecionado);
-        }
-        if (tipSelecionado.equals("ultrapassagem")) {
-          UploadUltrapassagem.readUploadUltrapassagem(file, dataString, horaString, tipSelecionado);
-        }
-        if (tipSelecionado.equals("velocidade")) {
-          UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file, dataString, horaString, tipSelecionado);
-        }
+    if (file.getFileName() != null) {
+      if (tipSelecionado.equals("acidente")) {
+        UploadAcidente.readUploadAcidente(file, dataString, horaString, tipSelecionado);
       }
+      if (tipSelecionado.equals("ultrapassagem")) {
+        UploadUltrapassagem.readUploadUltrapassagem(file, dataString, horaString, tipSelecionado);
+      }
+      if (tipSelecionado.equals("velocidade")) {
+        UploadVelocidadeMaxima.readUploadVelocidadeMaxima(file, dataString, horaString, tipSelecionado);
+      }
+    }
 
     tipSelecionado = null;
   }

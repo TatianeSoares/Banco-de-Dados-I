@@ -48,7 +48,7 @@ public class UploadVelocidadeMaxima {
 
 
     public static void readUploadVelocidadeMaxima(UploadedFile file, String dataString, String horaString, String tipSelecionado)
-            throws IOException, ParseException, SQLException {
+        throws IOException, ParseException, SQLException {
 
         int nomeColuna = 1;
         int i;
@@ -58,7 +58,7 @@ public class UploadVelocidadeMaxima {
         byte[] contents = file.getContent();
         CSVParser parserCv = new CSVParserBuilder().withSeparator(';').build();
         CSVReader csvReader = new CSVReaderBuilder((new InputStreamReader(new ByteArrayInputStream(contents))))
-                .withCSVParser(parserCv).build();
+            .withCSVParser(parserCv).build();
 
         List<String[]> table = csvReader.readAll();
         //TODO primeiro ler a linha com os nomes de colunas da table

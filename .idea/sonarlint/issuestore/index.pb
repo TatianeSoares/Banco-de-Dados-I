@@ -21,12 +21,6 @@ f
 6project/src/main/webapp/WEB-INF/templates/pagina.xhtml,0\0\00f7d04d70592d69a4880ae67214bf8014b69a7e
 g
 7project/src/main/webapp/WEB-INF/templates/default.xhtml,d\b\db6d886762cb9268e250e8a37a5d76dde89d86c1
-Z
-*project/src/main/webapp/menuSuperior.xhtml,e\2\e239fb383fe4fa764f296ec4ed6f2dabea755070
-W
-'project/src/main/webapp/relatorio.xhtml,7\4\740245505d3be641f00d51e83f8573748a7a59b3
-S
-#project/src/main/webapp/input.xhtml,e\4\e4c5d7d6fb0982eef06e47a1295dcffedbebca7f
 c
 3project/src/main/java/DAO/Rodovia/PgRodoviaDAO.java,0\d\0d80118c4302c3fcb3e79fea7ad44105b4bfaa9f
 m
@@ -35,8 +29,6 @@ a
 1project/src/main/java/model/VelocidadeMaxima.java,2\1\21008d2ccc526f2d47b981caca8a75ae01dfefaa
 m
 =project/src/main/java/DAO/Sinalizacao/PgUltrapassagemDAO.java,2\2\220708cc2f2cb744859060054048071248d64dcb
-o
-?project/src/main/java/DAO/HistoricoCarga/HistoricoCargaDAO.java,b\d\bde0acb3936f7e47942b5b19d7899e2899efc8c7
 o
 ?project/src/main/java/DAO/SentidoRodovia/SentidoRodoviaDAO.java,1\f\1fb0e560abd2d29ea7f965a4de42434fa758f30e
 q

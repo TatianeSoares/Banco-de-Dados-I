@@ -118,7 +118,7 @@ public class UploadAcidente {
       try(DAOFactory daoFactory = DAOFactory.getInstance()){
         //verificar se ja existe as insercoes em rodovia, trechoRod etc
         //antes de inserir trechorodovia inserir rodovia
-          // inserir primeiro rodovia
+        // inserir primeiro rodovia
         //para adicionar um acidente precisamos primeiro buscar os trechos de rodovia já exixtentes e adiiconar outra caso seja necessario
         //porem temos a questão de que não tem o nome da rodovia no csv de adicente, só o trecho
         //preciso pensar o que fazer nessa situação
@@ -143,7 +143,7 @@ public class UploadAcidente {
           tipoAcidenteDAO.create(tipoAcidente);
         }
         if (data != null && nrOcorrencia != 0 && !(descricaoSentidoRodovia.isEmpty())
-        && !(descricaoTipoOcorrencia.isEmpty()) && !(descricaoTipoAcidente.isEmpty())) {
+            && !(descricaoTipoOcorrencia.isEmpty()) && !(descricaoTipoAcidente.isEmpty())) {
           Acidente acidente = new Acidente();
           acidente.setData(new java.sql.Date(data.getTime()));
           acidente.setHora(hora);

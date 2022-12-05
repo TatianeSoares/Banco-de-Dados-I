@@ -6,19 +6,23 @@
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="conteudo">
         <f:metadata>
-            <f:viewAction action="#{inputController.init}"/>
+            <f:viewAction action="#{relatorioController.init}"/>
         </f:metadata>
         <h:form enctype="multipart/form-data" id="form">
             <div class="ui-g">
                 <div class="ui-g-12">
                     <div class="ui-fluid p-grid">
-                        <p:fieldset legend="Carga de Dados"
+                        <p:fieldset legend="Relatórios"
                                     style="margin: auto;
                                     width: 70%;
                                     font-size: 20px;">
-
-
-
+                            <div>
+                                <h:panelGroup id="panel" layout="block">
+                                    <p:barChart model="#{relatorioController.barModel2}"
+                                                style="width: 100%;
+                                                height: 500px;"/>
+                                </h:panelGroup>
+                            </div>
                         </p:fieldset>
                     </div>
                 </div>

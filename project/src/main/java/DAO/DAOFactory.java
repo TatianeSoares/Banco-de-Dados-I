@@ -2,6 +2,7 @@ package DAO;
 
 import DAO.Acidente.AcidenteDAO;
 import DAO.HistoricoCarga.HistoricoCargaDAO;
+import DAO.Relatorio.RelatorioDAO;
 import DAO.Rodovia.RodoviaDAO;
 import DAO.SentidoRodovia.SentidoRodoviaDAO;
 import DAO.Sinalizacao.UltrapassagemDAO;
@@ -97,5 +98,6 @@ public abstract class DAOFactory implements AutoCloseable{
   public abstract UltrapassagemDAO getUltrapassagemDAO();
   public abstract VelocidadeMaximaDAO getVelocidadeMaximaDAO();
   public abstract HistoricoCargaDAO getHistoricoCargaDAO();
+  public abstract RelatorioDAO getRelatorioDAO();
 
 }

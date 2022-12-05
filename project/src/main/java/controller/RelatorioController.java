@@ -35,38 +35,23 @@ public class RelatorioController implements Serializable {
 
     public void getDataVelocidadeObitos() throws Exception {
 
-        List<Acidente> acidenteList;
-        List<Float> kmList = new ArrayList<>();
-        float trecho40, trecho60, trecho80;
+        List<Integer> countList = new ArrayList<>();
 
         try(DAOFactory daoFactory = DAOFactory.getInstance()){
-            VelocidadeMaximaDAO velocidadeMaximaDAO = daoFactory.getVelocidadeMaximaDAO();
-            TrechoRodoviaDAO trechoRodoviaDAO = daoFactory.getTrechoRodoviaDAO();
             AcidenteDAO acidenteDAO = daoFactory.getAcidenteDAO();
-            acidenteList = acidenteDAO.getAcidentesFataisProximos1Km();
-
-//            for(Acidente acidente : acidenteList){
-//                kmList.add(acidente.getKm());
-//
-//            }
-
-            gerarVelocidadeObitos(acidenteList);
+            countList = acidenteDAO.getAcidentesFataisProximos1KmCount();
+            gerarVelocidadeObitos(countList);
         }
     }
-
-    private void gerarVelocidadeObitos(List<Acidente> acidenteList){
+    private void gerarVelocidadeObitos(List<Integer> counts){
 
         pieModel = new PieChartModel();
-        int i = 0;
-        for(Acidente acidente : acidenteList){
-            if(i == 5){
-                break;
-            }
 
-            pieModel.set(String.valueOf(acidente.getKm()), acidente.getMortos() + i);
-            i++;
-        }
-        pieModel.setTitle("Relação de Velocidades regulamentadas com acidentes graves");
+        pieModel.set("40km/h", counts.get(0));
+        pieModel.set("60km/h", counts.get(1));
+        pieModel.set("80km/h", counts.get(2));
+        pieModel.set("110km/h", counts.get(3));
+        pieModel.setTitle("Relação de Velocidades regulamentadas com acidentes com feridos");
         pieModel.setLegendPosition("e");
         pieModel.setFill(true);
         pieModel.setShowDataLabels(true);

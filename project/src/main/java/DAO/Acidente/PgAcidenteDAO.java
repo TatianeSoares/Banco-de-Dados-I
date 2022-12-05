@@ -66,58 +66,81 @@ public class PgAcidenteDAO implements AcidenteDAO{
                   "FROM rodovia.acidente " +
                   "WHERE mortos != 0;";
 
-  private static final String BUSCA_FATAIS_ACIDENTES_PROXIMOS_1KM =
-      "SELECT * FROM rodovia.acidente a " +
-      "JOIN rodovia.trechoRodovia tr ON a.idTrechoRodovia = tr.descricao " +
-      "JOIN rodovia.sentidoRodovia sr ON a.idSentidoRodovia = sr.descricao " +
-      "JOIN rodovia.rodovias r ON tr.descricao = r.descricao " +
-      "JOIN rodovia.velocidadeMaxima vm ON vm.idTrechoRodovia = tr.descricao AND vm.idSentidoRodovia = sr.descricao " +
-      "WHERE ABS(a.km - vm.km) < 1000;";
+  private static final String BUSCA_FATAIS_ACIDENTES_COUNT =
+          "SELECT COUNT(case when vm.veloveicleve = 40 then 1 end) count40, COUNT(case when vm.veloveicleve = 60 then 1 end) count60, " +
+          "COUNT(case when vm.veloveicleve = 80 then 1 end) count80, COUNT(case when vm.veloveicleve = 110 then 1 end) count110 " +
+          "FROM rodovia.acidente a " +
+          "JOIN rodovia.trechoRodovia tr ON a.idTrechoRodovia = tr.descricao " +
+          "JOIN rodovia.sentidoRodovia sr ON a.idSentidoRodovia = sr.descricao " +
+          "JOIN rodovia.rodovias r ON tr.idRodovia = r.descricao " +
+          "JOIN rodovia.velocidadeMaxima vm ON vm.idTrechoRodovia = tr.descricao AND vm.idSentidoRodovia = sr.descricao " +
+          "WHERE ABS(a.km - vm.km) < 1 AND (a.levementeferido != 0 OR a.gravementeferido != 0 OR a.mortos != 0);";
 
   public PgAcidenteDAO(Connection connection) {
     this.connection = connection;
   }
 
-//String idTrechoRodovia, Integer idSentidoRodovia, Integer idRodovia, int velocidadeMaxima
-  //TODO teria que fazer um pra cada velocidade
-  public List<Acidente> getAcidentesFataisProximos1Km(){
+  public List<Integer> getAcidentesFataisProximos1KmCount() {
     List<Acidente> acidenteList = new ArrayList<>();
-    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES_PROXIMOS_1KM);
-      ResultSet result = statement.executeQuery()) {
-        while (result.next()) {
-          Acidente acidente = new Acidente();
-          acidente.setData(result.getDate("data"));
-          acidente.setHora(result.getTime("hora"));
-          acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
-          acidente.setKm(result.getFloat("km"));
-          acidente.setAutomovel(result.getInt("automovel"));
-          acidente.setBicicleta(result.getInt("bicicleta"));
-          acidente.setCaminhao(result.getInt("caminhao"));
-          acidente.setMoto(result.getInt("moto"));
-          acidente.setOnibus(result.getInt("onibus"));
-          acidente.setOutros(result.getInt("outros"));
-          acidente.setTracaoAnimal(result.getInt("tracaoAnimal"));
-          acidente.setCargaEspecial(result.getInt("cargaEspecial"));
-          acidente.setTratorMaquina(result.getInt("tratorMaquina"));
-          acidente.setUtilitario(result.getInt("utilitario"));
-          acidente.setIleso(result.getInt("ileso"));
-          acidente.setLevementeFerido(result.getInt("levementeFerido"));
-          acidente.setGravementeFerido(result.getInt("gravementeFerido"));
-          acidente.setMortos(result.getInt("mortos"));
-          acidente.setIdTrechoRodovia(result.getString("idTrechoRodovia"));
-          acidente.setIdSentidoRodovia(result.getString("idSentidoRodovia"));
-          acidente.setIdTipoOcorrencia(result.getString("idTipoOcorrencia"));
-          acidente.setIdTipoAcidente(result.getString("idTipoAcidente"));
+    List<Integer> counts = new ArrayList<>();;
+    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES_COUNT);
+         ResultSet result = statement.executeQuery()) {
+      while (result.next()) {
+        int count40 = result.getInt("count40");
+        int count60 = result.getInt("count60");
+        int count80 = result.getInt("count80");
+        int count110 = result.getInt("count110");
+        counts.add(count40);
+        counts.add(count60);
+        counts.add(count80);
+        counts.add(count110);
+      }
 
-          acidenteList.add(acidente);
-        }
-
-    }catch (SQLException ex) {
+    } catch (SQLException ex) {
       Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
     }
 
-    return acidenteList;
+    return counts;
   }
+
+//  public List<Acidente> getAcidentesFataisProximos1Km(){
+//    List<Acidente> acidenteList = new ArrayList<>();
+//    try (PreparedStatement statement = connection.prepareStatement(BUSCA_FATAIS_ACIDENTES_PROXIMOS_1KM);
+//      ResultSet result = statement.executeQuery()) {
+//        while (result.next()) {
+//          Acidente acidente = new Acidente();
+//          acidente.setData(result.getDate("data"));
+//          acidente.setHora(result.getTime("hora"));
+//          acidente.setNrOcorrencia(result.getInt("nrOcorrencia"));
+//          acidente.setKm(result.getFloat("km"));
+//          acidente.setAutomovel(result.getInt("automovel"));
+//          acidente.setBicicleta(result.getInt("bicicleta"));
+//          acidente.setCaminhao(result.getInt("caminhao"));
+//          acidente.setMoto(result.getInt("moto"));
+//          acidente.setOnibus(result.getInt("onibus"));
+//          acidente.setOutros(result.getInt("outros"));
+//          acidente.setTracaoAnimal(result.getInt("tracaoAnimal"));
+//          acidente.setCargaEspecial(result.getInt("cargaEspecial"));
+//          acidente.setTratorMaquina(result.getInt("tratorMaquina"));
+//          acidente.setUtilitario(result.getInt("utilitario"));
+//          acidente.setIleso(result.getInt("ileso"));
+//          acidente.setLevementeFerido(result.getInt("levementeFerido"));
+//          acidente.setGravementeFerido(result.getInt("gravementeFerido"));
+//          acidente.setMortos(result.getInt("mortos"));
+//          acidente.setIdTrechoRodovia(result.getString("idTrechoRodovia"));
+//          acidente.setIdSentidoRodovia(result.getString("idSentidoRodovia"));
+//          acidente.setIdTipoOcorrencia(result.getString("idTipoOcorrencia"));
+//          acidente.setIdTipoAcidente(result.getString("idTipoAcidente"));
+//
+//          acidenteList.add(acidente);
+//        }
+//
+//    }catch (SQLException ex) {
+//      Logger.getLogger(PgAcidenteDAO.class.getName()).log(Level.SEVERE, "DAO", ex);
+//    }
+//
+//    return acidenteList;
+//  }
 
   public List<Acidente> getAcidentesFatais() throws SQLException {
 

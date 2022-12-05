@@ -10,8 +10,10 @@ public interface AcidenteDAO extends DAO<Acidente> {
 
     public boolean verificarInAcidente(Acidente acidente);
 
-    public List<Acidente> getAcidentesFatais() throws SQLException;
+    //public List<Acidente> getAcidentesFatais() throws SQLException;
 
-    public List<Acidente> getAcidentesFataisProximos1Km();
+    //public List<Acidente> getAcidentesFataisProximos1Km();
+
+    public List<Integer> getAcidentesFataisProximos1KmCount();
 
 }

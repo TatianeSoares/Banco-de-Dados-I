@@ -50,4 +50,5 @@ public class PgDAOFactory extends DAOFactory {
   }
   public VelocidadeMaximaDAO getVelocidadeMaximaDAO(){return new PgVelocidadeMaximaDAO(this.connection);}
   public HistoricoCargaDAO getHistoricoCargaDAO() {return new PgHistoricoCargaDAO(this.connection);}
+  public HistoricoCargaDAO getRelatorioDAO() {return new PgHistoricoCargaDAO(this.connection);}
 }

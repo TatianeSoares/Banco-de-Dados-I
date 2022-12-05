@@ -54,11 +54,11 @@ public class PgAcidenteDAO implements AcidenteDAO{
           "idSentidoRodovia = ?," +
           "idTipoOcorrencia = ?," +
           "idTipoAcidente = ?" +
-          "WHERE data = ? AND nrOcorrencia;";
+          "WHERE data = ? AND nrOcorrencia = ?;";
 
   private static final String DELETE_ACIDENTE =
       "DELETE FROM rodovia.acidente " +
-      "WHERE data = ? AND nrOcorrencia;";
+      "WHERE data = ? AND nrOcorrencia = ?;";
 
 
   private static final String BUSCA_FATAIS_ACIDENTES =

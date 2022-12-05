@@ -97,5 +97,6 @@ public abstract class DAOFactory implements AutoCloseable{
   public abstract UltrapassagemDAO getUltrapassagemDAO();
   public abstract VelocidadeMaximaDAO getVelocidadeMaximaDAO();
   public abstract HistoricoCargaDAO getHistoricoCargaDAO();
+  public abstract HistoricoCargaDAO getRelatorioDAO();
 
 }

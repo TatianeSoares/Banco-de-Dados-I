@@ -1,0 +1,90 @@
+Este arquivo contém comando sql utilizados por fora do progama principal, além de selects que foram feitos tentando implementar outras ideias, os selects voltam informações, porém as informações retornadas não são boas para monstar um relatório. Dessa forma, segue estes comandos.
+
+ALTER TABLE rodovia.ultrapassagem
+    ADD COLUMN id INTEGER;
+
+CREATE SEQUENCE rodovia.seq_ultrapassagem OWNED BY rodovia.ultrapassagem.id;
+
+//////////////////////////////////////////////////////////////
+
+ALTER TABLE rodovia.ultrapassagem ALTER COLUMN id SET DEFAULT nextval('rodovia.seq_ultrapassagem');
+
+UPDATE
+    rodovia.ultrapassagem
+SET
+    id = nextval('rodovia.seq_ultrapassagem');
+
+////////////////////////////////////////////////////////////
+
+alter table rodovia.ultrapassagem add primary key (id);
+
+///////////////////////////////////////////////////////////
+
+select ta.Trecho,
+       ta.Acidente,
+       ta.Data_Acidente,
+       vm.veloVeicPesado as Vel_Veic_Pesado,
+       vm.veloVeicLeve as Vel_Veic_Leve,
+       sum(ta.Qtde) as Qtde
+from (
+         SELECT tr.descricao as Trecho,
+                a.idTipoAcidente as Acidente,
+                a.data as Data_Acidente,
+                count(1) as Qtde
+         FROM rodovia.trechoRodovia tr
+                  JOIN rodovia.acidente a ON a.idTrechoRodovia = tr.descricao
+                  JOIN rodovia.tipoacidente tpa ON a.idTipoAcidente = tpa.descricao
+         group by tr.descricao, a.idTipoAcidente, a.data)
+         ta
+JOIN rodovia.velocidadeMaxima vm ON vm.idTrechoRodovia = ta.Trecho
+group by ta.Trecho,
+    ta.Acidente,
+    ta.Data_Acidente,
+    vm.veloVeicPesado,
+    vm.veloVeicLeve;
+
+
+/////////////////////////////////////////////////////
+
+select idtrechorodovia, idsentidorodovia,latitude, longitude, km from rodovia.velocidademaxima group by idtrechorodovia, idsentidorodovia,latitude, longitude, km
+having count(1) > 1;
+
+//////////////////////////////////////////////////////
+
+SELECT u.idTrechoRodovia as Trecho,
+       sr.descricao as Sentido,
+       ta.descricao as Acidente,
+       a.data as Data_Acidente,
+       count(1) as Qtde
+    FROM rodovia.ultrapassagem u
+JOIN rodovia.acidente a ON u.idTrechoRodovia = a.idTrechoRodovia
+JOIN rodovia.tipoacidente ta ON a.idTipoAcidente = ta.descricao
+    JOIN rodovia.sentidoRodovia sr ON a.idSentidoRodovia = sr.descricao
+group by u.idTrechoRodovia,
+    sr.descricao,
+    ta.descricao,
+    a.data;
+
+/////////////////////////////////////////////////
+
+SELECT * FROM rodovia.acidente a
+      JOIN rodovia.trechoRodovia tr ON a.idTrechoRodovia = tr.descricao
+      JOIN rodovia.sentidoRodovia sr ON a.idSentidoRodovia = sr.descricao
+      JOIN rodovia.rodovias r ON tr.descricao = r.descricao
+      JOIN rodovia.velocidadeMaxima vm ON vm.idTrechoRodovia = tr.descricao AND vm.idSentidoRodovia = sr.descricao
+      WHERE ABS(a.km - vm.km) < 1000;
+
+//////////////////////////////////////////////////
+
+SELECT tr.descricao as Trecho,
+       ta.descricao as Acidente,
+       a.data as Data_Acidente,
+    vm.veloVeicPesado as Vel_Veic_Pesado,
+        vm.veloVeicLeve as Vel_Veic_Leve,
+       count(1) as Qtde
+FROM rodovia.trechoRodovia tr
+         JOIN rodovia.acidente a ON a.idTrechoRodovia = tr.descricao
+         JOIN rodovia.tipoacidente ta ON a.idTipoAcidente = ta.descricao
+         JOIN rodovia.velocidadeMaxima vm ON vm.idTrechoRodovia = tr.descricao
+group by tr.descricao, ta.descricao, a.data, a.nrOcorrencia, vm.veloVeicPesado, vm.veloVeicLeve;
+

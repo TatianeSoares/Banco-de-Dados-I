@@ -1,0 +1,8 @@
+
+E
+java:S2695S"/This "PreparedStatement" only has 1 parameters.(ö¡ûÖ
+4
+java:S1128"Remove this duplicated import.(öÌş
+k
+java:S1192!"UDefine a constant instead of duplicating this literal "WHERE descricao = ?;" 3 times.(çÑØ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÇÍˆ²úÿÿÿÿ

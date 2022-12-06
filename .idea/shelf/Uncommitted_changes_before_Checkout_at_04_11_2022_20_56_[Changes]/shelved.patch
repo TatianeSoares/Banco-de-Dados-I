@@ -1,0 +1,12 @@
+Index: project/src/main/webapp/menuSuperior.xhtml
+===================================================================
+diff --git a/project/src/main/webapp/menuSuperior.xhtml b/project/src/main/webapp/menuSuperior.xhtml
+--- a/project/src/main/webapp/menuSuperior.xhtml	
++++ b/project/src/main/webapp/menuSuperior.xhtml	
+@@ -27,4 +27,4 @@
+         </p:toolbarGroup>
+     </p:toolbar>
+ </h:body>
+-</html>
++</html>
+\ No newline at end of file

@@ -1,0 +1,13 @@
+Index: project/src/main/java/controller/inputController.java
+===================================================================
+diff --git a/project/src/main/java/controller/inputController.java b/project/src/main/java/controller/inputController.java
+--- a/project/src/main/java/controller/inputController.java	
++++ b/project/src/main/java/controller/inputController.java	
+@@ -126,6 +126,7 @@
+ 
+         Acidente acidente = new Acidente();
+ 
++        
+ 
+ 
+ 

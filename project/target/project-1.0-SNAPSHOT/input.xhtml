@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="conteudo">
+        <f:metadata>
+            <f:viewAction action="#{inputController.init}"/>
+        </f:metadata>
+        <h:form enctype="multipart/form-data" id="form">
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="ui-fluid p-grid">
+                        <p:fieldset legend="Carga de Dados"
+                                    style="margin: auto;
+                                    width: 70%;
+                                    font-size: 20px;">
+                            <div class="p-col-12 p-md-12">
+                                <p:outputLabel value="Selecione o conteúdo do arquivo:"/>
+                            </div>
+                            <div class="p-col-12 p-md-5">
+                                <p:selectOneMenu id="tipo" value="#{inputController.tipSelecionado}">
+                                    <f:selectItem itemLabel="Select One" itemDisabled="true"/>
+                                    <f:selectItem itemLabel="Acidente" itemValue="acidente"/>
+                                    <f:selectItem itemLabel="Ultrapassagem" itemValue="ultrapassagem"/>
+                                    <f:selectItem itemLabel="Velocidade Máxima" itemValue="velocidade"/>
+                                    <p:ajax listener="#{inputController.setType(inputController.tipSelecionado)}"/>
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="p-col-12 p-md-3">
+                                <p:fileUpload mode="advanced"
+                                              listener="#{inputController.uploadFile}"/>
+                            </div>
+                        </p:fieldset>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -12,13 +12,14 @@
             <div class="ui-g">
                 <div class="ui-g-12">
                     <div class="ui-fluid p-grid">
-                        <p:fieldset legend="Relatório"
+                        <p:fieldset legend="Relatório Velocidade e Acidente"
                                     style="margin: auto;
                                     width: 70%;
                                     font-size: 20px;">
                             <div class="p-col-12 p-md-4">
                                 <p:commandButton value="Gerar relatório"
                                                  actionListener="#{pieController.getDataVelocidadeObitos}"
+                                                 style="margin-right: 15px;"
                                                  update="panel"/>
                             </div>
                             <div>
@@ -26,7 +27,7 @@
                                     <p:chart type="pie"
                                              model="#{pieController.pieModel}"
                                              style="width:400px;height: 300px"
-                                             rendered="#{relatorioController.pieModel != null}" />
+                                             rendered="#{pieController.pieModel != null}" />
                                 </h:panelGroup>
                             </div>
                         </p:fieldset>

@@ -18,8 +18,6 @@ public class PgRelatorioDAO implements RelatorioDAO{
   private static final String BUSCA_ACIDENTE_POR_TIPO =
       "SELECT tr.descricao as Trecho, " +
           "       a.idTipoOcorrencia as Tipo_Ocorrencia, " +
-          "       a.idTipoAcidente as Acidente, " +
-          "       a.data as Data_Acidente, " +
           "       count(1) as Qtde " +
           "FROM rodovia.trechoRodovia tr " +
           "         JOIN rodovia.acidente a ON a.idTrechoRodovia = tr.descricao " +
@@ -27,7 +25,7 @@ public class PgRelatorioDAO implements RelatorioDAO{
           "         JOIN rodovia.sentidorodovia sr ON a.idSentidoRodovia = sr.descricao " +
           "         JOIN rodovia.tipoocorrencia tpo ON a.idTipoOcorrencia = tpo.descricao " +
           "where a.idtipoocorrencia = ? " +
-          "group by tr.descricao, a.idTipoOcorrencia, a.idTipoAcidente, a.data;";
+          "group by tr.descricao, a.idTipoOcorrencia";
 
   private static final String BUSCA_ACI_ULT_VELO =
       "SELECT tr.descricao, " +
@@ -93,8 +91,6 @@ public class PgRelatorioDAO implements RelatorioDAO{
           Relatorio relatorio = new Relatorio();
           relatorio.setTrechoRodovia(result.getString("trecho"));
           relatorio.setTipoOcorrencia(result.getString("tipo_ocorrencia"));
-          relatorio.setTipoAcidente(result.getString("acidente"));
-          relatorio.setDataAcidente(result.getDate("data_acidente"));
           relatorio.setQtAcidente(result.getInt("qtde"));
 
           relatorioList.add(relatorio);

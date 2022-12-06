@@ -10,22 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af8ac1c3-bd85-4e41-afda-c05f89d3ef93" name="Changes" comment="ultimo relatorio implementado&#10;todos os relatorios finalizados">
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/BarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/controller/DounutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorioDonut.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/DAO/Relatorio/PgRelatorioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/DAO/Relatorio/PgRelatorioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/RelatorioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/controller/historicoCargaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/controller/HistoricoCargaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/menuSuperior.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/menuSuperior.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/pie.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorioPie.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/relatorio.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/relatorioBar.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/controller/historicoCargaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/controller/historicoCargaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/historicoCargaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/WEB-INF/classes/controller/historicoCargaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/menuSuperior.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/menuSuperior.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/project-1.0-SNAPSHOT/relatorio.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_24_2022_12_00_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_11_2022_08_05__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2022_09_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2022_08_55__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2022_08_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2022_09_05__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2022_09_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_22_2022_11_11_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2022_12_00_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2022_12_01_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_11_2022_09_49__Changes_.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +153,7 @@
       <workItem from="1666098330674" duration="1075000" />
       <workItem from="1666100476601" duration="230000" />
       <workItem from="1670271545173" duration="102000" />
+      <workItem from="1670302920681" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="arrumando apresentação dos relatorios">
       <created>1670278113313</created>
@@ -166,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670278113313</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ultimo relatorio implementado&#10;todos os relatorios finalizados">
+      <created>1670303163057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670303163057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

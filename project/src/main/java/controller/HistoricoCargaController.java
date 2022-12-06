@@ -15,7 +15,7 @@ import java.util.List;
 
 @Named
 @ViewScoped
-public class historicoCargaController implements Serializable {
+public class HistoricoCargaController implements Serializable {
 
   @Getter @Setter List<HistoricoCarga> todasCargasList;
 
